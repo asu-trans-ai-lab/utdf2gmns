@@ -57,13 +57,19 @@ def geocoder_geocoding_from_address(address: str) -> tuple:
 if __name__ == "__main__":
 
     # Step 1: input data path
-    # path_input = "./geo_referencing_lnglat_.xlsx"
     path_input = "intersection_from_synchro.csv"
+
     # Step 2: read data
     df = pd.read_csv(path_input)
 
-    # Step 3: get address values
-    address_list = df["full_name"].tolist()
+    # Step 3: get address values from column full_name_intersection
+    if "full_name_intersection" not in df.columns:
+        if {"intersection_name", "city_name"}.issubset(set(df.columns)):
+            df["full_name_intersection"] = df["intersection_name"] + ", " + df["city_name"]
+        else:
+            raise Exception("full_name and city_name are not in the dataframe, please check the input file.")
+
+    address_list = df["full_name_intersection"].tolist()
 
     # Step 4: geocoding
     lnglat_values = [geocoder_geocoding_from_address(address) for address in address_list]
@@ -73,4 +79,4 @@ if __name__ == "__main__":
         df.loc[i, "x_coord"] = lnglat_values[i][0]
         df.loc[i, "y_coord"] = lnglat_values[i][1]
 
-    df.to_csv("geo_referencing_lnglat_geocoded.csv", index=False)
+    df.to_csv("geo_referencing_lnglat_geocoded_1.csv", index=False)
