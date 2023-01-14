@@ -5,10 +5,10 @@
 # Author/Copyright: Mr. Xiangyong Luo
 ##############################################################
 
-from geopy.geocoders import Nominatim
+# from geopy.geocoders import Nominatim
+# import googlemaps
 import pandas as pd
 import geocoder
-import googlemaps
 import math
 
 
@@ -27,36 +27,36 @@ def calculate_distance_from_two_points(point1: tuple, point2: tuple) -> float:
     return distance
 
 
-def googlemaps_geocoding_from_address(address, api_key) -> tuple:
-
-    # initialize googlemaps client
-    gmaps = googlemaps.Client(key=api_key)
-
-    # Geocoding an address
-    location_instance = gmaps.geocode(address)
-
-    # get the location
-    location_lng_lat = (location_instance[0]['geometry']['location']['lat'], location_instance[0]['geometry']['location']['lng'])
-
-    return location_lng_lat
-
-
-def geopy_geocoding_from_address(address: str) -> tuple:
-
-    # initialize geopy client
-    geo_locator = Nominatim(user_agent="myGeopyGeocoder")
-
-    # Geocoding an address
-    try:
-        location = geo_locator.geocode(address, timeout=10)
-        location_lng_lat = (location.longitude, location.latitude)
-    except Exception as e:
-
-        location_lng_lat = (0,0)
-        print(
-            f"Error: {address} is not able to geocode, for {e}, try to use (0 ,0) to as lng and lat \n")
-
-    return location_lng_lat
+# def googlemaps_geocoding_from_address(address, api_key) -> tuple:
+#
+#     # initialize googlemaps client
+#     gmaps = googlemaps.Client(key=api_key)
+#
+#     # Geocoding an address
+#     location_instance = gmaps.geocode(address)
+#
+#     # get the location
+#     location_lng_lat = (location_instance[0]['geometry']['location']['lat'], location_instance[0]['geometry']['location']['lng'])
+#
+#     return location_lng_lat
+#
+#
+# def geopy_geocoding_from_address(address: str) -> tuple:
+#
+#     # initialize geopy client
+#     geo_locator = Nominatim(user_agent="myGeopyGeocoder")
+#
+#     # Geocoding an address
+#     try:
+#         location = geo_locator.geocode(address, timeout=10)
+#         location_lng_lat = (location.longitude, location.latitude)
+#     except Exception as e:
+#
+#         location_lng_lat = (0,0)
+#         print(
+#             f"Error: {address} is not able to geocode, for {e}, try to use (0 ,0) to as lng and lat \n")
+#
+#     return location_lng_lat
 
 
 def geocoder_geocoding_from_address(address: str) -> tuple:
@@ -127,6 +127,10 @@ def generate_coordinates_from_csv(path_input: str, distance_threshold = 0.01) ->
     return df_final
 
 if __name__ == "__main__":
+    """
+    We provided three geocoding methods: googlemaps, geopy and geocoder
+    The example using geocoder and you don't need to install googlemaps and geopy as well(comment out the code if you want to use them)
+    """
 
     # Step 1: input data path
     path_input = "intersection_from_synchro.csv"
