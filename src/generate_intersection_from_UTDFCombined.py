@@ -31,9 +31,7 @@ subSectionDic={}
 sectionElementIndexDic={}
 rowIndex=0
 currentSectionNameStr=""
-globalHashDic = {}  # table key, element key, perameter(second) key, direction(first) key
-
-
+globalHashDic = {}  # table key, element key, parameter(second) key, direction(first) key
 
 presetExportFileNameList=["LAYOUT","LANES","TIMING","PHASING"]
 presetExportFileShortNameList=["lay","lan","tim","pha"]
@@ -44,7 +42,7 @@ exportColumnList= [["INTID","INTNAME","TYPE","X","Y","Z","NID","SID","EID","WID"
                                                           ["PLANID","INTID","S1","S2","S3","S4","S5","S6","S7","S8","CL","OFF","LD","REF","CLR"],
                                                           ["RECORDNAME","INTID","D1","D2","D3","D4","D5","D6","D7","D8"]]
 exportColumnDic=dict(zip(presetExportFileShortNameList,exportColumnList))
-exportColumnFlattenList=[x for x in flatten(exportColumnList)]
+exportColumnFlattenList = list(flatten(exportColumnList))
 #output variable,table name,
 # two steps, find first, and obtain variables second. thus, we have a target element and a target key(parameter) with some selections(directions)
 exportVariableFromVariableDic={"INTID":"INTID",
@@ -56,7 +54,7 @@ exportColumnForIntersection=["full_name", "city_name", "synchro_INTID", "file_na
 # 1. each export file has a section dimension determined by a variable of import file
 # 2. build a mapping between the first dimension variable and variable in import file
 
-def exractElementData(sectionName:str, subSectionList:list):
+def extractElementData(sectionName:str, subSectionList:list):
     flagRecroding=False
     elementDataDic={}
     positionOfDirectionKeyDic={}

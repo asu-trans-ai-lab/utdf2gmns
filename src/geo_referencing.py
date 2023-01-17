@@ -139,4 +139,4 @@ if __name__ == "__main__":
     df = generate_coordinates_from_csv(path_input)
 
     # save to csv file
-    df.to_csv("intersection_from_synchro_with_coordinates.csv", index=False)
+    df.to_csv(f"{path_input.split('.')[0]}_with_coordinates.csv", index=False)
