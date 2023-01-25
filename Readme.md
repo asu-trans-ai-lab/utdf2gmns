@@ -9,7 +9,7 @@ You have to prepare two columns named: intersection_name and city_name (The reas
 
 please preapre the format like:
 
-![1671489567598](image/ReadMe/intersection_city_name.png)
+![1671489567598](src/image/ReadMe/intersection_city_name.png)
 
 ### Georeferencing Code Logic
 
@@ -26,3 +26,16 @@ If results are not equal:
     if the distance between result_1 and result_2 within the threshould, use result_1 and finish
 
     else, use three-points-validation-methods to generate longitude and latitude.
+
+For  UTDF:
+
+First step:
+
+* Node: Node.csv from osm2gmns
+* Link: Link.csv from osm2gmns
+* Movement: Movement.csv from osm2gmns
+* utdf_lanes: utdf_lanes.csv from UTDF.csv
+
+Second Step:
+
+    commine four documents together and generate utdf_movement.csv
