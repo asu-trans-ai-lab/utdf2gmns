@@ -3,35 +3,37 @@ from EnumClass import LinkEnum as lie
 from EnumClass import LinkSecondEnum as lise
 from EnumClass import LaneEnum as lae
 from EnumClass import LaneSecondEnum as lase
-from EnumClass import TimeplanEnum as tpe
-from EnumClass import TimeplanSecondEnum as tpse
+from EnumClass import TimePlanEnum as tpe
+from EnumClass import TimePlanSecondEnum as tpse
 from EnumClass import PhaseEnum as pe
 from EnumClass import PhaseSecondEnum as pse
-from backup.Functions import *
-import pickle
 
+from EnumClass import (NodeEnum, LinkEnum, LinkSecondEnum,
+                       LaneEnum, LaneSecondEnum,TimePlanEnum,
+                       TimePlanSecondEnum, PhaseEnum, PhaseSecondEnum)
 import pandas as pd
+import numpy as np
+
+
+# from backup.Functions import *
+# import pickle
 
 # importPath= r"data/Combined_File.csv"
-importPath= r"UTDF.csv"
-settingPath=r"setting.csv"
-
+importPath = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\dataset\UTDF.csv"
+settingPath=r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\dataset\setting.csv"
 exportPath= r"export"
+
+
 dataList=[]
-sectionNameList=[]
-presetSectionNameList=['[Network]', '[Nodes]', '[Links]', '[Lanes]', '[Timeplans]', '[Phases]']
-presetSectionShortNameList=["net","nod","lin","lan","tim","pha"]
-presetSectionNameShortDic=dict(zip(presetSectionShortNameList,presetSectionNameList))
+
+
+
+
 presetElementIndexofSection="INTID"
 presetParameterIndexofSection="RECORDNAME"
 positionElementIndexofSectionDic={}
 positionParameterIndexofSectionDic={}
-sectionLocationDic={}
-subSectionDic={}
-sectionElementIndexDic={}
-rowIndex=0
 currentSectionNameStr=""
-globalHashDic = {}  # table key, element key, parameter(second) key, direction(first) key
 
 presetExportFileNameList=["LAYOUT","LANES","TIMING","PHASING"]
 presetExportFileShortNameList=["lay","lan","tim","pha"]
@@ -42,7 +44,7 @@ exportColumnList= [["INTID","INTNAME","TYPE","X","Y","Z","NID","SID","EID","WID"
                                                           ["PLANID","INTID","S1","S2","S3","S4","S5","S6","S7","S8","CL","OFF","LD","REF","CLR"],
                                                           ["RECORDNAME","INTID","D1","D2","D3","D4","D5","D6","D7","D8"]]
 exportColumnDic=dict(zip(presetExportFileShortNameList,exportColumnList))
-exportColumnFlattenList = list(flatten(exportColumnList))
+exportColumnFlattenList = sum(exportColumnList,[])
 #output variable,table name,
 # two steps, find first, and obtain variables second. thus, we have a target element and a target key(parameter) with some selections(directions)
 exportVariableFromVariableDic={"INTID":"INTID",
@@ -54,8 +56,16 @@ exportColumnForIntersection=["full_name", "city_name", "synchro_INTID", "file_na
 # 1. each export file has a section dimension determined by a variable of import file
 # 2. build a mapping between the first dimension variable and variable in import file
 
+
+
+
+
+
 def extractElementData(sectionName:str, subSectionList:list):
-    flagRecroding=False
+    # define a bool variable to indicate whether the section is recorded
+    isRecorded=False
+
+
     elementDataDic={}
     positionOfDirectionKeyDic={}
     for line in subSectionList:
@@ -89,7 +99,8 @@ def extractElementData(sectionName:str, subSectionList:list):
                     positionOfDirectionKeyDic[nam]=line.split(",").index(nam)
             flagRecroding=True
             continue
-        if flagRecroding:
+
+        if isRecorded:
             lineList=line.split(",")
             elementName= lineList[positionElementIndexofSectionDic[sectionName]]
             if elementName not in sectionElementIndexDic[sectionName]:
@@ -133,6 +144,28 @@ def QueryValueFromTheGlobalHashTable(tableNameStr:str, elementNameStr:str, param
     return globalHashDic[tableNameStr][elementNameStr][parameterName][directionName]
 
 if __name__ == '__main__':
+
+    # define input utdf file path
+    path_utdf = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\dataset\UTDF.csv"
+
+
+    # read utdf file
+    rowIndex=0
+
+    # store section names in utdf file
+    sectionNameList=[]
+
+    # record each section index (row number) in utdf file
+    sectionLocationDic = {}
+
+    # record each section's content in utdf file
+    subSectionDic = {}
+
+
+    sectionElementIndexDic = {}
+
+
+
     with open(importPath, "r", encoding="utf-8") as fileHandler:
         while True:
             line=fileHandler.readline()
@@ -150,31 +183,44 @@ if __name__ == '__main__':
             rowIndex+=1
     print(rowIndex)
 
+
+    # table key, element key, parameter(second) key, direction(first) key
+    globalHashDic = {}
+
+
+    presetSectionNameList=['[Network]', '[Nodes]', '[Links]', '[Lanes]', '[Timeplans]', '[Phases]']
+    presetSectionShortNameList=["net","nod","lin","lan","tim","pha"]
+    presetSectionNameShortDic=dict(zip(presetSectionShortNameList,presetSectionNameList))
+
+
+
     for tableKey in presetSectionNameList:
-        if tableKey not in globalHashDic.keys():
+        if tableKey not in globalHashDic:
             globalHashDic[tableKey]={}
 
         if tableKey=='[Network]':
             globalHashDic[tableKey]={"null":{}}
-            flagRecroding = False
+            isRecorded = False
             for lineN in subSectionDic[tableKey]:
                 if lineN=="":
                     continue
                 if "RECORDNAME" in lineN:
-                    flagRecroding = True
+                    isRecorded = True
                     continue
-                if flagRecroding:
+                if isRecorded:
                     lineArray=lineN.split(",")
                     globalHashDic[tableKey]["null"][lineArray[0]]={"DATA",lineArray[1]}
         else:
-            globalHashDic[tableKey]=exractElementData(tableKey, subSectionDic[tableKey])
+            globalHashDic[tableKey]=extractElementData(tableKey, subSectionDic[tableKey])
 
+    # read setting data from setting.csv
     df_setting=pd.read_csv(settingPath)
     city_name=df_setting["city_name"].values[0]
     print("import finished")
 
     # export intersection_from_synchro.csv
 
+    # get links data from data
     tableName=presetSectionNameShortDic["lin"]
     df = pd.DataFrame()
 
@@ -198,56 +244,7 @@ if __name__ == '__main__':
             asequenced_intersection_id+=1
     df.to_csv("intersection_from_synchro.csv",index=False)
 
-    file= open("globalHashDic.pkl","wb")
-    pickle.dump(globalHashDic,file)
-    file.close()
+    # file= open("globalHashDic.pkl","wb")
+    # pickle.dump(globalHashDic,file)
+    # file.close()
     print("export finished")
-
-
-
-
-
-
-
-
-    # first, we should obtain the index of row from the globalHashDic
-    # In the case of LAYOUT.csv, the index is INTID
-    # tableName=presetSectionNameShortDic["nod"]
-    # parameterName="null"
-    # for elementNode in sectionElementIndexDic[tableName]:
-    #     INTNAME
-    #     TYPE =
-    #     X
-    #     Y
-    #     Z
-    #     NID
-    #     SID
-    #     EID
-    #     WID
-    #     NEID
-    #     NWID
-    #     SEID
-    #     SWID
-    #     NNAME
-    #     SNAME
-    #     ENAME
-    #     WNAME
-    #     NENAME
-    #     NWNAME
-    #     SENAME
-    #     SWNAME
-    #     InsideRadius
-    #     OutsideRadius
-    #     RoundaboutLanes
-    #     CircleSpeed
-    #
-    #     row = [elementNode, ]  # we build the row driectly.
-    #
-    #
-    #
-    # for elementIndex in sectionElementIndexDic[tableName]:
-    #     for directionIndex in noe:
-    #         QueryValueFromTheGlobalHashTable(tableName,elementIndex,parameterName,directionIndex)
-
-
-# the exprot should use pandas

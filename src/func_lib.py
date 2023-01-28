@@ -9,7 +9,7 @@ import pandas as pd
 from utility_lib import utdf_categories
 
 def read_UTDF_file(filename: str) -> dict:
-    """ read UTDF file and split it into different categories """
+    """ read UTDF file and split data into different categories """
 
     # read the utdf.csv file
     with open(path_utdf, encoding='utf-8') as f:
@@ -56,7 +56,7 @@ def read_UTDF_file(filename: str) -> dict:
 
 
 if __name__ == '__main__':
-    path_utdf = "UTDF.csv"
+    path_utdf = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\dataset\UTDF.csv"
 
     utdf_categories_data_dict = read_UTDF_file(path_utdf)
 

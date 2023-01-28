@@ -171,13 +171,13 @@ class LaneSecondEnum(Enum):
     Lane_Group_Flow = 58
 
 
-class TimeplanEnum(Enum):
+class TimePlanEnum(Enum):
     RECORDNAME = 1
     INTID = 2
     DATA = 3
 
 
-class TimeplanSecondEnum(Enum):
+class TimePlanSecondEnum(Enum):
     Control_Type = 1
     Cycle_Length = 2
     Lock_Timings = 3

@@ -1,10 +1,35 @@
 import pandas as pd
-import math
+from math import sin, cos, sqrt, atan2, radians, isnan
 import pickle
 
 def CalculateTheDistanceBetweenPoints(x1: float,y1: float,x2: float,y2: float):
 
-    distance = math.sqrt((x1-x2)**2+(y1-y2)**2)
+    distance = sqrt((x1-x2)**2+(y1-y2)**2)
+    return distance
+
+
+def calculate_point2point_distance_in_km(point1: tuple, point2: tuple) -> float:
+    """ point1 and point2: a tuple of (longitude, latitude) """
+
+    # approximate radius of earth in km
+    R = 6373.0
+
+    lat1 = radians(point1[1])
+    lon1 = radians(point1[0])
+    lat2 = radians(point2[1])
+    lon2 = radians(point2[0])
+
+    dis_lon = lon2 - lon1
+    dis_lat = lat2 - lat1
+
+    a = sin(dis_lat / 2)**2 + cos(lat1) * cos(lat2) * sin(dis_lon / 2)**2
+    c = 2 * atan2(sqrt(a), sqrt(1 - a))
+
+    distance = R * c
+
+    # return math.pow((point1[0] - point2[0]) ** 2 + (point1[1] - point2[1]) ** 2, 0.5)
+
+    # the distance is in km
     return distance
 
 if __name__ == '__main__':
