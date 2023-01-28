@@ -1,23 +1,36 @@
-1. Please execute files 1) generate_intersection_from_UTDFCombined, 2) geo_referencing and 3) macro_node_matching in order.
-2. The input file is UTDF combined csv and the output is movement_synchro.csv
+## utdf2gmns: Introduction
 
-NOTE:
+This open-source package is a tool to conver utdf file to GMNS format.
 
-In order to make high accuracy for geocoding, plase prepare your intersection_from_synchro.csv as suggested:
+## Require documents:
 
-You have to prepare two columns named: intersection_name and city_name (The reason not a combined column name is that we need to validate intersection name before geocoding)
+* [X] UTDF.csv
+* [X] node.csv
+* [X] movement.csv
 
-please preapre the format like:
+## **Package dependency**:
 
-![1671489567598](src/image/ReadMe/intersection_city_name.png)
+* [X] geocoder==1.38.1
+* [X] numpy==1.23.3
+* [X] openpyxl==3.0.10
+* [X] pandas==1.4.4
 
-### Georeferencing Code Logic
+## Project logic:
 
-Three-way validation
+* Step1: Check all required documents exists in the input directory, else, raise an exception
+* Step2: Read UTDF.csv file to get data of utdf_intersection and utdf_lane
+* Step3: Read node and movement documents
+* Step4: Geocoding utdf_intersection, add two columns: coord_x and coord_y -> utdf_intersection_geo
+* Step5: Match utdf_intersection_geo and node -> utdf_intersection_node
+* Step6: Match movement and utdf_intersection_node -> movement_intersection
+* Step7: Match movement_intersection and utdf_lane  -> movement_utdf
 
-Step1: calculate result_1(longitude and latitude) using intersection_name and city_name (eg. SR95 & Aviation, Bullhead, AZ)
+### Georeferencing Code Logic (Step4)
 
-Step2: calculate result_2(longitude and latitude) using **reversed** intersection_name and city_name (eg. Aviation & SR95, Bullhead, AZ)
+**Three-way validation**
+
+* Step1: calculate result_1(longitude and latitude) using intersection_name and city_name (eg. SR95 & Aviation, Bullhead, AZ)
+* Step2: calculate result_2(longitude and latitude) using **reversed** intersection_name and city_name (eg. Aviation & SR95, Bullhead, AZ)
 
 If results of step1 and step2 are same, use result_1(longitude and latitude) and finish.
 
@@ -26,16 +39,3 @@ If results are not equal:
     if the distance between result_1 and result_2 within the threshould, use result_1 and finish
 
     else, use three-points-validation-methods to generate longitude and latitude.
-
-For  UTDF:
-
-First step:
-
-* Node: Node.csv from osm2gmns
-* Link: Link.csv from osm2gmns
-* Movement: Movement.csv from osm2gmns
-* utdf_lanes: utdf_lanes.csv from UTDF.csv
-
-Second Step:
-
-    commine four documents together and generate utdf_movement.csv
