@@ -16,29 +16,27 @@ from math import sin, cos, sqrt, atan2, radians, isnan
 import os
 
 
-def read_required_files(path_required_file: Union[str, dict]) -> tuple:
-    # sourcery skip: use-named-expression
+def check_required_files(input_dir: Union[str, dict]) -> tuple:
     """ read required files and return a tuple of (node_df, movement_df) """
 
     # read files from directory
-    if isinstance(path_required_file, str) and os.path.isdir(path_required_file):
-        required_files = ["intersection_geo.csv", "node.csv", "movement.csv", "utdf_lanes.csv"]
-    elif isinstance(path_required_file, dict):
-        required_files = list(path_required_file.values())
+    if isinstance(input_dir, str) and os.path.isdir(input_dir):
+        required_files = ["UTDF.csv", "node.csv", "movement.csv"]
     else:
         raise ValueError("The path_required_file should be a directory or a dictionary of file names")
 
     # check if the required files exist
-    files_from_directory = get_file_names_from_folder_by_type(path_required_file, file_type="csv")
+    files_from_directory = get_file_names_from_folder_by_type(
+        input_dir, file_type="csv")
 
     isRequired = check_required_files_exist(required_files, files_from_directory)
-    if isRequired:
-        df_intersection = pd.read_csv(os.path.join(path_required_file, "intersection_geo.csv"))
-        df_node = pd.read_csv(os.path.join(path_required_file, "node.csv"))
-        df_movement = pd.read_csv(os.path.join(path_required_file, "movement.csv"))
-        df_utdf_lanes = pd.read_csv(os.path.join(path_required_file, "utdf_lanes.csv"))
+    # if isRequired:
+    #     df_intersection = pd.read_csv(os.path.join(input_dir, "UTDF.csv"))
+    #     df_node = pd.read_csv(os.path.join(input_dir, "node.csv"))
+    #     df_movement = pd.read_csv(os.path.join(input_dir, "movement.csv"))
 
-    return (df_intersection, df_node, df_movement, df_utdf_lanes)
+    # return (df_intersection, df_node, df_movement, df_utdf_lanes)
+    return isRequired
 
 
 def calculate_point2point_distance_in_km(point1: tuple, point2: tuple) -> float:
@@ -151,13 +149,12 @@ def match_movement_and_intersection_node(df_movement: pd.DataFrame, df_intersect
 
 
 @func_running_time
-def match_movement_synchro(df_movement_intersection: pd.DataFrame,
-                           df_utdf_lanes: pd.DataFrame,
-                           isSave2CSV: bool = True) -> pd.DataFrame:
+def match_movement_utdf(df_movement_intersection: pd.DataFrame,
+                        df_utdf_lanes: pd.DataFrame) -> pd.DataFrame:
     # Add Synchro/utdf data to movement_intersection_node
 
     intersection_id_list = [value for value in list(
-        df_movement_intersection["synchro_INTID"].unique()) if not isnan(value)]
+        df_movement_intersection["synchro_INTID"].unique()) if value is not None]
 
     # get movement_intersection dataframe with and without id list
     df_with_id = df_movement_intersection[df_movement_intersection["synchro_INTID"].isin(
@@ -211,24 +208,20 @@ def match_movement_synchro(df_movement_intersection: pd.DataFrame,
 
     df_movement_utdf = pd.concat(movement_utdf_list, sort=False)
 
-    if isSave2CSV:
-        output_file_name = validate_filename("movement_utdf.csv")
-        df_movement_utdf.to_csv(output_file_name, index=False)
-
     return df_movement_utdf
+
 
 if __name__ == "__main__":
 
     # Prepare input path: can be either a dictionary or a directory string
-    required_files_dict = {"intersection_geo": "./intersection_geo.csv",
+    required_files_dict = {"UTDF": "./UTDF.csv",
                            "node": "./node.csv",
-                           "movement": "./movement.csv",
-                           "synchro_utdf": "./utdf_lanes.csv"}
+                           "movement": "./movement.csv"}
 
-    path_input_directory = r"C:\Users\roche\Anaconda_workspace\90geocoding\01synchro_matching\datasets\example_data1"
+    path_input_directory = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\datasets\data_test_1"
 
     # get input data
-    file_dataframes = read_required_files(path_input_directory)
+    file_dataframes = check_required_files(path_input_directory)
 
     df_intersection_geo = file_dataframes[0]
     df_node = file_dataframes[1]
@@ -244,4 +237,4 @@ if __name__ == "__main__":
     # df_movement_intersection.to_csv("movement_intersection.csv", index=False)
 
     # match movement with synchro
-    df_movement_synchro = match_movement_synchro(df_movement_intersection, df_utdf_lanes)
+    df_movement_synchro = match_movement_utdf(df_movement_intersection, df_utdf_lanes)

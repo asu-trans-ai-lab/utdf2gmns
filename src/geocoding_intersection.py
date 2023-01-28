@@ -70,15 +70,10 @@ def geocoder_geocoding_from_address(address: str) -> tuple:
     return location_lng_lat
 
 
-def generate_coordinates_from_csv(path_input: str, distance_threshold = 0.01) -> pd.DataFrame:
+def generate_coordinates_from_intersection(df_intersection: pd.DataFrame, distance_threshold = 0.01) -> pd.DataFrame:
     # distance_threshold is the threshold to determine whether the intersection is able to geocode, using km as unit
 
-    # TDD development
-    if not isinstance(path_input, str):
-        raise Exception("path_input should be a string.")
-
-    # Step 2: read data
-    df = pd.read_csv(path_input)
+    df = df_intersection
 
     # Step 3: generate full address values from columns intersection_name and city_name
 
@@ -113,13 +108,13 @@ def generate_coordinates_from_csv(path_input: str, distance_threshold = 0.01) ->
         df["distance_from_full_name"] = distance
 
         if distance[i] <= distance_threshold:
-            df.loc[i, "x_coord"] = lnglat_values_full_name[i][0]
-            df.loc[i, "y_coord"] = lnglat_values_full_name[i][1]
+            df.loc[i, "coord_x"] = lnglat_values_full_name[i][0]
+            df.loc[i, "coord_y"] = lnglat_values_full_name[i][1]
 
         else:
             # use None to indicate the intersection is not able to geocode
-            df.loc[i, "x_coord"] = None
-            df.loc[i, "y_coord"] = None
+            df.loc[i, "coord_x"] = None
+            df.loc[i, "coord_y"] = None
 
     created_column_names = ["reversed_intersection_name", "full_name_intersection", "full_name_intersection_reversed", "distance_from_full_name"]
     df_final = df.loc[:,~df.columns.isin(created_column_names)]
@@ -133,10 +128,13 @@ if __name__ == "__main__":
     """
 
     # Step 1: input data path
-    path_input = "intersection_from_synchro.csv"
+    path_input = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\datasets\data_test_1\intersection_from_synchro.csv"
+
+    # Step 2: read data
+    df_intersection = pd.read_csv(path_input)
 
     # Step 2: generate coordinates
-    df = generate_coordinates_from_csv(path_input)
+    df = generate_coordinates_from_intersection(df_intersection)
 
     # save to csv file
-    df.to_csv(f"{path_input.split('.')[0]}_with_coordinates.csv", index=False)
+    # df.to_csv(f"{path_input.split('.')[0]}_with_coordinates.csv", index=False)
