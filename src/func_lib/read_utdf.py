@@ -5,7 +5,7 @@
 # Author/Copyright: Mr. Xiangyong Luo
 ##############################################################
 
-from proj_config import link_column_names, utdf_setting, utdf_categories
+from package_settings import link_column_names, utdf_setting, utdf_categories
 import pandas as pd
 
 

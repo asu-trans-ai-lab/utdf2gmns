@@ -9,22 +9,7 @@
 # import googlemaps
 import pandas as pd
 import geocoder
-import math
-
-
-def calculate_distance_from_two_points(point1: tuple, point2: tuple) -> float:
-
-    lat1, lon1 = point1
-    lat2, lon2 = point2
-    radius = 6371  # radius of earth in km
-
-    lat_diff = math.radians(lat2-lat1)
-    lon_diff = math.radians(lon2-lon1)
-    a = math.sin(lat_diff/2) * math.sin(lat_diff / 2) + math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) * math.sin(lon_diff / 2) * math.sin(lon_diff / 2)
-    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1-a))
-    distance = radius * c  # distance in km
-
-    return distance
+from utility_lib import calculate_point2point_distance_in_km
 
 
 # def googlemaps_geocoding_from_address(address, api_key) -> tuple:
@@ -102,7 +87,7 @@ def generate_coordinates_from_intersection(df_intersection: pd.DataFrame, distan
     lnglat_values_full_name_reversed = [geocoder_geocoding_from_address(address) for address in intersection_full_name_reversed_list]
 
     # create new column named distance_from_full_name
-    distance = [calculate_distance_from_two_points(lnglat_values_full_name[i], lnglat_values_full_name_reversed[i]) for i in range(len(lnglat_values_full_name))]
+    distance = [calculate_point2point_distance_in_km(lnglat_values_full_name[i], lnglat_values_full_name_reversed[i]) for i in range(len(lnglat_values_full_name))]
 
     for i in range(len(df)):
         df["distance_from_full_name"] = distance
