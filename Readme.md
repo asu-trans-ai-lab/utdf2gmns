@@ -10,19 +10,15 @@ This open-source package is a tool to conver utdf file to GMNS format.
 
 ## **Produced output**
 
-If input folder have UTDF.csv only:
+**If input folder have UTDF.csv only:**
 
-A dictionary store utdf data with keys: Networks, Node, Links, Timeplans, Lanes, and utdf_intersection_geo
+*     A dictionary store utdf data with keys: Networks, Node, Links, Timeplans, Lanes, and utdf_intersection_geo
+*     A file named utdf2gmns.pickle to store dictionary object.
 
-A file named utdf2gmns.pickle to store dictionary object.
+**If input folder have node.csv and movement.csv:**
 
-
-If input folder have node.csv and movement.csv:
-
-Two dataframes named: movement_utdf.csv and
-
-movement_utdf.csv
-
+*     Two files named movement_utdf.csv and intersection_utdf.csv
+*     A file named utdf2gmns.pickle to store dictionary object.
 
 ## **Package dependency**:
 
