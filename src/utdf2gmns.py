@@ -93,7 +93,10 @@ def generate_movement_utdf(input_dir: str, isSave2csv: bool = True) -> pd.DataFr
         output_file_name = validate_filename(os.path.join(os.getcwd(),"movement_utdf.csv"))
         df_movement_utdf.to_csv(output_file_name, index=False)
 
-        # store utdf_intersection_geo and movement_utdf in utdf_dict_data and return utdf_dict_data
+        output_file_name = validate_filename(os.path.join(os.getcwd(),"intersection_utdf.csv"))
+        df_intersection_node.to_csv(output_file_name, index=False)
+
+        # store utdf_intersection_geo and movement_utdf in utdf_dict_data and return udf_intersection_nodetdf_dict_data
         utdf_dict_data["utdf_intersection_geo"] = df_utdf_intersection_geo
         utdf_dict_data["movement_utdf"] = df_movement_utdf
         with open(os.path.join(os.getcwd(),"utdf2gmns.pickle"), 'wb') as f:
