@@ -16,7 +16,7 @@ def read_UTDF_file(path_utdf: str) -> dict:
     with open(path_utdf, encoding='utf-8') as f:
         lines = f.readlines()
 
-    # find the start index of each category, the index is the column name
+    # find the start index of each category, the index is the row contain column names
     categorical_data_beginning_index_dict = {}
     for i in range(len(lines)):
         if "Network" in lines[i] and utdf_categories["Network"] in lines[i + 1]:
