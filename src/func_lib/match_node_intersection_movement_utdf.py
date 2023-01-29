@@ -59,7 +59,6 @@ def match_intersection_node(df_intersection_geo: pd.DataFrame, df_node: pd.DataF
     df_intersection_node = pd.DataFrame(
         intersection_node_list, columns=col_intersection_geo + col_node)
 
-    # df_intersection_node.to_csv("macro_intersection_node.csv", index=False)
     return df_intersection_node
 
 
