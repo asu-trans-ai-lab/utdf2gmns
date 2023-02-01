@@ -5,10 +5,13 @@
 # Author/Copyright: Mr. Xiangyong Luo
 ##############################################################
 
-from package_settings import link_column_names, utdf_setting, utdf_categories
+# from utility_lib import func_running_time
 import pandas as pd
+from utils_lib.package_settings import link_column_names, utdf_categories, utdf_setting
+from utils_lib.utility_lib import func_running_time
 
 
+@func_running_time
 def read_UTDF_file(path_utdf: str) -> dict:
     """ read UTDF file and split data into different categories """
 
@@ -37,7 +40,7 @@ def read_UTDF_file(path_utdf: str) -> dict:
     categorical_index_ordered = sorted(list(categorical_data_beginning_index_dict.keys())) # ascending order
 
     # prepare dataframe for each category
-    utdf_categories_data_dict = {}
+    utdf_dict_data = {}
 
     for j in range(len(categorical_index_ordered)):
         # get the category name from start_index_dict
@@ -52,21 +55,29 @@ def read_UTDF_file(path_utdf: str) -> dict:
             category_value = [k.split(",") for k in lines[categorical_index_ordered[j]:categorical_index_ordered[j+1] - 2]]
 
         # save data to dictionary
-        utdf_categories_data_dict[category_name] = pd.DataFrame(category_value[1:], columns=category_value[0])
-    return utdf_categories_data_dict
+        utdf_dict_data[category_name] = pd.DataFrame(category_value[1:], columns=category_value[0])
+
+    # format utdf_lane data : remove unnecessary rows with None and column with '\n'
+    utdf_dict_data["utdf_lane"] = generate_lane_data_from_utdf(utdf_dict_data)
+
+    return utdf_dict_data
 
 
-def generate_intersection_data_from_utdf(utdf_dict_data: dict) -> pd.DataFrame:
+@func_running_time
+def generate_intersection_data_from_utdf(utdf_dict_data: dict, city_name: str) -> pd.DataFrame:
 
     # Get link data from utdf
     df_link = utdf_dict_data["Links"]
+
+    # update columns name
+    df_link.columns = [i.replace("\n", "") if "\n" in i else i for i in df_link.columns.tolist()]
 
     # remove unnecessary rows / invalid rows with NaN
     df_link = df_link[df_link["INTID"].notna()]
 
     # clean the data / remove '\n' in the end of column SW
-    df_link = df_link.rename(columns={"SW\n": "SW"})
-    df_link["SW"] = df_link["SW"].map(lambda x: x.replace("\n", ""))
+    # df_link = df_link.rename(columns={"SW\n": "SW"})
+    # df_link["SW"] = df_link["SW"].map(lambda x: x.replace("\n", ""))
 
     # get the unique link id
     link_id = df_link["INTID"].unique().tolist()
@@ -79,8 +90,7 @@ def generate_intersection_data_from_utdf(utdf_dict_data: dict) -> pd.DataFrame:
         df_single_id_dict = {}
         for name in record_name:
             # convert one row of dataframe to dictionary
-            df_single_id_name = df_single_id[df_single_id["RECORDNAME"] == name].to_dict("records")[
-                0]
+            df_single_id_name = df_single_id[df_single_id["RECORDNAME"] == name].to_dict("records")[0]
             df_single_id_dict[name] = df_single_id_name
         df_link_dict[single_id] = df_single_id_dict
 
@@ -96,9 +106,8 @@ def generate_intersection_data_from_utdf(utdf_dict_data: dict) -> pd.DataFrame:
         direction_list = df_link_dict[single_id]["Name"]
         direction_name_list = []
         for direction_id in range(3, 11):
-            direction_name = direction_list[link_column_names.get(
-                direction_id)]
-            if direction_name not in direction_name_list and direction_name != '':
+            direction_name = direction_list.get(link_column_names.get(direction_id), "")
+            if direction_name not in direction_name_list and direction_name != '' and direction_name != '\n':
                 direction_name_list.append(direction_name)
         if len(direction_name_list) > 1:
             isIntersection = True
@@ -109,13 +118,15 @@ def generate_intersection_data_from_utdf(utdf_dict_data: dict) -> pd.DataFrame:
             # get "INTID"
             intersection_id = direction_list[link_column_names.get(2)]
 
-            link_list.append([intersection_name, utdf_setting.get(
-                "city_name"), intersection_id, "", sequenced_intersection_id])
+            link_list.append([intersection_name, city_name, intersection_id, "", sequenced_intersection_id])
             sequenced_intersection_id += 1
 
     intersection_column_name = ["intersection_name", "city_name",
                                 "synchro_INTID", "file_name", "intersection_id"]
-    return pd.DataFrame(link_list, columns=intersection_column_name)
+    df_utdf_intersection = pd.DataFrame(link_list, columns=intersection_column_name)
+    df_utdf_intersection["intersection_name"] = df_utdf_intersection["intersection_name"].map(lambda x: x.replace("\n", ""))
+
+    return df_utdf_intersection
 
 
 def generate_lane_data_from_utdf(utdf_dict_data: dict) -> pd.DataFrame:
@@ -127,17 +138,20 @@ def generate_lane_data_from_utdf(utdf_dict_data: dict) -> pd.DataFrame:
     df_lane = df_lane[df_lane["INTID"].notna()]
 
     # clean the data / remove '\n' in the end of column SW
-    df_lane = df_lane.rename(columns={"HOLD\n": "HOLD"})
-    df_lane["HOLD"] = df_lane["HOLD"].map(lambda x: x.replace("\n", ""))
+    # df_lane = df_lane.rename(columns={"HOLD\n": "HOLD"})
+    # df_lane["HOLD"] = df_lane["HOLD"].map(lambda x: x.replace("\n", ""))
     return df_lane
 
 
 if __name__ == '__main__':
-    path_utdf = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\datasets\data_test_1\UTDF.csv"
+    path_utdf = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\datasets\data_bullhead_seg4\UTDF.csv"
+    # path_utdf = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\datasets\data_test_1\UTDF.csv"
+
+    city_name = utdf_setting.get("city_name")
 
     utdf_dict_data = read_UTDF_file(path_utdf)
 
-    df_intersection = generate_intersection_data_from_utdf(utdf_dict_data)
+    df_intersection = generate_intersection_data_from_utdf(utdf_dict_data, city_name)
 
     df_lane = generate_lane_data_from_utdf(utdf_dict_data)
 

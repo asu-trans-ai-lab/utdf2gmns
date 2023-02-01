@@ -8,7 +8,6 @@
 required_files = ["UTDF.csv"]
 required_files_sub = ["node.csv", "movement.csv"]
 
-
 utdf_categories = {
     "Network": "Network Settings",
     "Nodes": "Node Data",

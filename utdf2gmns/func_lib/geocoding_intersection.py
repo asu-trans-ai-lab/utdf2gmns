@@ -9,7 +9,7 @@
 # import googlemaps
 import pandas as pd
 import geocoder
-from utility_lib import calculate_point2point_distance_in_km
+from utils_lib.utility_lib import calculate_point2point_distance_in_km, func_running_time
 
 
 # def googlemaps_geocoding_from_address(address, api_key) -> tuple:
@@ -50,11 +50,15 @@ def geocoder_geocoding_from_address(address: str) -> tuple:
     location_instance = geocoder.arcgis(address).geojson
 
     # get the location
-    location_lng_lat = (location_instance["features"][0]["geometry"]["coordinates"])
+    try:
+        location_lng_lat = (location_instance["features"][0]["geometry"]["coordinates"])
+    except Exception:
+        location_lng_lat = [0, 0]
 
     return location_lng_lat
 
 
+@func_running_time
 def generate_coordinates_from_intersection(df_intersection: pd.DataFrame, distance_threshold = 0.01) -> pd.DataFrame:
     # distance_threshold is the threshold to determine whether the intersection is able to geocode, using km as unit
 
@@ -102,7 +106,7 @@ def generate_coordinates_from_intersection(df_intersection: pd.DataFrame, distan
             df.loc[i, "coord_y"] = None
 
     created_column_names = ["reversed_intersection_name", "full_name_intersection", "full_name_intersection_reversed", "distance_from_full_name"]
-    df_final = df.loc[:,~df.columns.isin(created_column_names)]
+    df_final = df.loc[:, ~df.columns.isin(created_column_names)]
 
     return df_final
 
