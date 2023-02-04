@@ -162,9 +162,9 @@ if __name__ == '__main__':
     # path_node = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\datasets\data_ASU_network\node.csv"
     # path_movement = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\datasets\data_ASU_network\movement.csv"
 
-    path_utdf = r"../datasets/data_bullhead_city_network/UTDF.csv"
-    path_node = r"../datasets/data_bullhead_city_network/node.csv"
-    path_movement = r"../datasets/data_bullhead_city_network/movement.csv"
+    path_utdf = r"../datasets/data_bullhead_seg4/UTDF.csv"
+    path_node = r"../datasets/data_bullhead_seg4/node.csv"
+    path_movement = r"../datasets/data_bullhead_seg4/movement.csv"
 
     df_node = pd.read_csv(path_node)
     df_movement = pd.read_csv(path_movement)
