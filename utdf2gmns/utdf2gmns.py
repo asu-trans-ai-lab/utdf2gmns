@@ -14,12 +14,13 @@ from func_lib.match_node_intersection_movement_utdf import (match_intersection_n
                                                             match_movement_and_intersection_node,
                                                             match_movement_utdf)
 from utils_lib.utility_lib import (func_running_time,
-                         get_file_names_from_folder_by_type,
-                         check_required_files_exist,
-                         validate_filename)
+                                   path2linux,
+                                   get_file_names_from_folder_by_type,
+                                   check_required_files_exist, validate_filename)
 # from package_settings import required_files, required_files_sub
 import os
 import pickle
+from pathlib import Path
 
 
 @func_running_time
@@ -151,9 +152,8 @@ def generate_movement_utdf(input_filename_list: list, city_name_list: list,  nod
 
 if __name__ == '__main__':
 
-    # utdf to utdf_geo and utdf_lane
-    # utdf2geolane
-    # geolane2movement_utdf
+    dir_current = Path(__file__).parent
+    dir_upper_1 = dir_current.parent
 
 
     city_name = " Tempe, AZ"
@@ -162,9 +162,9 @@ if __name__ == '__main__':
     # path_node = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\datasets\data_ASU_network\node.csv"
     # path_movement = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\datasets\data_ASU_network\movement.csv"
 
-    path_utdf = r"../datasets/data_bullhead_seg4/UTDF.csv"
-    path_node = r"../datasets/data_bullhead_seg4/node.csv"
-    path_movement = r"../datasets/data_bullhead_seg4/movement.csv"
+    path_utdf = path2linux(os.path.join(dir_upper_1, "datasets/data_bullhead_seg4/UTDF.csv"))
+    path_node = path2linux(os.path.join(dir_upper_1, "datasets/data_bullhead_seg4/node.csv"))
+    path_movement = path2linux(os.path.join(dir_upper_1, "datasets/data_bullhead_seg4/movement.csv"))
 
     df_node = pd.read_csv(path_node)
     df_movement = pd.read_csv(path_movement)

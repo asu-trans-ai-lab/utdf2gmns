@@ -66,6 +66,14 @@
         "documentation": {}
     },
     {
+        "label": "path2linux",
+        "importPath": "utils_lib.utility_lib",
+        "description": "utils_lib.utility_lib",
+        "isExtraImport": true,
+        "detail": "utils_lib.utility_lib",
+        "documentation": {}
+    },
+    {
         "label": "get_file_names_from_folder_by_type",
         "importPath": "utils_lib.utility_lib",
         "description": "utils_lib.utility_lib",
@@ -169,6 +177,14 @@
         "importPath": "datetime",
         "description": "datetime",
         "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
         "documentation": {}
     },
     {
