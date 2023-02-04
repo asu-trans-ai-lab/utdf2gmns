@@ -162,9 +162,9 @@ if __name__ == '__main__':
     # path_node = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\datasets\data_ASU_network\node.csv"
     # path_movement = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\datasets\data_ASU_network\movement.csv"
 
-    path_utdf = path2linux(os.path.join(dir_upper_1, "datasets/data_bullhead_seg4/UTDF.csv"))
-    path_node = path2linux(os.path.join(dir_upper_1, "datasets/data_bullhead_seg4/node.csv"))
-    path_movement = path2linux(os.path.join(dir_upper_1, "datasets/data_bullhead_seg4/movement.csv"))
+    path_utdf = path2linux(os.path.join(dir_upper_1, "datasets/data_ASU_network/UTDF.csv"))
+    path_node = path2linux(os.path.join(dir_upper_1, "datasets/data_ASU_network/node.csv"))
+    path_movement = path2linux(os.path.join(dir_upper_1, "datasets/data_ASU_network/movement.csv"))
 
     df_node = pd.read_csv(path_node)
     df_movement = pd.read_csv(path_movement)
@@ -175,8 +175,8 @@ if __name__ == '__main__':
     movement_utdf = utdf2gmns_dict.get("movement_utdf")
     utdf_geo = utdf2gmns_dict.get("utdf_geo")
 
-    movement_utdf.to_csv("movement_utdf.csv", index=False)
-    utdf_geo.to_csv("utdf_geo.csv", index=False)
+    movement_utdf.to_csv(path2linux(os.path.join(dir_current, "movement_utdf")), index=False)
+    utdf_geo.to_csv(path2linux(os.path.join(dir_current, "utdf_geo.csv")), index=False)
 
 
     # utdf_dict_data = read_UTDF_file(path_utdf)
