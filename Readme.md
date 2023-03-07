@@ -31,3 +31,14 @@ This open-source package is a tool to conver utdf file to GMNS format.
 
 * Step 1: Read UTDF.csv file and perform geocoding, then produce utdf_geo and utdf_lane.
 * Step 2: Match four files (utdf_geo, node, utdf_lane, movement) to produce movement_utdf
+
+## TODO LIST
+
+* [ ] Print out how many intersections being geocoded.
+* [ ] Print out how many movements being matched or not matched for signalized intersecton nodes in osm2gmns files.
+* [ ] Add cycle length and green time for each movement.
+* [ ] Check reasonable capacity.
+* [ ] Check each movement is reasonable (like 15s of green time...). other attributes.
+* [ ] Check number of lanes correctness between osm2gmns file and synchro file per movements.
+* [ ] Print out check log.
+* [ ] Number of lanes of the movements from synchro file.

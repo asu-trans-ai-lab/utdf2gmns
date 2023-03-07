@@ -7,9 +7,27 @@
 
 # from utility_lib import func_running_time
 import pandas as pd
-from utils_lib.package_settings import link_column_names, utdf_categories, utdf_setting
-from utils_lib.utility_lib import func_running_time
+import sys
+import os
+from pathlib import Path
 
+# add folder utils_lib to the path
+try:
+    sys.path.append(os.path.join(Path(__file__).resolve().parent.parent, "utils_lib"))
+except Exception:
+    sys.path.append(os.path.join(Path("__file__").resolve().parent.parent, "utils_lib"))
+
+try:
+    # for deployment
+    from utils_lib.package_settings import link_column_names, utdf_categories, utdf_setting
+    from utils_lib.utility_lib import func_running_time
+except Exception:
+    # for local testing
+    from package_settings import link_column_names, utdf_categories, utdf_setting
+    from utility_lib import func_running_time
+
+# aviod the warning of "A value is trying to be set on a copy of a slice from a DataFrame"
+pd.options.mode.chained_assignment = None  # default='warn'
 
 @func_running_time
 def read_UTDF_file(path_utdf: str) -> dict:
@@ -58,8 +76,33 @@ def read_UTDF_file(path_utdf: str) -> dict:
         utdf_dict_data[category_name] = pd.DataFrame(category_value[1:], columns=category_value[0])
 
     # format utdf_lane data : remove unnecessary rows with None and column with '\n'
-    utdf_dict_data["utdf_lane"] = generate_lane_data_from_utdf(utdf_dict_data)
+    # format each table in utdf_dict_data
+    for table_name, df_table_name in utdf_dict_data.items():
+        try:
+            # get the last column name from utdf_setting
+            last_col_name = list(df_table_name.columns)[-1]
 
+            # remove unnecessary rows / invalid rows with NaN
+            if table_name != "Network":
+                df_table_name = df_table_name[df_table_name["INTID"].notna()]
+                df_table_name = df_table_name[df_table_name['INTID'].astype(str).str.isdigit()]
+            else:
+                df_table_name = df_table_name[df_table_name[last_col_name].notna()]
+
+            # clean the data / remove '\n' in the end of column SW
+
+
+            df_table_name.loc[:, last_col_name] = df_table_name[last_col_name].map(
+                lambda x: x.replace("\n", ""))
+
+            df_table_name = df_table_name.rename(columns={last_col_name: last_col_name.replace("\n", "")})
+
+            utdf_dict_data[table_name] = df_table_name
+        except Exception as e:
+            print(f"Could not format table: {table_name} for {e}")
+            continue
+
+    utdf_dict_data["phase_timePlans"] = pd.concat([utdf_dict_data["Phases"], utdf_dict_data["Timeplans"]], axis=0, ignore_index=True)
     return utdf_dict_data
 
 
@@ -129,20 +172,6 @@ def generate_intersection_data_from_utdf(utdf_dict_data: dict, city_name: str) -
     return df_utdf_intersection
 
 
-def generate_lane_data_from_utdf(utdf_dict_data: dict) -> pd.DataFrame:
-
-    # Get link data from utdf
-    df_lane = utdf_dict_data["Lanes"]
-
-    # remove unnecessary rows / invalid rows with NaN
-    df_lane = df_lane[df_lane["INTID"].notna()]
-
-    # clean the data / remove '\n' in the end of column SW
-    # df_lane = df_lane.rename(columns={"HOLD\n": "HOLD"})
-    # df_lane["HOLD"] = df_lane["HOLD"].map(lambda x: x.replace("\n", ""))
-    return df_lane
-
-
 if __name__ == '__main__':
     path_utdf = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\datasets\data_bullhead_seg4\UTDF.csv"
     # path_utdf = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\datasets\data_test_1\UTDF.csv"
@@ -150,13 +179,3 @@ if __name__ == '__main__':
     city_name = utdf_setting.get("city_name")
 
     utdf_dict_data = read_UTDF_file(path_utdf)
-
-    df_intersection = generate_intersection_data_from_utdf(utdf_dict_data, city_name)
-
-    df_lane = generate_lane_data_from_utdf(utdf_dict_data)
-
-
-
-
-
-
