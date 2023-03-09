@@ -5,7 +5,8 @@
 # Author/Copyright: Mr. Xiangyong Luo
 ##############################################################
 
-required_files = ["UTDF.csv", "node.csv", "movement.csv"]
+required_files = ["UTDF.csv"]
+required_files_sub = ["node.csv", "movement.csv"]
 
 utdf_categories = {
     "Network": "Network Settings",

@@ -7,7 +7,7 @@
 
 
 import pandas as pd
-from utility_lib import func_running_time, calculate_point2point_distance_in_km
+from utils_lib.utility_lib import func_running_time, calculate_point2point_distance_in_km
 
 
 def find_shortest_distance_node(point: tuple, node_df: pd.DataFrame, max_distance_threshold: float = 0.1) -> tuple:
@@ -59,7 +59,6 @@ def match_intersection_node(df_intersection_geo: pd.DataFrame, df_node: pd.DataF
     df_intersection_node = pd.DataFrame(
         intersection_node_list, columns=col_intersection_geo + col_node)
 
-    # df_intersection_node.to_csv("macro_intersection_node.csv", index=False)
     return df_intersection_node
 
 
@@ -95,9 +94,9 @@ def match_movement_and_intersection_node(df_movement: pd.DataFrame, df_intersect
 
 
 @func_running_time
-def match_movement_utdf(df_movement_intersection: pd.DataFrame,
-                        df_utdf_lanes: pd.DataFrame) -> pd.DataFrame:
+def match_movement_utdf_lane(df_movement_intersection: pd.DataFrame, utdf_dict_data: dict) -> pd.DataFrame:
     # Add Synchro/utdf data to movement_intersection_node
+    df_utdf_lanes = utdf_dict_data.get("Lanes")
 
     intersection_id_list = [value for value in list(
         df_movement_intersection["synchro_INTID"].unique()) if value is not None]
@@ -152,6 +151,13 @@ def match_movement_utdf(df_movement_intersection: pd.DataFrame,
     # add missing columns to movement_synchro_list
     movement_utdf_list = [df.reindex(columns=col_longest, fill_value=None) for df in movement_utdf_list_removed_duplicated]
 
-    df_movement_utdf = pd.concat(movement_utdf_list, sort=False)
+    df_movement_utdf_lane = pd.concat(movement_utdf_list, sort=False)
 
-    return df_movement_utdf
+    return df_movement_utdf_lane
+
+
+def match_movement_utdf_phase_timeplans(df_movement_utdf_lane: pd.DataFrame, utdf_dict_data: dict) -> pd.DataFrame:
+
+    df_utdf_phase_timeplans = utdf_dict_data.get("phase_timeplans")
+
+    return pd.merge(df_movement_utdf_lane, df_utdf_phase_timeplans, left_on="synchro_INTID", right_on="INTID", how="left")

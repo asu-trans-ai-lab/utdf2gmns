@@ -2,11 +2,23 @@
 
 This open-source package is a tool to conver utdf file to GMNS format.
 
-## Require documents:
+## Required Data Input Files:
 
 * [X] UTDF.csv
-* [X] node.csv
-* [X] movement.csv
+* [X] node.csv (GMNS format)
+* [X] movement.csv (GMNS format)
+
+## **Produced outputs**
+
+**If input folder have UTDF.csv only, outputs are:**
+
+* A dictionary store utdf data with keys: Networks, Node, Links, Timeplans, Lanes, and utdf_intersection_geo
+* A file named utdf2gmns.pickle to store dictionary object.
+
+**If input folder have extra node.csv and movement.csv, outputs are:**
+
+* Two files named movement_utdf.csv and intersection_utdf.csv
+* A file named utdf2gmns.pickle to store dictionary object.
 
 ## **Package dependency**:
 
@@ -15,27 +27,18 @@ This open-source package is a tool to conver utdf file to GMNS format.
 * [X] openpyxl==3.0.10
 * [X] pandas==1.4.4
 
-## Project logic:
+## Data Conversion Steps:
 
-* Step1: Check all required documents exists in the input directory, else, raise an exception
-* Step2: Read UTDF.csv file to get data of utdf_intersection and utdf_lane
-* Step3: Read node and movement documents
-* Step4: Geocoding utdf_intersection, add two columns: coord_x and coord_y -> utdf_intersection_geo
-* Step5: Match utdf_intersection_geo and node -> utdf_intersection_node
-* Step6: Match movement and utdf_intersection_node -> movement_intersection
-* Step7: Match movement_intersection and utdf_lane  -> movement_utdf
+* Step 1: Read UTDF.csv file and perform geocoding, then produce utdf_geo, utdf_lane, and utdf_phase_timeplans.
+* Step 2: Match four files (utdf_geo, node, utdf_lane, utdf_pahse_timeplans, movement) to produce movement_utdf
 
-### Georeferencing Code Logic (Step4)
+## TODO LIST
 
-**Three-way validation**
-
-* Step1: calculate result_1(longitude and latitude) using intersection_name and city_name (eg. SR95 & Aviation, Bullhead, AZ)
-* Step2: calculate result_2(longitude and latitude) using **reversed** intersection_name and city_name (eg. Aviation & SR95, Bullhead, AZ)
-
-If results of step1 and step2 are same, use result_1(longitude and latitude) and finish.
-
-If results are not equal:
-
-    if the distance between result_1 and result_2 within the threshould, use result_1 and finish
-
-    else, use three-points-validation-methods to generate longitude and latitude.
+* [X] Print out how many intersections being geocoded.
+* [ ] Print out how many movements being matched or not matched for signalized intersecton nodes in osm2gmns files.
+* [X] Add cycle length and green time for each movement.
+* [ ] Check reasonable capacity.
+* [ ] Check each movement is reasonable (like 15s of green time...). other attributes.
+* [ ] Check number of lanes correctness between osm2gmns file and synchro file per movements.
+* [ ] Print out check log.
+* [ ] Number of lanes of the movements from synchro file.
