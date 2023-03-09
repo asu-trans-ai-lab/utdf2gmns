@@ -46,7 +46,7 @@ def generate_utdf_dict_of_dataframes(utdf_filename: str, city_name: str) ->dict:
 
 
 @func_running_time
-def generate_movement_utdf(input_dir: list, city_name: list, isSave2csv: bool = True) -> list[pd.DataFrame]:
+def generate_movement_utdf(input_dir: list, city_name: list, output_dir: str = "", isSave2csv: bool = True) -> list[pd.DataFrame]:
 
     # check if required files exist in the input directory
     files_from_directory = get_file_names_from_folder_by_type(input_dir, file_type="csv")
@@ -105,13 +105,15 @@ def generate_movement_utdf(input_dir: list, city_name: list, isSave2csv: bool = 
     # save the output file, the default isSave2csv is True
     # the output path is user's current working directory, output file name is movement_utdf.csv
     if isSave2csv:
-        output_file_name = validate_filename(os.path.join(os.getcwd(),"movement_utdf.csv"))
+        if not output_dir:
+            output_dir = os.getcwd()
+        output_file_name = validate_filename(os.path.join(output_dir, "movement_utdf.csv"))
         df_movement_utdf_phase.to_csv(output_file_name, index=False)
 
-        output_file_name = validate_filename(os.path.join(os.getcwd(),"utdf_intersection.csv"))
+        output_file_name = validate_filename(os.path.join(output_dir, "utdf_intersection.csv"))
         df_intersection_node.to_csv(output_file_name, index=False)
 
-        with open(path2linux(os.path.join(os.getcwd(), "utdf2gmns.pickle")), 'wb') as f:
+        with open(path2linux(os.path.join(output_dir, "utdf2gmns.pickle")), 'wb') as f:
             pickle.dump(utdf_dict_data, f, pickle.HIGHEST_PROTOCOL)
 
     return [df_movement_utdf_phase, utdf_dict_data]
