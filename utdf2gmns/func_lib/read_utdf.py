@@ -20,14 +20,15 @@ except Exception:
 try:
     # for deployment
     from utils_lib.package_settings import link_column_names, utdf_categories, utdf_setting
-    from utils_lib.utility_lib import func_running_time
+    from utils_lib.utility_lib import func_running_time, path2linux
 except Exception:
     # for local testing
     from package_settings import link_column_names, utdf_categories, utdf_setting
-    from utility_lib import func_running_time
+    from utility_lib import func_running_time, path2linux
 
 # aviod the warning of "A value is trying to be set on a copy of a slice from a DataFrame"
 pd.options.mode.chained_assignment = None  # default='warn'
+
 
 @func_running_time
 def read_UTDF_file(path_utdf: str) -> dict:
@@ -62,7 +63,7 @@ def read_UTDF_file(path_utdf: str) -> dict:
 
     for j in range(len(categorical_index_ordered)):
         # get the category name from start_index_dict
-        category_name  = categorical_data_beginning_index_dict[categorical_index_ordered[j]]
+        category_name = categorical_data_beginning_index_dict[categorical_index_ordered[j]]
 
         # if it's the last value in the list, then the end index is the end of the file
         if j == len(categorical_index_ordered) - 1:
@@ -70,7 +71,7 @@ def read_UTDF_file(path_utdf: str) -> dict:
 
         # if it's not the last value in the list, then the end index is the start index of the next category - 2
         else:
-            category_value = [k.split(",") for k in lines[categorical_index_ordered[j]:categorical_index_ordered[j+1] - 2]]
+            category_value = [k.split(",") for k in lines[categorical_index_ordered[j]:categorical_index_ordered[j + 1] - 2]]
 
         # save data to dictionary
         utdf_dict_data[category_name] = pd.DataFrame(category_value[1:], columns=category_value[0])
@@ -90,19 +91,25 @@ def read_UTDF_file(path_utdf: str) -> dict:
                 df_table_name = df_table_name[df_table_name[last_col_name].notna()]
 
             # clean the data / remove '\n' in the end of column SW
-
-
             df_table_name.loc[:, last_col_name] = df_table_name[last_col_name].map(
                 lambda x: x.replace("\n", ""))
 
             df_table_name = df_table_name.rename(columns={last_col_name: last_col_name.replace("\n", "")})
+
+            # drop the column with empty string
+            df_table_name = df_table_name.drop(columns=[""], axis=1) if "" in df_table_name.columns else df_table_name
 
             utdf_dict_data[table_name] = df_table_name
         except Exception as e:
             print(f"Could not format table: {table_name} for {e}")
             continue
 
-    utdf_dict_data["phase_timePlans"] = pd.concat([utdf_dict_data["Phases"], utdf_dict_data["Timeplans"]], axis=0, ignore_index=True)
+    # update Timeplans table with three columns needed
+    utdf_dict_data["Timeplans"] = utdf_dict_data["Timeplans"].iloc[:, 0:3]
+
+    # utdf_dict_data["phase_timePlans"] = pd.concat([utdf_dict_data.get("Phases"), utdf_dict_data.get("Timeplans")], axis=0, ignore_index=True)
+    utdf_dict_data["phase_timeplans"] = spanning_phase_timeplans_data(utdf_dict_data)
+
     return utdf_dict_data
 
 
@@ -148,6 +155,8 @@ def generate_intersection_data_from_utdf(utdf_dict_data: dict, city_name: str) -
 
         direction_list = df_link_dict[single_id]["Name"]
         direction_name_list = []
+
+        # for link table, direction info store in column 3 to 10
         for direction_id in range(3, 11):
             direction_name = direction_list.get(link_column_names.get(direction_id), "")
             if direction_name not in direction_name_list and direction_name != '' and direction_name != '\n':
@@ -155,6 +164,7 @@ def generate_intersection_data_from_utdf(utdf_dict_data: dict, city_name: str) -
         if len(direction_name_list) > 1:
             isIntersection = True
 
+        # generate intersection name if it's an intersection
         intersection_name = ""
         if isIntersection:
             intersection_name = ' & '.join(direction_name_list)
@@ -172,10 +182,88 @@ def generate_intersection_data_from_utdf(utdf_dict_data: dict, city_name: str) -
     return df_utdf_intersection
 
 
-if __name__ == '__main__':
-    path_utdf = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\datasets\data_bullhead_seg4\UTDF.csv"
-    # path_utdf = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\datasets\data_test_1\UTDF.csv"
+# combine phase and timeplans data into one dataframe (intersection id based)
+def spanning_phase_timeplans_data(utdf_dict_data: dict, isSimpleCol: bool = True) -> pd.DataFrame:
 
-    city_name = utdf_setting.get("city_name")
+    df_phase = utdf_dict_data.get("Phases")
+    df_timeplans = utdf_dict_data.get("Timeplans")
+
+    # get unique intersection id
+    intersection_id = df_phase["INTID"].unique().tolist()
+
+    final_spanned_list = []
+
+    for INTID in intersection_id:
+
+        # get utdf_phase dataframe by id
+        df_phase_single_id = df_phase[df_phase["INTID"] == INTID].reset_index(drop=True)
+        df_timeplans_single_id = df_timeplans[df_timeplans["INTID"] == INTID].reset_index(drop=True)
+
+        df_phase_single_id_dict = df_phase_single_id.to_dict("list")
+        df_timeplans_single_id_dict = df_timeplans_single_id.to_dict("list")
+
+        # df phase new column name and data
+        df_phase_col_name_new = []
+        df_phase_single_id_new = []
+
+        # df timeplans new column name and data
+        df_timeplans_col_name_new = []
+        df_timeplans_single_id_new = []
+
+        # span df_phase_single_id_dict
+        for col_name in df_phase_single_id_dict:
+            if col_name not in ["RECORDNAME", "INTID"]:
+                df_phase_col_name_new += [f"{row_name}_{col_name}" for row_name in df_phase_single_id_dict.get("RECORDNAME")]
+                df_phase_single_id_new += df_phase_single_id_dict.get(col_name)
+
+        # span df_timeplans_single_id_dict
+        df_timeplans_col_name_new = df_timeplans_single_id_dict.get("RECORDNAME")
+        df_timeplans_single_id_new = df_timeplans_single_id_dict.get("DATA")
+
+        # generate final column name and data for single intersection id
+        single_id_col_name_final = ["INTID"] + df_phase_col_name_new + df_timeplans_col_name_new
+        single_id_data_final = [INTID] + df_phase_single_id_new + df_timeplans_single_id_new
+
+        final_spanned_list.append(pd.DataFrame([single_id_data_final], columns=single_id_col_name_final))
+
+        # if isSimpleCol is True, then only keep the columns with Start_D and End_D if _D exists
+        # if _D not exists in column name, then keep all columns
+        if isSimpleCol:
+            simple_col_list = []
+            for i in single_id_col_name_final:
+                if "_D" in i:
+                    if ("Start" in i and "Local" not in i) or "End" in i:
+                        simple_col_list.append(i)
+                else:
+                    simple_col_list.append(i)
+            final_spanned_list = [df[simple_col_list] for df in final_spanned_list]
+            return pd.concat(final_spanned_list, axis=0, ignore_index=True)
+    return pd.concat(final_spanned_list, axis=0, ignore_index=True)
+
+
+if __name__ == '__main__':
+
+    path_project_folder = Path(__file__).parents[2].absolute()
+    path_utdf = path2linux(os.path.join(path_project_folder, "datasets/data_ASU_network_2/UTDF.csv"))
+
+    # city_name = utdf_setting.get("city_name")
 
     utdf_dict_data = read_UTDF_file(path_utdf)
+
+    df_phase = utdf_dict_data.get("Phases")
+    df_timeplans = utdf_dict_data.get("Timeplans")
+
+    intersection_id = df_phase["INTID"].unique().tolist()
+
+    df_phase_spanned = spanning_phase_timeplans_data(utdf_dict_data)
+
+
+
+
+
+
+
+
+
+
+

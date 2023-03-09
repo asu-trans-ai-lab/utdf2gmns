@@ -1,11 +1,69 @@
 [
     {
-        "label": "pandas",
+        "label": "contextlib",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "pandas",
-        "description": "pandas",
-        "detail": "pandas",
+        "importPath": "contextlib",
+        "description": "contextlib",
+        "detail": "contextlib",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "Pool",
+        "importPath": "multiprocessing",
+        "description": "multiprocessing",
+        "isExtraImport": true,
+        "detail": "multiprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
         "documentation": {}
     },
     {
@@ -18,19 +76,12 @@
         "documentation": {}
     },
     {
-        "label": "calculate_point2point_distance_in_km",
-        "importPath": "utils_lib.utility_lib",
-        "description": "utils_lib.utility_lib",
+        "label": "pandas",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "utils_lib.utility_lib",
-        "documentation": {}
-    },
-    {
-        "label": "func_running_time",
-        "importPath": "utils_lib.utility_lib",
-        "description": "utils_lib.utility_lib",
-        "isExtraImport": true,
-        "detail": "utils_lib.utility_lib",
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
         "documentation": {}
     },
     {
@@ -43,38 +94,6 @@
     },
     {
         "label": "calculate_point2point_distance_in_km",
-        "importPath": "utils_lib.utility_lib",
-        "description": "utils_lib.utility_lib",
-        "isExtraImport": true,
-        "detail": "utils_lib.utility_lib",
-        "documentation": {}
-    },
-    {
-        "label": "func_running_time",
-        "importPath": "utils_lib.utility_lib",
-        "description": "utils_lib.utility_lib",
-        "isExtraImport": true,
-        "detail": "utils_lib.utility_lib",
-        "documentation": {}
-    },
-    {
-        "label": "func_running_time",
-        "importPath": "utils_lib.utility_lib",
-        "description": "utils_lib.utility_lib",
-        "isExtraImport": true,
-        "detail": "utils_lib.utility_lib",
-        "documentation": {}
-    },
-    {
-        "label": "path2linux",
-        "importPath": "utils_lib.utility_lib",
-        "description": "utils_lib.utility_lib",
-        "isExtraImport": true,
-        "detail": "utils_lib.utility_lib",
-        "documentation": {}
-    },
-    {
-        "label": "get_file_names_from_folder_by_type",
         "importPath": "utils_lib.utility_lib",
         "description": "utils_lib.utility_lib",
         "isExtraImport": true,
@@ -90,7 +109,7 @@
         "documentation": {}
     },
     {
-        "label": "validate_filename",
+        "label": "func_running_time",
         "importPath": "utils_lib.utility_lib",
         "description": "utils_lib.utility_lib",
         "isExtraImport": true,
@@ -98,27 +117,27 @@
         "documentation": {}
     },
     {
-        "label": "link_column_names",
-        "importPath": "utils_lib.package_settings",
-        "description": "utils_lib.package_settings",
+        "label": "get_file_names_from_folder_by_type",
+        "importPath": "utils_lib.utility_lib",
+        "description": "utils_lib.utility_lib",
         "isExtraImport": true,
-        "detail": "utils_lib.package_settings",
+        "detail": "utils_lib.utility_lib",
         "documentation": {}
     },
     {
-        "label": "utdf_categories",
-        "importPath": "utils_lib.package_settings",
-        "description": "utils_lib.package_settings",
+        "label": "path2linux",
+        "importPath": "utils_lib.utility_lib",
+        "description": "utils_lib.utility_lib",
         "isExtraImport": true,
-        "detail": "utils_lib.package_settings",
+        "detail": "utils_lib.utility_lib",
         "documentation": {}
     },
     {
-        "label": "utdf_setting",
-        "importPath": "utils_lib.package_settings",
-        "description": "utils_lib.package_settings",
+        "label": "validate_filename",
+        "importPath": "utils_lib.utility_lib",
+        "description": "utils_lib.utility_lib",
         "isExtraImport": true,
-        "detail": "utils_lib.package_settings",
+        "detail": "utils_lib.utility_lib",
         "documentation": {}
     },
     {
@@ -162,37 +181,12 @@
         "documentation": {}
     },
     {
-        "label": "os",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "os",
-        "description": "os",
-        "detail": "os",
-        "documentation": {}
-    },
-    {
         "label": "datetime",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "datetime",
         "description": "datetime",
         "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
         "documentation": {}
     },
     {
@@ -204,27 +198,12 @@
         "documentation": {}
     },
     {
-        "label": "read_UTDF_file",
-        "importPath": "func_lib.read_utdf",
-        "description": "func_lib.read_utdf",
+        "label": "pickle",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "func_lib.read_utdf",
-        "documentation": {}
-    },
-    {
-        "label": "generate_intersection_data_from_utdf",
-        "importPath": "func_lib.read_utdf",
-        "description": "func_lib.read_utdf",
-        "isExtraImport": true,
-        "detail": "func_lib.read_utdf",
-        "documentation": {}
-    },
-    {
-        "label": "generate_lane_data_from_utdf",
-        "importPath": "func_lib.read_utdf",
-        "description": "func_lib.read_utdf",
-        "isExtraImport": true,
-        "detail": "func_lib.read_utdf",
+        "importPath": "pickle",
+        "description": "pickle",
+        "detail": "pickle",
         "documentation": {}
     },
     {
@@ -252,7 +231,7 @@
         "documentation": {}
     },
     {
-        "label": "match_movement_utdf",
+        "label": "match_movement_utdf_lane",
         "importPath": "func_lib.match_node_intersection_movement_utdf",
         "description": "func_lib.match_node_intersection_movement_utdf",
         "isExtraImport": true,
@@ -260,12 +239,43 @@
         "documentation": {}
     },
     {
-        "label": "pickle",
-        "kind": 6,
+        "label": "match_movement_utdf_phase_timeplans",
+        "importPath": "func_lib.match_node_intersection_movement_utdf",
+        "description": "func_lib.match_node_intersection_movement_utdf",
         "isExtraImport": true,
-        "importPath": "pickle",
-        "description": "pickle",
-        "detail": "pickle",
+        "detail": "func_lib.match_node_intersection_movement_utdf",
+        "documentation": {}
+    },
+    {
+        "label": "generate_intersection_data_from_utdf",
+        "importPath": "func_lib.read_utdf",
+        "description": "func_lib.read_utdf",
+        "isExtraImport": true,
+        "detail": "func_lib.read_utdf",
+        "documentation": {}
+    },
+    {
+        "label": "read_UTDF_file",
+        "importPath": "func_lib.read_utdf",
+        "description": "func_lib.read_utdf",
+        "isExtraImport": true,
+        "detail": "func_lib.read_utdf",
+        "documentation": {}
+    },
+    {
+        "label": "required_files",
+        "importPath": "utils_lib.package_settings",
+        "description": "utils_lib.package_settings",
+        "isExtraImport": true,
+        "detail": "utils_lib.package_settings",
+        "documentation": {}
+    },
+    {
+        "label": "required_files_sub",
+        "importPath": "utils_lib.package_settings",
+        "description": "utils_lib.package_settings",
+        "isExtraImport": true,
+        "detail": "utils_lib.package_settings",
         "documentation": {}
     },
     {
@@ -282,7 +292,7 @@
         "kind": 2,
         "importPath": "utdf2gmns.func_lib.geocoding_intersection",
         "description": "utdf2gmns.func_lib.geocoding_intersection",
-        "peekOfCode": "def generate_coordinates_from_intersection(df_intersection: pd.DataFrame, distance_threshold = 0.01) -> pd.DataFrame:\n    # distance_threshold is the threshold to determine whether the intersection is able to geocode, using km as unit\n    df = df_intersection\n    # Step 3: generate full address values from columns intersection_name and city_name\n    # check required columns exist in the dataframe\n    if not {\"intersection_name\", \"city_name\"}.issubset(set(df.columns)):\n        raise Exception(\n            \"intersection_name and city_name are not in the dataframe, please check the input file.\")\n    # Create one column named \"reversed_intersection_name\"\n    for i in range(len(df)):",
+        "peekOfCode": "def generate_coordinates_from_intersection(df_intersection: pd.DataFrame, distance_threshold=0.01) -> pd.DataFrame:\n    # distance_threshold is the threshold to determine whether the intersection is able to geocode, using km as unit\n    df = df_intersection\n    # check required columns exist in the dataframe\n    if not {\"intersection_name\", \"city_name\"}.issubset(set(df.columns)):\n        raise Exception(\n            \"intersection_name and city_name are not in the dataframe, please check the input file.\")\n    # Create one column named \"reversed_intersection_name\"\n    for i in range(len(df)):\n        if \"&\" in df.loc[i, \"intersection_name\"]:",
         "detail": "utdf2gmns.func_lib.geocoding_intersection",
         "documentation": {}
     },
@@ -314,11 +324,20 @@
         "documentation": {}
     },
     {
-        "label": "match_movement_utdf",
+        "label": "match_movement_utdf_lane",
         "kind": 2,
         "importPath": "utdf2gmns.func_lib.match_node_intersection_movement_utdf",
         "description": "utdf2gmns.func_lib.match_node_intersection_movement_utdf",
-        "peekOfCode": "def match_movement_utdf(df_movement_intersection: pd.DataFrame,\n                        df_utdf_lanes: pd.DataFrame) -> pd.DataFrame:\n    # Add Synchro/utdf data to movement_intersection_node\n    intersection_id_list = [value for value in list(\n        df_movement_intersection[\"synchro_INTID\"].unique()) if value is not None]\n    # get movement_intersection dataframe with and without id list\n    df_with_id = df_movement_intersection[df_movement_intersection[\"synchro_INTID\"].isin(\n        intersection_id_list)]\n    df_without_id = df_movement_intersection[~df_movement_intersection[\"synchro_INTID\"].isin(\n        intersection_id_list)]",
+        "peekOfCode": "def match_movement_utdf_lane(df_movement_intersection: pd.DataFrame, utdf_dict_data: dict) -> pd.DataFrame:\n    # Add Synchro/utdf data to movement_intersection_node\n    df_utdf_lanes = utdf_dict_data.get(\"Lanes\")\n    intersection_id_list = [value for value in list(\n        df_movement_intersection[\"synchro_INTID\"].unique()) if value is not None]\n    # get movement_intersection dataframe with and without id list\n    df_with_id = df_movement_intersection[df_movement_intersection[\"synchro_INTID\"].isin(\n        intersection_id_list)]\n    df_without_id = df_movement_intersection[~df_movement_intersection[\"synchro_INTID\"].isin(\n        intersection_id_list)]",
+        "detail": "utdf2gmns.func_lib.match_node_intersection_movement_utdf",
+        "documentation": {}
+    },
+    {
+        "label": "match_movement_utdf_phase_timeplans",
+        "kind": 2,
+        "importPath": "utdf2gmns.func_lib.match_node_intersection_movement_utdf",
+        "description": "utdf2gmns.func_lib.match_node_intersection_movement_utdf",
+        "peekOfCode": "def match_movement_utdf_phase_timeplans(df_movement_utdf_lane: pd.DataFrame, utdf_dict_data: dict) -> pd.DataFrame:\n    df_utdf_phase_timeplans = utdf_dict_data.get(\"phase_timeplans\")\n    return pd.merge(df_movement_utdf_lane, df_utdf_phase_timeplans, left_on=\"synchro_INTID\", right_on=\"INTID\", how=\"left\")",
         "detail": "utdf2gmns.func_lib.match_node_intersection_movement_utdf",
         "documentation": {}
     },
@@ -341,11 +360,20 @@
         "documentation": {}
     },
     {
-        "label": "generate_lane_data_from_utdf",
+        "label": "spanning_phase_timeplans_data",
         "kind": 2,
         "importPath": "utdf2gmns.func_lib.read_utdf",
         "description": "utdf2gmns.func_lib.read_utdf",
-        "peekOfCode": "def generate_lane_data_from_utdf(utdf_dict_data: dict) -> pd.DataFrame:\n    # Get link data from utdf\n    df_lane = utdf_dict_data[\"Lanes\"]\n    # remove unnecessary rows / invalid rows with NaN\n    df_lane = df_lane[df_lane[\"INTID\"].notna()]\n    # clean the data / remove '\\n' in the end of column SW\n    # df_lane = df_lane.rename(columns={\"HOLD\\n\": \"HOLD\"})\n    # df_lane[\"HOLD\"] = df_lane[\"HOLD\"].map(lambda x: x.replace(\"\\n\", \"\"))\n    return df_lane\nif __name__ == '__main__':",
+        "peekOfCode": "def spanning_phase_timeplans_data(utdf_dict_data: dict, isSimpleCol: bool = True) -> pd.DataFrame:\n    df_phase = utdf_dict_data.get(\"Phases\")\n    df_timeplans = utdf_dict_data.get(\"Timeplans\")\n    # get unique intersection id\n    intersection_id = df_phase[\"INTID\"].unique().tolist()\n    final_spanned_list = []\n    for INTID in intersection_id:\n        # get utdf_phase dataframe by id\n        df_phase_single_id = df_phase[df_phase[\"INTID\"] == INTID].reset_index(drop=True)\n        df_timeplans_single_id = df_timeplans[df_timeplans[\"INTID\"] == INTID].reset_index(drop=True)",
+        "detail": "utdf2gmns.func_lib.read_utdf",
+        "documentation": {}
+    },
+    {
+        "label": "pd.options.mode.chained_assignment",
+        "kind": 5,
+        "importPath": "utdf2gmns.func_lib.read_utdf",
+        "description": "utdf2gmns.func_lib.read_utdf",
+        "peekOfCode": "pd.options.mode.chained_assignment = None  # default='warn'\n@func_running_time\ndef read_UTDF_file(path_utdf: str) -> dict:\n    \"\"\" read UTDF file and split data into different categories \"\"\"\n    # read the utdf.csv file\n    with open(path_utdf, encoding='utf-8') as f:\n        lines = f.readlines()\n    # find the start index of each category, the index is the row contain column names\n    categorical_data_beginning_index_dict = {}\n    for i in range(len(lines)):",
         "detail": "utdf2gmns.func_lib.read_utdf",
         "documentation": {}
     },
@@ -458,20 +486,11 @@
         "documentation": {}
     },
     {
-        "label": "generate_utdf_geo_lane",
+        "label": "generate_utdf_dict_of_dataframes",
         "kind": 2,
         "importPath": "utdf2gmns.utdf2gmns",
         "description": "utdf2gmns.utdf2gmns",
-        "peekOfCode": "def generate_utdf_geo_lane(utdf_filename: str, city_name: str, isAllCategories: bool = False) ->dict:\n    # read single UTDF file and produce data conversion and store data into a dictionary\n    # read UTDF file and create dataframes of utdf_geo and utdf_lane\n    utdf_dict_data = read_UTDF_file(utdf_filename)\n    df_utdf_intersection = generate_intersection_data_from_utdf(utdf_dict_data, city_name)\n    # geocoding utdf_intersection\n    df_utdf_geo = generate_coordinates_from_intersection(df_utdf_intersection)\n    # store utdf_geo and utdf_lane into utdf_dict_data\n    utdf_dict_data[\"utdf_geo\"] = df_utdf_geo\n    # store object into pickle file",
-        "detail": "utdf2gmns.utdf2gmns",
-        "documentation": {}
-    },
-    {
-        "label": "perform_data_matching",
-        "kind": 2,
-        "importPath": "utdf2gmns.utdf2gmns",
-        "description": "utdf2gmns.utdf2gmns",
-        "peekOfCode": "def perform_data_matching(matching_dict: dict) -> dict:\n    # you need to prepare node, movement, utdf_geo, and utdf_lane dataframes first and store them into a dictionary\n    # matching_dict: {\"utdf_geo\": utdf_geo, \"utdf_lane\": utdf_lane, \"node\": node, \"movement\": movement}\n    df_node = matching_dict.get(\"node\")\n    df_utdf_geo = matching_dict.get(\"utdf_geo\")\n    df_movement = matching_dict.get(\"movement\")\n    df_utdf_lane = matching_dict.get(\"utdf_lane\")\n    # match utdf_geo with node\n    print(\"Performing data matching between utdf_geo and node...\")\n    df_intersection_node = match_intersection_node(df_utdf_geo, df_node)",
+        "peekOfCode": "def generate_utdf_dict_of_dataframes(utdf_filename: str, city_name: str) ->dict:\n    # read single UTDF file and produce data conversion and store data into a dictionary\n    # read UTDF file and create dataframes of utdf_geo and utdf_lane\n    utdf_dict_data = read_UTDF_file(utdf_filename)\n    df_utdf_intersection = generate_intersection_data_from_utdf(utdf_dict_data, city_name)\n    # geocoding utdf_intersection\n    df_utdf_geo = generate_coordinates_from_intersection(df_utdf_intersection)\n    # store utdf_geo and utdf_lane into utdf_dict_data\n    utdf_dict_data[\"utdf_geo\"] = df_utdf_geo\n    # store object into pickle file",
         "detail": "utdf2gmns.utdf2gmns",
         "documentation": {}
     },
@@ -480,7 +499,16 @@
         "kind": 2,
         "importPath": "utdf2gmns.utdf2gmns",
         "description": "utdf2gmns.utdf2gmns",
-        "peekOfCode": "def generate_movement_utdf(input_filename_list: list, city_name_list: list,  node_movement_dir: str, isSave2csv: bool = True) -> pd.DataFrame:\n    # define a empty dictionary to store all data\n    utdf2gmns_dict = {}\n    utdf_movement_dict = {}\n    # Check node.csv and movement.csv exist in the current directory or not\n    # # check if required files exist in the input directory\n    # files_from_directory = get_file_names_from_folder_by_type(input_dir, file_type=\"csv\")\n    # # if not required, raise an exception\n    # isRequired = check_required_files_exist(required_files, files_from_directory)\n    # isRequired_sub = check_required_files_exist(required_files_sub, files_from_directory)",
+        "peekOfCode": "def generate_movement_utdf(input_dir: list, city_name: list, isSave2csv: bool = True) -> list[pd.DataFrame]:\n    # check if required files exist in the input directory\n    files_from_directory = get_file_names_from_folder_by_type(input_dir, file_type=\"csv\")\n    # if not required, raise an exception\n    isRequired = check_required_files_exist(required_files, files_from_directory)\n    isRequired_sub = check_required_files_exist(required_files_sub, files_from_directory)\n    # required fils are not found, raise an exception\n    if not isRequired:\n        raise Exception(f\"Required files {required_files} are not found!\")\n    # read UTDF file and create dataframes of utdf_intersection and utdf_lane",
+        "detail": "utdf2gmns.utdf2gmns",
+        "documentation": {}
+    },
+    {
+        "label": "pd.options.mode.chained_assignment",
+        "kind": 5,
+        "importPath": "utdf2gmns.utdf2gmns",
+        "description": "utdf2gmns.utdf2gmns",
+        "peekOfCode": "pd.options.mode.chained_assignment = None  # default='warn'\n@func_running_time\ndef generate_utdf_dict_of_dataframes(utdf_filename: str, city_name: str) ->dict:\n    # read single UTDF file and produce data conversion and store data into a dictionary\n    # read UTDF file and create dataframes of utdf_geo and utdf_lane\n    utdf_dict_data = read_UTDF_file(utdf_filename)\n    df_utdf_intersection = generate_intersection_data_from_utdf(utdf_dict_data, city_name)\n    # geocoding utdf_intersection\n    df_utdf_geo = generate_coordinates_from_intersection(df_utdf_intersection)\n    # store utdf_geo and utdf_lane into utdf_dict_data",
         "detail": "utdf2gmns.utdf2gmns",
         "documentation": {}
     }

@@ -5,22 +5,23 @@
 # Author/Copyright: Mr. Xiangyong Luo
 ##############################################################
 
-import pandas as pd
-from func_lib.read_utdf import (read_UTDF_file,
-                                generate_intersection_data_from_utdf)
-from func_lib.geocoding_intersection import generate_coordinates_from_intersection
-from func_lib.match_node_intersection_movement_utdf import (match_intersection_node,
-                                                            match_movement_and_intersection_node,
-                                                            match_movement_utdf_lane,
-                                                            match_movement_utdf_phase)
-from utils_lib.utility_lib import (func_running_time,
-                                   path2linux,
-                                   get_file_names_from_folder_by_type,
-                                   check_required_files_exist, validate_filename)
-from utils_lib.package_settings import required_files, required_files_sub
 import os
 import pickle
 from pathlib import Path
+
+import pandas as pd
+from func_lib.geocoding_intersection import generate_coordinates_from_intersection
+from func_lib.match_node_intersection_movement_utdf import (
+    match_intersection_node, match_movement_and_intersection_node,
+    match_movement_utdf_lane, match_movement_utdf_phase_timeplans)
+from func_lib.read_utdf import (generate_intersection_data_from_utdf,
+                                read_UTDF_file)
+from utils_lib.package_settings import required_files, required_files_sub
+from utils_lib.utility_lib import (check_required_files_exist,
+                                   func_running_time,
+                                   get_file_names_from_folder_by_type,
+                                   path2linux, validate_filename)
+pd.options.mode.chained_assignment = None  # default='warn'
 
 
 @func_running_time
@@ -59,22 +60,21 @@ def generate_movement_utdf(input_dir: list, city_name: list, isSave2csv: bool = 
         raise Exception(f"Required files {required_files} are not found!")
 
     # read UTDF file and create dataframes of utdf_intersection and utdf_lane
-    path_utdf = os.path.join(input_dir, "UTDF.csv")
+    path_utdf = path2linux(os.path.join(input_dir, "UTDF.csv"))
     utdf_dict_data = generate_utdf_dict_of_dataframes(path_utdf, city_name)
-
 
     # required_sub files are not found, will return utdf_intersection and utdf_lane
     if not isRequired_sub:
         print("Because node.csv and movement.csv are not found, the function will return data from utdf in a dictionary, keys are: Lanes, Nodes, Networks, Timeplans, Links and utdf_geo.\n")
 
         # store object into pickle file
-        with open(os.path.join(os.getcwd(),"utdf2gmns.pickle"), 'wb') as f:
+        with open(path2linux(os.path.join(os.getcwd(),"utdf2gmns.pickle")), 'wb') as f:
             pickle.dump(utdf_dict_data, f, pickle.HIGHEST_PROTOCOL)
         return utdf_dict_data
 
     # get the path of each file, since the input directory and files are checked, no need to validate the filename
-    path_node = os.path.join(input_dir, "node.csv")
-    path_movement = os.path.join(input_dir, "movement.csv")
+    path_node = path2linux(os.path.join(input_dir, "node.csv"))
+    path_movement = path2linux(os.path.join(input_dir, "movement.csv"))
 
     # read node and movement files
     df_node = pd.read_csv(path_node)
@@ -91,30 +91,41 @@ def generate_movement_utdf(input_dir: list, city_name: list, isSave2csv: bool = 
     # match movement with utdf_lane
     print("Performing data matching between movement_geo and utdf_lane...")
     df_movement_utdf_lane = match_movement_utdf_lane(
-        df_movement_intersection, utdf_dict_data.get("Lanes"))
+        df_movement_intersection, utdf_dict_data)
+
+    # match movement with utdf_lane
+    print("Performing data matching between movement_utdf_lane and utdf_phase_timeplans...")
+    df_movement_utdf_phase = match_movement_utdf_phase_timeplans(
+        df_movement_utdf_lane, utdf_dict_data)
+
+    # store utdf_intersection_geo and movement_utdf in utdf_dict_data and return udf_intersection_nodetdf_dict_data
+    utdf_dict_data["movement_utdf_phase"] = df_movement_utdf_phase
+    utdf_dict_data["utdf_geo_GMNS_node"] = df_intersection_node
 
     # save the output file, the default isSave2csv is True
     # the output path is user's current working directory, output file name is movement_utdf.csv
     if isSave2csv:
         output_file_name = validate_filename(os.path.join(os.getcwd(),"movement_utdf.csv"))
-        df_movement_utdf_lane.to_csv(output_file_name, index=False)
+        df_movement_utdf_phase.to_csv(output_file_name, index=False)
 
         output_file_name = validate_filename(os.path.join(os.getcwd(),"utdf_intersection.csv"))
         df_intersection_node.to_csv(output_file_name, index=False)
 
-        # store utdf_intersection_geo and movement_utdf in utdf_dict_data and return udf_intersection_nodetdf_dict_data
-        utdf_dict_data["movement_utdf_lane"] = df_movement_utdf_lane
-        with open(os.path.join(os.getcwd(),"utdf2gmns.pickle"), 'wb') as f:
+        with open(path2linux(os.path.join(os.getcwd(), "utdf2gmns.pickle")), 'wb') as f:
             pickle.dump(utdf_dict_data, f, pickle.HIGHEST_PROTOCOL)
 
-    return [df_movement_utdf_lane, df_intersection_node]
+    return [df_movement_utdf_phase, utdf_dict_data]
 
 
 if __name__ == '__main__':
 
     dir_current = Path(__file__).parent
-    dir_upper_1 = r"C:\Users\roche\Dropbox (ASU)\TRB_Webinar_ March2023\ASU_Network_V2"
+    input_dir = path2linux(os.path.join(dir_current.parent, "datasets", "data_ASU_network_2"))
+
+    path_utdf = path2linux(os.path.join(input_dir, "UTDF.csv"))
 
     city_name = " Tempe, AZ"
 
-    df_movement_utdf_lane, df_intersection_node = generate_movement_utdf(dir_upper_1, city_name, isSave2csv=False)
+    # utdf_dict_data = generate_utdf_dict_of_dataframes(path_utdf, city_name)
+
+    df_movement_utdf_phase, utdf_dict_data = generate_movement_utdf(input_dir, city_name, isSave2csv=False)

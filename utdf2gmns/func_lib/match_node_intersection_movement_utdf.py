@@ -94,9 +94,9 @@ def match_movement_and_intersection_node(df_movement: pd.DataFrame, df_intersect
 
 
 @func_running_time
-def match_movement_utdf_lane(df_movement_intersection: pd.DataFrame,
-                        df_utdf_lanes: pd.DataFrame) -> pd.DataFrame:
+def match_movement_utdf_lane(df_movement_intersection: pd.DataFrame, utdf_dict_data: dict) -> pd.DataFrame:
     # Add Synchro/utdf data to movement_intersection_node
+    df_utdf_lanes = utdf_dict_data.get("Lanes")
 
     intersection_id_list = [value for value in list(
         df_movement_intersection["synchro_INTID"].unique()) if value is not None]
@@ -156,58 +156,8 @@ def match_movement_utdf_lane(df_movement_intersection: pd.DataFrame,
     return df_movement_utdf_lane
 
 
-def match_movement_utdf_phase(df_movement_utdf_lane: pd.DataFrame, df_utdf_phase: pd.DataFrame) -> pd.DataFrame:
-    intersection_id_list = [value for value in list(df_movement_utdf_lane["synchro_INTID"].unique()) if value is not None]
+def match_movement_utdf_phase_timeplans(df_movement_utdf_lane: pd.DataFrame, utdf_dict_data: dict) -> pd.DataFrame:
 
-    # get movement_utdf_lane dataframe with and without id list
-    df_with_id = df_movement_utdf_lane[df_movement_utdf_lane["synchro_INTID"].isin(
-        intersection_id_list)]
-    df_without_id = df_movement_utdf_lane[~df_movement_utdf_lane["synchro_INTID"].isin(
-        intersection_id_list)]
+    df_utdf_phase_timeplans = utdf_dict_data.get("phase_timeplans")
 
-    # get movement_utdf_lane column name
-    col_movement_utdf_lane = list(df_movement_utdf_lane.columns)
-
-    # Add utdf info to df_with_id
-    movement_utdf_list = [df_without_id]
-
-    for intersection_id in intersection_id_list:
-        # get movement_utdf_lane dataframe by id
-        df_with_id_single_id = df_with_id[
-            df_with_id["synchro_INTID"] == intersection_id].reset_index(drop=True)
-
-        # get utdf_phase dataframe by id
-        df_utdf_phase_single_id = df_utdf_phase[df_utdf_phase["INTID"] == intersection_id].reset_index(drop=True)
-
-        # print(df_synchro_single_id)
-        df_utdf_phase_single_id_dict = df_utdf_phase_single_id.to_dict("list")
-
-        col_utdf_phase_added_info = [f"{record_name}_phase" for record_name in df_utdf_phase_single_id_dict.get("RECORDNAME", [])]
-
-        union_list = []
-        for j in range(len(df_with_id_single_id)):
-
-            first_list = list(df_with_id_single_id.loc[j, :])
-
-            movement_txt_id = df_with_id_single_id.loc[j, "mvmt_txt_id"]
-            second_list = df_utdf_phase_single_id_dict.get(movement_txt_id, [])
-
-            union_list.append(first_list + second_list)
-
-        movement_utdf_list.append(pd.DataFrame(
-            union_list, columns=col_movement_utdf_lane + col_utdf_phase_added_info))
-
-    # remove duplicated columns
-    movement_utdf_list_removed_duplicated = [
-        df.loc[:, ~df.columns.duplicated()] for df in movement_utdf_list]
-
-    # get maximum column names from movement_synchro_list
-    col_longest = sorted(movement_utdf_list_removed_duplicated,
-                         key=lambda x: len(x.columns))[-1].columns
-
-    # add missing columns to movement_synchro_list
-    movement_utdf_list = [df.reindex(columns=col_longest, fill_value=None)
-                          for df in movement_utdf_list_removed_duplicated]
-
-    df_movement_utdf_phase = pd.concat(movement_utdf_list, sort=False)
-    return df_movement_utdf_phase
+    return pd.merge(df_movement_utdf_lane, df_utdf_phase_timeplans, left_on="synchro_INTID", right_on="INTID", how="left")
