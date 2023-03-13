@@ -6,6 +6,9 @@
 ##############################################################
 
 import pandas as pd
+import platform
+# print("python version", platform.python_version())
+
 from func_lib.read_utdf import (read_UTDF_file,
                                 generate_intersection_data_from_utdf,
                                 generate_lane_data_from_utdf)
@@ -154,7 +157,7 @@ if __name__ == '__main__':
 
     dir_current = Path(__file__).parent
     dir_upper_1 = dir_current.parent
-
+    # print("python version", __version__)
 
     city_name = " Tempe, AZ"
 
