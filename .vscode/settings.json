@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./utdf2gmns/utils_lib"
+    ]
+}

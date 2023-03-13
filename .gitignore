@@ -1,2 +1,5 @@
 *.pyc
 */__pycache__/*
+*/.vscode/*
+*/.pytest_cache/*
+*/GMNS_*/*
