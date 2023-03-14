@@ -42,3 +42,4 @@ This open-source package is a tool to conver utdf file to GMNS format.
 * [ ] Check number of lanes correctness between osm2gmns file and synchro file per movements.
 * [ ] Print out check log.
 * [ ] Number of lanes of the movements from synchro file.
+* [ ] Add signal info to micre-link.csv

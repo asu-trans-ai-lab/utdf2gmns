@@ -46,7 +46,7 @@ def generate_utdf_dict_of_dataframes(utdf_filename: str, city_name: str) ->dict:
 
 
 @func_running_time
-def generate_movement_utdf(input_dir: list, city_name: list, output_dir: str = "", isSave2csv: bool = True) -> list[pd.DataFrame]:
+def generate_movement_utdf(input_dir: list, city_name: list, output_dir: str = "", isSave2csv: bool = True) -> list:
 
     # check if required files exist in the input directory
     files_from_directory = get_file_names_from_folder_by_type(input_dir, file_type="csv")
@@ -131,3 +131,4 @@ if __name__ == '__main__':
     # utdf_dict_data = generate_utdf_dict_of_dataframes(path_utdf, city_name)
 
     df_movement_utdf_phase, utdf_dict_data = generate_movement_utdf(input_dir, city_name, isSave2csv=False)
+    df_movement_utdf_phase.to_csv(path2linux(os.path.join(input_dir, "movement_utdf.csv")), index=False)
