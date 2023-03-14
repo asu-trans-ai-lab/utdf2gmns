@@ -26,7 +26,8 @@ source activate xluo_civ
 
 # conda install python=3.10.4
 
-conda install geocoder
+# can not install geocoder using conda, pip3 instead
+# conda install geocoder
 
 # run function with arguments
 python utdf2gmns.py

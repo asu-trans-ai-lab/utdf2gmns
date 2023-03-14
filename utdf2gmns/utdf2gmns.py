@@ -19,7 +19,7 @@ from func_lib.read_utdf import (generate_intersection_data_from_utdf,
 from utils_lib.package_settings import required_files, required_files_sub
 from utils_lib.utility_lib import (check_required_files_exist,
                                    func_running_time,
-                                   get_file_names_from_folder_by_type,
+                                   get_filenames_from_folder_by_type,
                                    path2linux, validate_filename)
 pd.options.mode.chained_assignment = None  # default='warn'
 
@@ -49,7 +49,7 @@ def generate_utdf_dict_of_dataframes(utdf_filename: str, city_name: str) ->dict:
 def generate_movement_utdf(input_dir: list, city_name: list, output_dir: str = "", isSave2csv: bool = True) -> list:
 
     # check if required files exist in the input directory
-    files_from_directory = get_file_names_from_folder_by_type(input_dir, file_type="csv")
+    files_from_directory = get_filenames_from_folder_by_type(input_dir, file_type="csv")
 
     # if not required, raise an exception
     isRequired = check_required_files_exist(required_files, files_from_directory)
@@ -121,7 +121,7 @@ def generate_movement_utdf(input_dir: list, city_name: list, output_dir: str = "
 
 if __name__ == '__main__':
 
-    dir_current = Path(__file__).parent
+    dir_current = Path(__file__).parent.absolute()
     input_dir = path2linux(os.path.join(dir_current.parent, "datasets", "data_ASU_network_2"))
 
     path_utdf = path2linux(os.path.join(input_dir, "UTDF.csv"))
