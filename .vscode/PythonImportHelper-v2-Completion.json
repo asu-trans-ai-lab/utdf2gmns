@@ -499,7 +499,7 @@
         "kind": 2,
         "importPath": "utdf2gmns.utdf2gmns",
         "description": "utdf2gmns.utdf2gmns",
-        "peekOfCode": "def generate_movement_utdf(input_dir: list, city_name: list, output_dir: str = \"\", isSave2csv: bool = True) -> list[pd.DataFrame]:\n    # check if required files exist in the input directory\n    files_from_directory = get_file_names_from_folder_by_type(input_dir, file_type=\"csv\")\n    # if not required, raise an exception\n    isRequired = check_required_files_exist(required_files, files_from_directory)\n    isRequired_sub = check_required_files_exist(required_files_sub, files_from_directory)\n    # required fils are not found, raise an exception\n    if not isRequired:\n        raise Exception(f\"Required files {required_files} are not found!\")\n    # read UTDF file and create dataframes of utdf_intersection and utdf_lane",
+        "peekOfCode": "def generate_movement_utdf(input_dir: list, city_name: list, output_dir: str = \"\", isSave2csv: bool = True) -> list:\n    # check if required files exist in the input directory\n    files_from_directory = get_file_names_from_folder_by_type(input_dir, file_type=\"csv\")\n    # if not required, raise an exception\n    isRequired = check_required_files_exist(required_files, files_from_directory)\n    isRequired_sub = check_required_files_exist(required_files_sub, files_from_directory)\n    # required fils are not found, raise an exception\n    if not isRequired:\n        raise Exception(f\"Required files {required_files} are not found!\")\n    # read UTDF file and create dataframes of utdf_intersection and utdf_lane",
         "detail": "utdf2gmns.utdf2gmns",
         "documentation": {}
     },

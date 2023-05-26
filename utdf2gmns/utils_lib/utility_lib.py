@@ -35,15 +35,40 @@ def path2linux(path: Union[str, Path]) -> str:
         return str(path).replace("\\", "/")
 
 
-def get_file_names_from_folder_by_type(dir_name: str, file_type: str = "txt",
-                                       isTraverseSubdirectory: bool = False) -> list:
+def get_filenames_from_folder_by_type(dir_name: str, file_type: str = "txt", isTraverseSubdirectory: bool = False) -> list:
+    """Get all files in the folder with the specified file type
+
+    Args:
+        dir_name (str)                         : the folder path
+        file_type (str, optional)              : the exact file type to specify, if file_type is "*" or "all", return all files in the folder. Defaults to "txt".
+        isTraverseSubdirectory (bool, optional): get files inside the subfolder or not, if True, will traverse all subfolders. Defaults to False.
+
+    Returns:
+        list: a list of file paths
+
+    Examples:
+        # get all files in the folder without traversing subfolder
+        >>> from pyhelpers.dirs import get_filenames_from_folder_by_type
+        >>> get_filenames_from_folder_by_type("C:/Users/user/Desktop", "txt")
+        ['C:/Users/user/Desktop/test.txt']
+
+        # get all files in the folder with traversing subfolder
+        >>> from pyhelpers.dirs import get_filenames_from_folder_by_type
+        >>> get_filenames_from_folder_by_type("C:/Users/user/Desktop", "txt", isTraverseSubdirectory=True)
+        ['C:/Users/user/Desktop/test.txt', 'C:/Users/user/Desktop/sub_folder/test2.txt']
+    """
+
     if isTraverseSubdirectory:
         files_list = []
         for root, dirs, files in os.walk(dir_name):
             files_list.extend([os.path.join(root, file) for file in files])
+        if file_type in {"*", "all"}:
+            return [path2linux(file) for file in files_list]
         return [path2linux(file) for file in files_list if file.split(".")[-1] == file_type]
-
+    print("input dir:", dir_name, "input file type", file_type)
     # files in the first layer of the folder
+    if file_type in {"*", "all"}:
+        return [path2linux(os.path.join(dir_name, file)) for file in os.listdir(dir_name)]
     return [path2linux(os.path.join(dir_name, file)) for file in os.listdir(dir_name) if file.split(".")[-1] == file_type]
 
 
