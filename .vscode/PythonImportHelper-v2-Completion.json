@@ -302,7 +302,7 @@
         "kind": 2,
         "importPath": "utdf2gmns.func_lib.match_node_intersection_movement_utdf",
         "description": "utdf2gmns.func_lib.match_node_intersection_movement_utdf",
-        "peekOfCode": "def match_intersection_node(df_intersection_geo: pd.DataFrame, df_node: pd.DataFrame) -> pd.DataFrame:\n    # get valid node data with ctrl_type = signal\n    df_node_signal = df_node[df_node[\"ctrl_type\"] == \"signal\"].reset_index(drop=True)\n    #  mach intersection_geo with node\n    col_intersection_geo = list(df_intersection_geo.columns)\n    col_node = list(df_node_signal.columns)\n    intersection_node_list = []\n    for i in range(len(df_intersection_geo)):\n        intersection_value = list(df_intersection_geo.loc[i, :])\n        intersection_lnglat = (",
+        "peekOfCode": "def match_intersection_node(df_intersection_geo: pd.DataFrame, df_node: pd.DataFrame) -> pd.DataFrame:\n    # get valid node data with ctrl_type = signal\n    df_node_signal = df_node[df_node[\"ctrl_type\"] == \"signal\"].reset_index(drop=True)\n    # mach intersection_geo with node\n    col_intersection_geo = list(df_intersection_geo.columns)\n    col_node = list(df_node_signal.columns)\n    intersection_node_list = []\n    for i in range(len(df_intersection_geo)):\n        intersection_value = list(df_intersection_geo.loc[i, :])\n        intersection_lnglat = (",
         "detail": "utdf2gmns.func_lib.match_node_intersection_movement_utdf",
         "documentation": {}
     },
@@ -329,7 +329,7 @@
         "kind": 2,
         "importPath": "utdf2gmns.func_lib.match_node_intersection_movement_utdf",
         "description": "utdf2gmns.func_lib.match_node_intersection_movement_utdf",
-        "peekOfCode": "def match_movement_utdf_phase_timeplans(df_movement_utdf_lane: pd.DataFrame, utdf_dict_data: dict) -> pd.DataFrame:\n    df_utdf_phase_timeplans = utdf_dict_data.get(\"phase_timeplans\")\n    return pd.merge(df_movement_utdf_lane, df_utdf_phase_timeplans, left_on=\"synchro_INTID\", right_on=\"INTID\", how=\"left\")",
+        "peekOfCode": "def match_movement_utdf_phase_timeplans(df_movement_utdf_lane: pd.DataFrame, utdf_dict_data: dict) -> pd.DataFrame:\n    df_utdf_phase_timeplans = utdf_dict_data.get(\"phase_timeplans\")\n    df_movement_utdf_lane[\"synchro_INTID\"] = df_movement_utdf_lane[\"synchro_INTID\"].astype(int)\n    df_utdf_phase_timeplans[\"INTID\"] = df_utdf_phase_timeplans[\"INTID\"].astype(int)\n    return pd.merge(df_movement_utdf_lane, df_utdf_phase_timeplans, left_on=\"synchro_INTID\", right_on=\"INTID\", how=\"left\")",
         "detail": "utdf2gmns.func_lib.match_node_intersection_movement_utdf",
         "documentation": {}
     },

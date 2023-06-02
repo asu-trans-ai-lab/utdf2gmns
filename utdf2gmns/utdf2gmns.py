@@ -71,7 +71,7 @@ def generate_movement_utdf(input_dir: str,
 
     # geocoding the utdf_intersection and store it into utdf_dict_data
     # If not automatically geocode, save the utdf_geo.csv file in the input directory
-    # And user manually add Coord_x and Coord_y to in utdf_geo.csv file
+    # And user manually add coord_x and coord_y to in utdf_geo.csv file
     # And re-run the function to generate the final movement_utdf.csv file
 
     try:
@@ -79,20 +79,29 @@ def generate_movement_utdf(input_dir: str,
         df_utdf_geo = generate_coordinates_from_intersection(
             utdf_dict_data.get("utdf_intersection"))
         utdf_dict_data["utdf_geo"] = df_utdf_geo
-    except Exception:
+
+    except Exception as e:
+
         try:
             # read utdf_geo.csv file from the input directory
             utdf_dict_data["utdf_geo"] = pd.read_csv(path2linux(os.path.join(input_dir,
                                                                              "utdf_geo.csv")))
-        except Exception:
+            # check if user manually add coord_x and coord_y to in utdf_geo.csv file
+            if "coord_x" not in utdf_dict_data.get("utdf_geo").columns:
+                raise Exception(
+                    "coord_x is not found in the utdf_geo.csv file!, please add coord_x and coord_y manually."
+                ) from e
+
+        except Exception as exc:
             #  Save the utdf_geo.csv file in the input directory
             utdf_dict_data.get("utdf_intersection").to_csv(
                 path2linux(os.path.join(input_dir, "utdf_geo.csv")), index=False)
-            print("We can not generate the utdf_geo.csv file automatically, \
-                please manually add Coord_x and Coord_y to the utdf_geo.csv file \
-                in your input directory and re-run the code afterward.")
 
-            sys.exit()
+            raise Exception(
+                "We can not generate the utdf_geo.csv file automatically, \
+                please manually add coord_x and coord_y to the utdf_geo.csv file \
+                in your input directory and re-run the code afterward."
+            ) from exc
 
     # required_sub files are not found, will return utdf_intersection and utdf_lane
     if not isRequired_sub:
@@ -101,7 +110,7 @@ def generate_movement_utdf(input_dir: str,
             keys are: Lanes, Nodes, Networks, Timeplans, Links and utdf_geo.\n")
 
         # store object into pickle file
-        with open(path2linux(os.path.join(os.getcwd(),"utdf2gmns.pickle")), 'wb') as f:
+        with open(path2linux(os.path.join(os.getcwd(), "utdf2gmns.pickle")), 'wb') as f:
             pickle.dump(utdf_dict_data, f, pickle.HIGHEST_PROTOCOL)
         return utdf_dict_data
 
@@ -158,16 +167,13 @@ def generate_movement_utdf(input_dir: str,
 
 if __name__ == '__main__':
 
-    # dir_current = Path(__file__).parent.absolute()
-    # input_dir = path2linux(os.path.join(dir_current.parent, "datasets", "data_ASU_network_2"))
-    input_dir = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\datasets\data_ASU_network_2"
-
-    # # path_utdf = path2linux(os.path.join(input_dir, "UTDF.csv"))
-    path_utdf = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\datasets\data_ASU_network_2\UTDF.csv"
-
     city_name = " Tempe, AZ"
 
-    utdf_dict_data = generate_utdf_dict_of_dataframes(path_utdf, city_name)
-
-    # df_movement_utdf_phase, utdf_dict_data = generate_movement_utdf(input_dir, city_name, isSave2csv=False)
+    # NOTE : the following code is for generating movement_utdf.csv file
+    input_dir = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\datasets\data_ASU_network_2"
+    df_movement_utdf_phase, utdf_dict_data = generate_movement_utdf(input_dir, city_name, isSave2csv=False)
     # df_movement_utdf_phase.to_csv(path2linux(os.path.join(input_dir, "movement_utdf.csv")), index=False)
+
+    # NOTE : the following code is for testing purpose only: read utdf.csv file and generate utdf_dict_data
+    path_utdf = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\datasets\data_ASU_network\UTDF.csv"
+    utdf_dict_data = generate_utdf_dict_of_dataframes(path_utdf, city_name)

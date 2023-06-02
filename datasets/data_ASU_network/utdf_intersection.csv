@@ -1,0 +1,259 @@
+intersection_name,city_name,synchro_INTID,file_name,intersection_id,reversed_intersection_name,full_name_intersection,full_name_intersection_reversed,distance_from_full_name,coord_x,coord_y
+College & McKellips," Tempe, AZ",2,,0, McKellips & College,"College & McKellips,  Tempe, AZ"," McKellips & College,  Tempe, AZ",0.0,-111.93520998206698,33.45110998184006
+Scottsdale Road & McKellips," Tempe, AZ",3,,1, McKellips & Scottsdale Road,"Scottsdale Road & McKellips,  Tempe, AZ"," McKellips & Scottsdale Road,  Tempe, AZ",0.0,-111.9264600295231,33.45123998515831
+Priest Drive & Center Pkwy," Tempe, AZ",5,,2, Center Pkwy & Priest Drive,"Priest Drive & Center Pkwy,  Tempe, AZ"," Center Pkwy & Priest Drive,  Tempe, AZ",0.0,-111.95499001627554,33.44458001826172
+Priest Drive & 202 EB," Tempe, AZ",6,,3, 202 EB & Priest Drive,"Priest Drive & 202 EB,  Tempe, AZ"," 202 EB & Priest Drive,  Tempe, AZ",0.0,-111.96302683398818,33.32039738504338
+Scottsdale Road & Weber Drive," Tempe, AZ",7,,4, Weber Drive & Scottsdale Road,"Scottsdale Road & Weber Drive,  Tempe, AZ"," Weber Drive & Scottsdale Road,  Tempe, AZ",0.0,-111.92643002230973,33.4439900160972
+Mill Avenue & Washington St & Curry Rd," Tempe, AZ",8,,5, Washington St  & Mill Avenue,"Mill Avenue & Washington St & Curry Rd,  Tempe, AZ"," Washington St  & Mill Avenue,  Tempe, AZ",0.0,-111.94347998683503,33.43764998644481
+College & Curry Rd," Tempe, AZ",9,,6, Curry Rd & College,"College & Curry Rd,  Tempe, AZ"," Curry Rd & College,  Tempe, AZ",0.0,-111.93081996027884,33.440220003686946
+Scottsdale Road & Curry Rd," Tempe, AZ",10,,7, Curry Rd & Scottsdale Road,"Scottsdale Road & Curry Rd,  Tempe, AZ"," Curry Rd & Scottsdale Road,  Tempe, AZ",0.0,-111.92634000066963,33.44061998810648
+Miller & Curry Rd," Tempe, AZ",11,,8, Curry Rd & Miller,"Miller & Curry Rd,  Tempe, AZ"," Curry Rd & Miller,  Tempe, AZ",12029.373027085405,,
+McClintock Drive & Curry Rd," Tempe, AZ",12,,9, Curry Rd & McClintock Drive,"McClintock Drive & Curry Rd,  Tempe, AZ"," Curry Rd & McClintock Drive,  Tempe, AZ",0.0,-111.9095499589618,33.44038998868335
+Priest Drive & Rio Salado Parkway," Tempe, AZ",13,,10, Rio Salado Parkway & Priest Drive,"Priest Drive & Rio Salado Parkway,  Tempe, AZ"," Rio Salado Parkway & Priest Drive,  Tempe, AZ",0.0,-111.96097000127703,33.42961999747419
+Hardy & Rio Salado Parkway," Tempe, AZ",14,,11, Rio Salado Parkway & Hardy,"Hardy & Rio Salado Parkway,  Tempe, AZ"," Rio Salado Parkway & Hardy,  Tempe, AZ",0.0,-111.95240000819433,33.43099999401299
+Ash Street & Rio Salado Parkway," Tempe, AZ",16,,12, Rio Salado Parkway & Ash Street,"Ash Street & Rio Salado Parkway,  Tempe, AZ"," Rio Salado Parkway & Ash Street,  Tempe, AZ",0.0,-111.94257997998156,33.429239982938974
+Scottsdale Road & 202," Tempe, AZ",17,,13, 202 & Scottsdale Road,"Scottsdale Road & 202,  Tempe, AZ"," 202 & Scottsdale Road,  Tempe, AZ",0.9428270606938464,,
+Rural Road & Scottsdale Road & Rio Salado Parkway," Tempe, AZ",18,,14, Scottsdale Road  & Rural Road,"Rural Road & Scottsdale Road & Rio Salado Parkway,  Tempe, AZ"," Scottsdale Road  & Rural Road,  Tempe, AZ",0.016540796154844436,,
+McClintock Drive & 202," Tempe, AZ",19,,15, 202 & McClintock Drive,"McClintock Drive & 202,  Tempe, AZ"," 202 & McClintock Drive,  Tempe, AZ",10.012901224670891,,
+McClintock Drive & Rio Salado Parkway," Tempe, AZ",20,,16, Rio Salado Parkway & McClintock Drive,"McClintock Drive & Rio Salado Parkway,  Tempe, AZ"," Rio Salado Parkway & McClintock Drive,  Tempe, AZ",0.0,-111.90907998565076,33.42932000915954
+Packard Dr & Rio Salado Parkway," Tempe, AZ",21,,17, Rio Salado Parkway & Packard Dr,"Packard Dr & Rio Salado Parkway,  Tempe, AZ"," Rio Salado Parkway & Packard Dr,  Tempe, AZ",0.0,-111.92929001149223,33.42866999256829
+Price Freeway SB & Rio Salado Parkway," Tempe, AZ",22,,18, Rio Salado Parkway & Price Freeway SB,"Price Freeway SB & Rio Salado Parkway,  Tempe, AZ"," Rio Salado Parkway & Price Freeway SB,  Tempe, AZ",0.1460137103472524,,
+Ash Street & 5th Street," Tempe, AZ",23,,19, 5th Street & Ash Street,"Ash Street & 5th Street,  Tempe, AZ"," 5th Street & Ash Street,  Tempe, AZ",0.0,-111.943340009052,33.425489982322546
+Priest Drive & 5th Street," Tempe, AZ",24,,20, 5th Street & Priest Drive,"Priest Drive & 5th Street,  Tempe, AZ"," 5th Street & Priest Drive,  Tempe, AZ",0.0,-111.96097997574181,33.42561001117602
+Beck & University Drive," Tempe, AZ",25,,21, University Drive & Beck,"Beck & University Drive,  Tempe, AZ"," University Drive & Beck,  Tempe, AZ",0.0,-111.95647000891924,33.42192000403158
+Mill Avenue & 5th Street," Tempe, AZ",27,,22, 5th Street & Mill Avenue,"Mill Avenue & 5th Street,  Tempe, AZ"," 5th Street & Mill Avenue,  Tempe, AZ",0.0,-111.94008003544998,33.42549999869685
+Mill Avenue & 4th Street," Tempe, AZ",28,,23, 4th Street & Mill Avenue,"Mill Avenue & 4th Street,  Tempe, AZ"," 4th Street & Mill Avenue,  Tempe, AZ",0.0,-111.75210998940845,33.42108998606963
+Mill Avenue & Rio Salado Parkway," Tempe, AZ",29,,24, Rio Salado Parkway & Mill Avenue,"Mill Avenue & Rio Salado Parkway,  Tempe, AZ"," Rio Salado Parkway & Mill Avenue,  Tempe, AZ",0.0,-111.93996998106128,33.429580015796034
+Mill Avenue & 6th Street," Tempe, AZ",30,,25, 6th Street & Mill Avenue,"Mill Avenue & 6th Street,  Tempe, AZ"," 6th Street & Mill Avenue,  Tempe, AZ",0.0,-111.93996998106128,33.424360017955465
+Mill Avenue & 7th Street," Tempe, AZ",31,,26, 7th Street & Mill Avenue,"Mill Avenue & 7th Street,  Tempe, AZ"," 7th Street & Mill Avenue,  Tempe, AZ",0.0,-111.94006997716616,33.42316999725213
+Rural Road & 6th Street," Tempe, AZ",33,,27, 6th Street & Rural Road,"Rural Road & 6th Street,  Tempe, AZ"," 6th Street & Rural Road,  Tempe, AZ",0.0,-111.926370007883,33.42451001211279
+Lindon & University Drive," Tempe, AZ",34,,28, University Drive & Lindon,"Lindon & University Drive,  Tempe, AZ"," University Drive & Lindon,  Tempe, AZ",0.0,-111.96520998699833,33.421939994870655
+52nd Street & University Drive," Tempe, AZ",35,,29, University Drive & 52nd Street,"52nd Street & University Drive,  Tempe, AZ"," University Drive & 52nd Street,  Tempe, AZ",0.0,-111.9695700015731,33.421939994870655
+Priest Drive & University Drive," Tempe, AZ",36,,30, University Drive & Priest Drive,"Priest Drive & University Drive,  Tempe, AZ"," University Drive & Priest Drive,  Tempe, AZ",0.0,-111.96091996131507,33.421939994870655
+Perry Lane & Rio Salado Parkway," Tempe, AZ",37,,31, Rio Salado Parkway & Perry Lane,"Perry Lane & Rio Salado Parkway,  Tempe, AZ"," Rio Salado Parkway & Perry Lane,  Tempe, AZ",0.0,-111.90477001103795,33.42919000584129
+Hardy & University Drive," Tempe, AZ",38,,32, University Drive & Hardy,"Hardy & University Drive,  Tempe, AZ"," University Drive & Hardy,  Tempe, AZ",0.0,-111.95219004151978,33.42190001319251
+Roosevelt & University Drive," Tempe, AZ",39,,33, University Drive & Roosevelt,"Roosevelt & University Drive,  Tempe, AZ"," University Drive & Roosevelt,  Tempe, AZ",0.0,-111.94725997371006,33.42188999681821
+Farmer & University Drive," Tempe, AZ",40,,34, University Drive & Farmer,"Farmer & University Drive,  Tempe, AZ"," University Drive & Farmer,  Tempe, AZ",0.0,-111.94423997399595,33.42188999681821
+Ash Street & University Drive," Tempe, AZ",41,,35, University Drive & Ash Street,"Ash Street & University Drive,  Tempe, AZ"," University Drive & Ash Street,  Tempe, AZ",0.0,-111.94236997139751,33.42192000403158
+McClintock Drive & Tempe Marketplace," Tempe, AZ",42,,36, Tempe Marketplace & McClintock Drive,"McClintock Drive & Tempe Marketplace,  Tempe, AZ"," Tempe Marketplace & McClintock Drive,  Tempe, AZ",0.0,-111.90929003614434,33.43208000223714
+Mill Avenue & University Drive," Tempe, AZ",43,,37, University Drive & Mill Avenue,"Mill Avenue & University Drive,  Tempe, AZ"," University Drive & Mill Avenue,  Tempe, AZ",0.0,-111.94000996273942,33.42192000403158
+Myrtle Avenue & University Drive," Tempe, AZ",44,,38, University Drive & Myrtle Avenue,"Myrtle Avenue & University Drive,  Tempe, AZ"," University Drive & Myrtle Avenue,  Tempe, AZ",0.0,-111.93813996014099,33.421950011244945
+Forest & University Drive," Tempe, AZ",45,,39, University Drive & Forest,"Forest & University Drive,  Tempe, AZ"," University Drive & Forest,  Tempe, AZ",0.0,-111.93662996028392,33.421950011244945
+College Avenue & University Drive," Tempe, AZ",46,,40, University Drive & College Avenue,"College Avenue & University Drive,  Tempe, AZ"," University Drive & College Avenue,  Tempe, AZ",0.0,-111.93500001539243,33.421950011244945
+Van Ness & University Drive," Tempe, AZ",47,,41, University Drive & Van Ness,"Van Ness & University Drive,  Tempe, AZ"," University Drive & Van Ness,  Tempe, AZ",0.0,-111.95901979282841,33.42193002040588
+Packard Dr & 6th Street," Tempe, AZ",48,,42, 6th Street & Packard Dr,"Packard Dr & 6th Street,  Tempe, AZ"," 6th Street & Packard Dr,  Tempe, AZ",0.0,-111.92906001206909,33.42430000352873
+Rural Road & University Drive," Tempe, AZ",49,,43, University Drive & Rural Road,"Rural Road & University Drive,  Tempe, AZ"," University Drive & Rural Road,  Tempe, AZ",12030.571517147764,,
+Dorsey Lane & University Drive," Tempe, AZ",50,,44, University Drive & Dorsey Lane,"Dorsey Lane & University Drive,  Tempe, AZ"," University Drive & Dorsey Lane,  Tempe, AZ",0.0,-111.91764997873346,33.422009983762166
+McClintock Drive & University Drive," Tempe, AZ",51,,45, University Drive & McClintock Drive,"McClintock Drive & University Drive,  Tempe, AZ"," University Drive & McClintock Drive,  Tempe, AZ",0.0,-111.90910001839934,33.4219899929231
+Normal Ave & Apache Boulevard," Tempe, AZ",52,,46, Apache Boulevard & Normal Ave,"Normal Ave & Apache Boulevard,  Tempe, AZ"," Apache Boulevard & Normal Ave,  Tempe, AZ",0.0,-111.93276003558783,33.41466001859618
+Smith Rd & University Drive," Tempe, AZ",53,,47, University Drive & Smith Rd,"Smith Rd & University Drive,  Tempe, AZ"," University Drive & Smith Rd,  Tempe, AZ",0.0,-111.90050001810329,33.42210000540227
+Paseo Del Saber & Apache Boulevard," Tempe, AZ",54,,48, Apache Boulevard & Paseo Del Saber,"Paseo Del Saber & Apache Boulevard,  Tempe, AZ"," Apache Boulevard & Paseo Del Saber,  Tempe, AZ",0.0,-111.5720699781422,33.415079993854775
+Price Freeway SB & University Drive," Tempe, AZ",55,,49, University Drive & Price Freeway SB,"Price Freeway SB & University Drive,  Tempe, AZ"," University Drive & Price Freeway SB,  Tempe, AZ",0.0,-111.89107004175479,33.42190998765729
+Hayden Ferry & Rio Salado Parkway," Tempe, AZ",56,,50, Rio Salado Parkway & Hayden Ferry,"Hayden Ferry & Rio Salado Parkway,  Tempe, AZ"," Rio Salado Parkway & Hayden Ferry,  Tempe, AZ",3.2293848732372603,,
+Evergreen Road & University Drive," Tempe, AZ",57,,51, University Drive & Evergreen Road,"Evergreen Road & University Drive,  Tempe, AZ"," University Drive & Evergreen Road,  Tempe, AZ",0.0,-111.8829799964479,33.42213001261564
+MH West & Rio Salado Parkway," Tempe, AZ",58,,52, Rio Salado Parkway & MH West,"MH West & Rio Salado Parkway,  Tempe, AZ"," Rio Salado Parkway & MH West,  Tempe, AZ",0.0,-111.8918424472223,33.42936919221862
+MH East & Rio Salado Parkway," Tempe, AZ",59,,53, Rio Salado Parkway & MH East,"MH East & Rio Salado Parkway,  Tempe, AZ"," Rio Salado Parkway & MH East,  Tempe, AZ",12027.271403526827,,
+Mill Avenue & 10th Street," Tempe, AZ",60,,54, 10th Street & Mill Avenue,"Mill Avenue & 10th Street,  Tempe, AZ"," 10th Street & Mill Avenue,  Tempe, AZ",0.0,-111.93999998827465,33.41904999847479
+Smith Rd & Rio Salado Parkway," Tempe, AZ",61,,55, Rio Salado Parkway & Smith Rd,"Smith Rd & Rio Salado Parkway,  Tempe, AZ"," Rio Salado Parkway & Smith Rd,  Tempe, AZ",0.0,-111.90044997814132,33.429229987519435
+McAllister Avenue & Terrace Road," Tempe, AZ",62,,56, Terrace Road & McAllister Avenue,"McAllister Avenue & Terrace Road,  Tempe, AZ"," Terrace Road & McAllister Avenue,  Tempe, AZ",0.0,-111.92883001264596,33.41842998909691
+Rural Road & Terrace Road," Tempe, AZ",63,,57, Terrace Road & Rural Road,"Rural Road & Terrace Road,  Tempe, AZ"," Terrace Road & Rural Road,  Tempe, AZ",0.0,-111.92628996070768,33.420230002803834
+Rural Road & Lemon Street," Tempe, AZ",64,,58, Lemon Street & Rural Road,"Rural Road & Lemon Street,  Tempe, AZ"," Lemon Street & Rural Road,  Tempe, AZ",0.0,-111.92628996070768,33.416819993134965
+Ped Crossing & McAllister Avenue," Tempe, AZ",65,,59, McAllister Avenue & Ped Crossing,"Ped Crossing & McAllister Avenue,  Tempe, AZ"," McAllister Avenue & Ped Crossing,  Tempe, AZ",0.0,-111.9320965996191,33.34374878758978
+McClintock Drive & Don Carlos Rd," Tempe, AZ",66,,60, Don Carlos Rd & McClintock Drive,"McClintock Drive & Don Carlos Rd,  Tempe, AZ"," Don Carlos Rd & McClintock Drive,  Tempe, AZ",12029.122910736907,,
+52nd Street & 14th Street," Tempe, AZ",67,,61, 14th Street & 52nd Street,"52nd Street & 14th Street,  Tempe, AZ"," 14th Street & 52nd Street,  Tempe, AZ",0.0,-111.96950998714637,33.413569993997726
+Priest Drive & 14th Street," Tempe, AZ",68,,62, 14th Street & Priest Drive,"Priest Drive & 14th Street,  Tempe, AZ"," 14th Street & Priest Drive,  Tempe, AZ",0.0,-111.96080999074542,33.41315001873912
+Priest Drive & 13th Street," Tempe, AZ",69,,63, 13th Street & Priest Drive,"Priest Drive & 13th Street,  Tempe, AZ"," 13th Street & Priest Drive,  Tempe, AZ",0.0,-111.960830023494,33.414680009435244
+Hardy & 13th Street," Tempe, AZ",70,,64, 13th Street & Hardy,"Hardy & 13th Street,  Tempe, AZ"," 13th Street & Hardy,  Tempe, AZ",0.0,-111.9521700087712,33.414650002221876
+Apache Boulevard & Mill Avenue," Tempe, AZ",72,,65, Mill Avenue & Apache Boulevard,"Apache Boulevard & Mill Avenue,  Tempe, AZ"," Mill Avenue & Apache Boulevard,  Tempe, AZ",0.0,-111.93996998106128,33.417060008932395
+Forest & Apache Boulevard," Tempe, AZ",73,,66, Apache Boulevard & Forest,"Forest & Apache Boulevard,  Tempe, AZ"," Apache Boulevard & Forest,  Tempe, AZ",0.0,-111.936580004141,33.414739981952465
+College Avenue & Apache Boulevard," Tempe, AZ",74,,67, Apache Boulevard & College Avenue,"College Avenue & Apache Boulevard,  Tempe, AZ"," Apache Boulevard & College Avenue,  Tempe, AZ",0.0,-111.9349400009657,33.414650002221876
+McAllister Avenue & Apache Boulevard," Tempe, AZ",75,,68, Apache Boulevard & McAllister Avenue,"McAllister Avenue & Apache Boulevard,  Tempe, AZ"," Apache Boulevard & McAllister Avenue,  Tempe, AZ",12031.140468669859,,
+Rural Road & Apache Boulevard," Tempe, AZ",76,,69, Apache Boulevard & Rural Road,"Rural Road & Apache Boulevard,  Tempe, AZ"," Apache Boulevard & Rural Road,  Tempe, AZ",0.0,-111.92630999345626,33.41470000027432
+52nd Street & Broadway Road," Tempe, AZ",80,,70, Broadway Road & 52nd Street,"52nd Street & Broadway Road,  Tempe, AZ"," Broadway Road & 52nd Street,  Tempe, AZ",0.0,-111.96582999637621,33.4075299945695
+Rural Road & Spence Ave," Tempe, AZ",82,,71, Spence Ave & Rural Road,"Rural Road & Spence Ave,  Tempe, AZ"," Spence Ave & Rural Road,  Tempe, AZ",0.0,-111.92627998624289,33.412860004889254
+48th Street & Broadway Road," Tempe, AZ",83,,72, Broadway Road & 48th Street,"48th Street & Broadway Road,  Tempe, AZ"," Broadway Road & 48th Street,  Tempe, AZ",12035.636958674793,,
+48th Street & Broadway Frontage," Tempe, AZ",84,,73, Broadway Frontage & 48th Street,"48th Street & Broadway Frontage,  Tempe, AZ"," Broadway Frontage & 48th Street,  Tempe, AZ",0.0,-111.97827997243883,33.40731998598544
+Old 52nd & Broadway Road," Tempe, AZ",85,,74, Broadway Road & Old 52nd,"Old 52nd & Broadway Road,  Tempe, AZ"," Broadway Road & Old 52nd,  Tempe, AZ",0.0,-111.96582999637621,33.4075299945695
+Priest Drive & Broadway Road," Tempe, AZ",86,,75, Broadway Road & Priest Drive,"Priest Drive & Broadway Road,  Tempe, AZ"," Broadway Road & Priest Drive,  Tempe, AZ",0.0,-111.96077000906728,33.40742999846462
+Industrial Park Avenue & Beck Avenue & Broadway Road," Tempe, AZ",87,,76, Beck Avenue  & Industrial Park Avenue,"Industrial Park Avenue & Beck Avenue & Broadway Road,  Tempe, AZ"," Beck Avenue  & Industrial Park Avenue,  Tempe, AZ",0.0,-111.95523996462823,33.40739999125125
+Hardy & Broadway Road," Tempe, AZ",88,,77, Broadway Road & Hardy,"Hardy & Broadway Road,  Tempe, AZ"," Broadway Road & Hardy,  Tempe, AZ",0.0,-111.95216003430642,33.407390016786465
+Roosevelt Street & Broadway Road," Tempe, AZ",89,,78, Broadway Road & Roosevelt Street,"Roosevelt Street & Broadway Road,  Tempe, AZ"," Broadway Road & Roosevelt Street,  Tempe, AZ",0.0,-111.94780999419643,33.407380000412175
+Broadway Road & Broadway Frontage," Tempe, AZ",90,,79, Broadway Frontage & Broadway Road,"Broadway Road & Broadway Frontage,  Tempe, AZ"," Broadway Frontage & Broadway Road,  Tempe, AZ",0.0,0.0,0.0
+Mill Avenue & Broadway Road," Tempe, AZ",91,,80, Broadway Road & Mill Avenue,"Mill Avenue & Broadway Road,  Tempe, AZ"," Broadway Road & Mill Avenue,  Tempe, AZ",0.0,-111.93985003602684,33.40741000762554
+College Avenue & Broadway Road," Tempe, AZ",92,,81, Broadway Road & College Avenue,"College Avenue & Broadway Road,  Tempe, AZ"," Broadway Road & College Avenue,  Tempe, AZ",12031.703295110414,,
+Rural Road & Vista Del Corro," Tempe, AZ",93,,82, Vista Del Corro & Rural Road,"Rural Road & Vista Del Corro,  Tempe, AZ"," Vista Del Corro & Rural Road,  Tempe, AZ",0.0,-111.92627998624289,33.410130019025004
+Rural Road & Broadway Road," Tempe, AZ",94,,83, Broadway Road & Rural Road,"Rural Road & Broadway Road,  Tempe, AZ"," Broadway Road & Rural Road,  Tempe, AZ",0.0,-111.92627998624289,33.40744001483891
+Terrace Road & Broadway Road," Tempe, AZ",96,,84, Broadway Road & Terrace Road,"Terrace Road & Broadway Road,  Tempe, AZ"," Broadway Road & Terrace Road,  Tempe, AZ",0.0,-111.92257996272416,33.407449989303686
+Dorsey Lane & Broadway Road," Tempe, AZ",97,,85, Broadway Road & Dorsey Lane,"Dorsey Lane & Broadway Road,  Tempe, AZ"," Broadway Road & Dorsey Lane,  Tempe, AZ",0.0,-111.91767998594683,33.40744001483891
+McClintock Drive & Broadway Road," Tempe, AZ",99,,86, Broadway Road & McClintock Drive,"McClintock Drive & Broadway Road,  Tempe, AZ"," Broadway Road & McClintock Drive,  Tempe, AZ",0.0,-111.90907998565076,33.40742999846462
+College & Continental," Tempe, AZ",101,,87, Continental & College,"College & Continental,  Tempe, AZ"," Continental & College,  Tempe, AZ",0.0,-111.9350099898572,33.45835001834591
+River Drive & Broadway Road," Tempe, AZ",102,,88, Broadway Road & River Drive,"River Drive & Broadway Road,  Tempe, AZ"," Broadway Road & River Drive,  Tempe, AZ",0.0,-111.89771999227708,33.40742999846462
+Price Freeway SB & Broadway Road," Tempe, AZ",103,,89, Broadway Road & Price Freeway SB,"Price Freeway SB & Broadway Road,  Tempe, AZ"," Broadway Road & Price Freeway SB,  Tempe, AZ",12027.729446222827,,
+Priest Drive & Fountainhead Pkwy," Tempe, AZ",104,,90, Fountainhead Pkwy & Priest Drive,"Priest Drive & Fountainhead Pkwy,  Tempe, AZ"," Fountainhead Pkwy & Priest Drive,  Tempe, AZ",0.0,-111.96081996521019,33.40368999326773
+Priest Drive & Fairmont Dr," Tempe, AZ",105,,91, Fairmont Dr & Priest Drive,"Priest Drive & Fairmont Dr,  Tempe, AZ"," Fairmont Dr & Priest Drive,  Tempe, AZ",0.0,-111.96077000906728,33.39646998951048
+Rural Road & Broadmor Drive," Tempe, AZ",106,,92, Broadmor Drive & Rural Road,"Rural Road & Broadmor Drive,  Tempe, AZ"," Broadmor Drive & Rural Road,  Tempe, AZ",0.0,-111.92630001899148,33.40352998273612
+48th Street & Cotton Center Blvd," Tempe, AZ",107,,93, Cotton Center Blvd & 48th Street,"48th Street & Cotton Center Blvd,  Tempe, AZ"," Cotton Center Blvd & 48th Street,  Tempe, AZ",0.0,-111.97830000518742,33.40352998273612
+48th Street & Alameda Dr," Tempe, AZ",108,,94, Alameda Dr & 48th Street,"48th Street & Alameda Dr,  Tempe, AZ"," Alameda Dr & 48th Street,  Tempe, AZ",0.0,-111.9783099796522,33.40004998417574
+Priest Drive & Alameda Dr," Tempe, AZ",109,,95, Alameda Dr & Priest Drive,"Priest Drive & Alameda Dr,  Tempe, AZ"," Alameda Dr & Priest Drive,  Tempe, AZ",0.0,-111.96076003460249,33.40014000581584
+Hardy & Alameda Dr," Tempe, AZ",110,,96, Alameda Dr & Hardy,"Hardy & Alameda Dr,  Tempe, AZ"," Alameda Dr & Hardy,  Tempe, AZ",0.0,-111.95210999434447,33.400109998602474
+Mill Avenue & Alameda Dr," Tempe, AZ",111,,97, Alameda Dr & Mill Avenue,"Mill Avenue & Alameda Dr,  Tempe, AZ"," Alameda Dr & Mill Avenue,  Tempe, AZ",12032.313482456388,,
+College Avenue & Alameda Dr," Tempe, AZ",112,,98, Alameda Dr & College Avenue,"College Avenue & Alameda Dr,  Tempe, AZ"," Alameda Dr & College Avenue,  Tempe, AZ",12031.876208164196,,
+Rural Road & Alameda Dr," Tempe, AZ",113,,99, Alameda Dr & Rural Road,"Rural Road & Alameda Dr,  Tempe, AZ"," Alameda Dr & Rural Road,  Tempe, AZ",0.0,-111.92630001899148,33.40024000192072
+McClintock Drive & Alameda Drive," Tempe, AZ",114,,100, Alameda Drive & McClintock Drive,"McClintock Drive & Alameda Drive,  Tempe, AZ"," Alameda Drive & McClintock Drive,  Tempe, AZ",0.0,-111.9091199673289,33.40014000581584
+McClintock Drive & Campus Drive," Tempe, AZ",115,,101, Campus Drive & McClintock Drive,"McClintock Drive & Campus Drive,  Tempe, AZ"," Campus Drive & McClintock Drive,  Tempe, AZ",0.0,-111.90913002561271,33.398380015696574
+McClintock Drive & Del Rio Drive," Tempe, AZ",116,,102, Del Rio Drive & McClintock Drive,"McClintock Drive & Del Rio Drive,  Tempe, AZ"," Del Rio Drive & McClintock Drive,  Tempe, AZ",0.0,-111.9091199673289,33.39656998561536
+Mill Avenue & Broadmor Dr," Tempe, AZ",117,,103, Broadmor Dr & Mill Avenue,"Mill Avenue & Broadmor Dr,  Tempe, AZ"," Broadmor Dr & Mill Avenue,  Tempe, AZ",0.0,-111.93973998163814,33.40258001973973
+48th Street & Southern Ave," Tempe, AZ",118,,104, Southern Ave & 48th Street,"48th Street & Southern Ave,  Tempe, AZ"," Southern Ave & 48th Street,  Tempe, AZ",0.0,-111.97836001961416,33.39277000790125
+Potter & Southern Ave," Tempe, AZ",119,,105, Southern Ave & Potter,"Potter & Southern Ave,  Tempe, AZ"," Southern Ave & Potter,  Tempe, AZ",12035.444186723264,,
+Priest Drive & Southern Ave," Tempe, AZ",120,,106, Southern Ave & Priest Drive,"Priest Drive & Southern Ave,  Tempe, AZ"," Southern Ave & Priest Drive,  Tempe, AZ",12034.399234834056,,
+Hardy & Southern Ave," Tempe, AZ",121,,107, Southern Ave & Hardy,"Hardy & Southern Ave,  Tempe, AZ"," Southern Ave & Hardy,  Tempe, AZ",0.0,-111.95195995827763,33.39285998763184
+Roosevelt Street & Southern Ave," Tempe, AZ",122,,108, Southern Ave & Roosevelt Street,"Roosevelt Street & Southern Ave,  Tempe, AZ"," Southern Ave & Roosevelt Street,  Tempe, AZ",0.0,-111.94778996144784,33.39283999679277
+Kyrene Rd. & Southern Ave," Tempe, AZ",123,,109, Southern Ave & Kyrene Rd.,"Kyrene Rd. & Southern Ave,  Tempe, AZ"," Southern Ave & Kyrene Rd.,  Tempe, AZ",0.0,-111.94367000458001,33.39283999679277
+Mill Avenue & Southern Ave," Tempe, AZ",124,,110, Southern Ave & Mill Avenue,"Mill Avenue & Southern Ave,  Tempe, AZ"," Southern Ave & Mill Avenue,  Tempe, AZ",0.0,-111.93960000385512,33.39285998763184
+College Avenue & Southern Ave," Tempe, AZ",125,,111, Southern Ave & College Avenue,"College Avenue & Southern Ave,  Tempe, AZ"," Southern Ave & College Avenue,  Tempe, AZ",0.0,-111.93490001928755,33.39290001121951
+Butte Ave & Southern Ave," Tempe, AZ",126,,112, Southern Ave & Butte Ave,"Butte Ave & Southern Ave,  Tempe, AZ"," Southern Ave & Butte Ave,  Tempe, AZ",0.0,-111.91136003095254,33.392989990950085
+Rural Road & Southern Ave," Tempe, AZ",127,,113, Southern Ave & Rural Road,"Rural Road & Southern Ave,  Tempe, AZ"," Southern Ave & Rural Road,  Tempe, AZ",0.0,-111.92634000066963,33.39295998373673
+Terrace Rd & Southern Ave," Tempe, AZ",128,,114, Southern Ave & Terrace Rd,"Terrace Rd & Southern Ave,  Tempe, AZ"," Southern Ave & Terrace Rd,  Tempe, AZ",0.0,-111.92299000542751,33.39295998373673
+Dorsey Ave & Southern Ave," Tempe, AZ",129,,115, Southern Ave & Dorsey Ave,"Dorsey Ave & Southern Ave,  Tempe, AZ"," Southern Ave & Dorsey Ave,  Tempe, AZ",12030.493163208595,,
+McClintock Drive & Southern Ave," Tempe, AZ",130,,116, Southern Ave & McClintock Drive,"McClintock Drive & Southern Ave,  Tempe, AZ"," Southern Ave & McClintock Drive,  Tempe, AZ",0.0,-111.90913002561271,33.39297000011102
+Los Feliz Drive & Southern Ave," Tempe, AZ",131,,117, Southern Ave & Los Feliz Drive,"Los Feliz Drive & Southern Ave,  Tempe, AZ"," Southern Ave & Los Feliz Drive,  Tempe, AZ",0.0,-111.90483999992946,33.39298001648531
+Country Club Way & Southern Ave," Tempe, AZ",132,,118, Southern Ave & Country Club Way,"Country Club Way & Southern Ave,  Tempe, AZ"," Southern Ave & Country Club Way,  Tempe, AZ",0.0,-111.9005499742462,33.39300000732439
+13th Street & Apache Boulevard," Tempe, AZ",134,,119, Apache Boulevard & 13th Street,"13th Street & Apache Boulevard,  Tempe, AZ"," Apache Boulevard & 13th Street,  Tempe, AZ",0.0,-111.93828002174305,33.41494001607175
+Price Freeway SB & Southern Ave," Tempe, AZ",135,,120, Southern Ave & Price Freeway SB,"Price Freeway SB & Southern Ave,  Tempe, AZ"," Southern Ave & Price Freeway SB,  Tempe, AZ",0.0,-111.89101002732806,33.392820005953695
+Evergreen & Southern Ave," Tempe, AZ",138,,121, Southern Ave & Evergreen,"Evergreen & Southern Ave,  Tempe, AZ"," Southern Ave & Evergreen,  Tempe, AZ",12027.367797344707,,
+Mill Avenue & Hermosa Drive," Tempe, AZ",139,,122, Hermosa Drive & Mill Avenue,"Mill Avenue & Hermosa Drive,  Tempe, AZ"," Hermosa Drive & Mill Avenue,  Tempe, AZ",0.0,-111.93950998221501,33.38819001027764
+Priest Drive & US 60 WB," Tempe, AZ",140,,123, US 60 WB & Priest Drive,"Priest Drive & US 60 WB,  Tempe, AZ"," US 60 WB & Priest Drive,  Tempe, AZ",0.0,-111.96091996131507,33.38758001727404
+Mill Avenue & US 60 WB," Tempe, AZ",141,,124, US 60 WB & Mill Avenue,"Mill Avenue & US 60 WB,  Tempe, AZ"," US 60 WB & Mill Avenue,  Tempe, AZ",0.0,-111.93949003328547,33.38565000024887
+Rural Road & US 60 WB," Tempe, AZ",142,,125, US 60 WB & Rural Road,"Rural Road & US 60 WB,  Tempe, AZ"," US 60 WB & Rural Road,  Tempe, AZ",0.0,-111.92657997455755,33.38569999830132
+Rio Salado Parkway & 1st Street," Tempe, AZ",143,,126, 1st Street & Rio Salado Parkway,"Rio Salado Parkway & 1st Street,  Tempe, AZ"," 1st Street & Rio Salado Parkway,  Tempe, AZ",0.0,-111.96966999767798,33.42907999336211
+McClintock Drive & US 60 WB," Tempe, AZ",144,,127, US 60 WB & McClintock Drive,"McClintock Drive & US 60 WB,  Tempe, AZ"," US 60 WB & McClintock Drive,  Tempe, AZ",12029.898424228619,,
+Rural Road & Embassy Suites," Tempe, AZ",147,,128, Embassy Suites & Rural Road,"Rural Road & Embassy Suites,  Tempe, AZ"," Embassy Suites & Rural Road,  Tempe, AZ",0.0,-111.92882999999995,33.38412000000005
+Rural Road & Southshore," Tempe, AZ",149,,129, Southshore & Rural Road,"Rural Road & Southshore,  Tempe, AZ"," Southshore & Rural Road,  Tempe, AZ",12031.984161312754,,
+Rural Road & Minton," Tempe, AZ",150,,130, Minton & Rural Road,"Rural Road & Minton,  Tempe, AZ"," Minton & Rural Road,  Tempe, AZ",0.0,-111.92850001711794,33.37992997997438
+Calle Los Cerros & Baseline," Tempe, AZ",152,,131, Baseline & Calle Los Cerros,"Calle Los Cerros & Baseline,  Tempe, AZ"," Baseline & Calle Los Cerros,  Tempe, AZ",12035.9564134891,,
+Point Pkwy & Baseline," Tempe, AZ",153,,132, Baseline & Point Pkwy,"Point Pkwy & Baseline,  Tempe, AZ"," Baseline & Point Pkwy,  Tempe, AZ",12034.489077442122,,
+Wendler & Baseline," Tempe, AZ",154,,133, Baseline & Wendler,"Wendler & Baseline,  Tempe, AZ"," Baseline & Wendler,  Tempe, AZ",0.0,-111.9697399865695,33.378349991225804
+I-10 EB on-ramp & Baseline," Tempe, AZ",155,,134, Baseline & I-10 EB on-ramp,"I-10 EB on-ramp & Baseline,  Tempe, AZ"," Baseline & I-10 EB on-ramp,  Tempe, AZ",0.0,-111.96812001614278,33.37836998206487
+Priest Drive & Baseline," Tempe, AZ",156,,135, Baseline & Priest Drive,"Priest Drive & Baseline,  Tempe, AZ"," Baseline & Priest Drive,  Tempe, AZ",0.0,-111.96316002493872,33.37824999512091
+Darrow Dr & Baseline," Tempe, AZ",157,,136, Baseline & Darrow Dr,"Darrow Dr & Baseline,  Tempe, AZ"," Baseline & Darrow Dr,  Tempe, AZ",0.0,-111.96112003734387,33.37824999512091
+Hardy & Baseline," Tempe, AZ",159,,137, Baseline & Hardy,"Hardy & Baseline,  Tempe, AZ"," Baseline & Hardy,  Tempe, AZ",12033.997764640639,,
+Kyrene & Baseline," Tempe, AZ",160,,138, Baseline & Kyrene,"Kyrene & Baseline,  Tempe, AZ"," Baseline & Kyrene,  Tempe, AZ",0.0,-111.943860022325,33.37821001344277
+Mill Avenue & Baseline," Tempe, AZ",162,,139, Baseline & Mill Avenue,"Mill Avenue & Baseline,  Tempe, AZ"," Baseline & Mill Avenue,  Tempe, AZ",0.0,-111.9393499716834,33.378219987907556
+College & Baseline," Tempe, AZ",163,,140, Baseline & College,"College & Baseline,  Tempe, AZ"," Baseline & College,  Tempe, AZ",0.0,-111.93524996374512,33.378230004281846
+Rural Road & Baseline," Tempe, AZ",165,,141, Baseline & Rural Road,"Rural Road & Baseline,  Tempe, AZ"," Baseline & Rural Road,  Tempe, AZ",12031.841267898271,,
+Lakeshore & Baseline," Tempe, AZ",166,,142, Baseline & Lakeshore,"Lakeshore & Baseline,  Tempe, AZ"," Baseline & Lakeshore,  Tempe, AZ",0.0,-111.92056998234268,33.378319984012435
+McClintock Drive & Baseline," Tempe, AZ",168,,143, Baseline & McClintock Drive,"McClintock Drive & Baseline,  Tempe, AZ"," Baseline & McClintock Drive,  Tempe, AZ",0.0,-111.90926002893097,33.378429996491604
+County Club Way & Baseline," Tempe, AZ",170,,144, Baseline & County Club Way,"County Club Way & Baseline,  Tempe, AZ"," Baseline & County Club Way,  Tempe, AZ",12031.478738373075,,
+Priest & Grove Parkway," Tempe, AZ",171,,145, Grove Parkway & Priest,"Priest & Grove Parkway,  Tempe, AZ"," Grove Parkway & Priest,  Tempe, AZ",12035.547942804647,,
+Price Freeway SB & Baseline," Tempe, AZ",172,,146, Baseline & Price Freeway SB,"Price Freeway SB & Baseline,  Tempe, AZ"," Baseline & Price Freeway SB,  Tempe, AZ",0.0,-111.89296996774756,33.37854000897079
+Rural Road & Westchester," Tempe, AZ",174,,147, Westchester & Rural Road,"Rural Road & Westchester,  Tempe, AZ"," Westchester & Rural Road,  Tempe, AZ",0.0,-111.92861996215238,33.36739999864595
+McClintock Drive & Southshore & Cornell," Tempe, AZ",175,,148, Southshore  & McClintock Drive,"McClintock Drive & Southshore & Cornell,  Tempe, AZ"," Southshore  & McClintock Drive,  Tempe, AZ",0.0,-111.9113000165258,33.37222001206699
+McClintock Drive & Watson," Tempe, AZ",177,,149, Watson & McClintock Drive,"McClintock Drive & Watson,  Tempe, AZ"," Watson & McClintock Drive,  Tempe, AZ",12030.475301380578,,
+Hardy & Guadalupe," Tempe, AZ",178,,150, Guadalupe & Hardy,"Hardy & Guadalupe,  Tempe, AZ"," Guadalupe & Hardy,  Tempe, AZ",0.0,-111.95450998468068,33.363670009823366
+Kyrene & Guadalupe," Tempe, AZ",180,,151, Guadalupe & Kyrene,"Kyrene & Guadalupe,  Tempe, AZ"," Guadalupe & Kyrene,  Tempe, AZ",0.0,-111.94587997717126,33.36365001898429
+Maple & Guadalupe," Tempe, AZ",181,,152, Guadalupe & Maple,"Maple & Guadalupe,  Tempe, AZ"," Guadalupe & Maple,  Tempe, AZ",12033.126300326388,,
+Rural Road & Guadalupe," Tempe, AZ",183,,153, Guadalupe & Rural Road,"Rural Road & Guadalupe,  Tempe, AZ"," Guadalupe & Rural Road,  Tempe, AZ",0.0,-111.92860001322282,33.36375001508917
+Lakeshore & Guadalupe," Tempe, AZ",184,,154, Guadalupe & Lakeshore,"Lakeshore & Guadalupe,  Tempe, AZ"," Guadalupe & Lakeshore,  Tempe, AZ",12031.393350924754,,
+McClintock Drive & Guadalupe," Tempe, AZ",186,,155, Guadalupe & McClintock Drive,"McClintock Drive & Guadalupe,  Tempe, AZ"," Guadalupe & McClintock Drive,  Tempe, AZ",0.0,-111.91123002763429,33.363770005928245
+Country Club Way & Guadalupe," Tempe, AZ",188,,156, Guadalupe & Country Club Way,"Country Club Way & Guadalupe,  Tempe, AZ"," Guadalupe & Country Club Way,  Tempe, AZ",0.0,-111.90260002012485,33.36380998760639
+Price Freeway NB & Guadalupe," Tempe, AZ",191,,157, Guadalupe & Price Freeway NB,"Price Freeway NB & Guadalupe,  Tempe, AZ"," Guadalupe & Price Freeway NB,  Tempe, AZ",0.0,-111.8938100020838,33.36395000729894
+Rural Road & Bell De Mar," Tempe, AZ",193,,158, Bell De Mar & Rural Road,"Rural Road & Bell De Mar,  Tempe, AZ"," Bell De Mar & Rural Road,  Tempe, AZ",12032.316709595516,,
+McClintock Drive & Bell De Mar," Tempe, AZ",195,,159, Bell De Mar & McClintock Drive,"McClintock Drive & Bell De Mar,  Tempe, AZ"," Bell De Mar & McClintock Drive,  Tempe, AZ",0.0,0.0,0.0
+Kyrene & Grove Parkway," Tempe, AZ",196,,160, Grove Parkway & Kyrene,"Kyrene & Grove Parkway,  Tempe, AZ"," Grove Parkway & Kyrene,  Tempe, AZ",0.0,-111.94767999087819,33.35482001926509
+Rural Road & Western Canal Path," Tempe, AZ",197,,161, Western Canal Path & Rural Road,"Rural Road & Western Canal Path,  Tempe, AZ"," Western Canal Path & Rural Road,  Tempe, AZ",0.0,-111.9583596860041,33.38580860776606
+McClintock Drive & Western Canal Path," Tempe, AZ",198,,162, Western Canal Path & McClintock Drive,"McClintock Drive & Western Canal Path,  Tempe, AZ"," Western Canal Path & McClintock Drive,  Tempe, AZ",0.0,-111.93723999999997,33.42551000000003
+Mill Avenue & Apache Boulevard," Tempe, AZ",201,,163, Apache Boulevard & Mill Avenue,"Mill Avenue & Apache Boulevard,  Tempe, AZ"," Apache Boulevard & Mill Avenue,  Tempe, AZ",0.0,-111.93996998106128,33.417060008932395
+I-10 EB & Elliot," Tempe, AZ",202,,164, Elliot & I-10 EB,"I-10 EB & Elliot,  Tempe, AZ"," Elliot & I-10 EB,  Tempe, AZ",0.0,-111.97206001354944,33.348969995672334
+Harl & Elliot," Tempe, AZ",203,,165, Elliot & Harl,"Harl & Elliot,  Tempe, AZ"," Elliot & Harl,  Tempe, AZ",0.0,-111.96589998526774,33.34914999704303
+Priest & Elliot," Tempe, AZ",204,,166, Elliot & Priest,"Priest & Elliot,  Tempe, AZ"," Elliot & Priest,  Tempe, AZ",12035.677386726224,,
+Beck & Elliot," Tempe, AZ",205,,167, Elliot & Beck,"Beck & Elliot,  Tempe, AZ"," Elliot & Beck,  Tempe, AZ",0.0,-111.9540506369522,33.34922604642852
+Hardy & Elliot," Tempe, AZ",206,,168, Elliot & Hardy,"Hardy & Elliot,  Tempe, AZ"," Elliot & Hardy,  Tempe, AZ",0.0,-111.95444997025395,33.34906999177721
+Kyrene & Elliot," Tempe, AZ",208,,169, Elliot & Kyrene,"Kyrene & Elliot,  Tempe, AZ"," Elliot & Kyrene,  Tempe, AZ",0.0,-111.94573999938822,33.34911998982966
+Canal & Elliot," Tempe, AZ",209,,170, Elliot & Canal,"Canal & Elliot,  Tempe, AZ"," Elliot & Canal,  Tempe, AZ",12034.839740270725,,
+Rural Road & Elliot," Tempe, AZ",210,,171, Elliot & Rural Road,"Rural Road & Elliot,  Tempe, AZ"," Elliot & Rural Road,  Tempe, AZ",12032.521947212375,,
+Lakeshore & Elliot," Tempe, AZ",213,,172, Elliot & Lakeshore,"Lakeshore & Elliot,  Tempe, AZ"," Elliot & Lakeshore,  Tempe, AZ",12031.735885616554,,
+McClintock Drive & Elliot," Tempe, AZ",215,,173, Elliot & McClintock Drive,"McClintock Drive & Elliot,  Tempe, AZ"," Elliot & McClintock Drive,  Tempe, AZ",12030.95687679977,,
+Los Feliz & Elliot," Tempe, AZ",216,,174, Elliot & Los Feliz,"Los Feliz & Elliot,  Tempe, AZ"," Elliot & Los Feliz,  Tempe, AZ",12030.558734786498,,
+River & Elliot," Tempe, AZ",219,,175, Elliot & River,"River & Elliot,  Tempe, AZ"," Elliot & River,  Tempe, AZ",0.0,-111.89794999170022,33.349210011469765
+Price Freeway SB & Elliot," Tempe, AZ",220,,176, Elliot & Price Freeway SB,"Price Freeway SB & Elliot,  Tempe, AZ"," Elliot & Price Freeway SB,  Tempe, AZ",0.0,-111.89368997323034,33.34944998535768
+Priest & Auto Dr," Tempe, AZ",221,,177, Auto Dr & Priest,"Priest & Auto Dr,  Tempe, AZ"," Auto Dr & Priest,  Tempe, AZ",0.0,-111.96313001772535,33.345489997111954
+Rural Road & Carver," Tempe, AZ",222,,178, Carver & Rural Road,"Rural Road & Carver,  Tempe, AZ"," Carver & Rural Road,  Tempe, AZ",0.0,-111.9284400026912,33.341920018820986
+Scottsdale Road & Playa Del Norte," Tempe, AZ",224,,179, Playa Del Norte & Scottsdale Road,"Scottsdale Road & Playa Del Norte,  Tempe, AZ"," Playa Del Norte & Scottsdale Road,  Tempe, AZ",12030.278208584772,,
+Scottsdale Road & Hancock Avenue," Tempe, AZ",225,,180, Hancock Avenue & Scottsdale Road,"Scottsdale Road & Hancock Avenue,  Tempe, AZ"," Hancock Avenue & Scottsdale Road,  Tempe, AZ",12029.990767910278,,
+Priest & Ruby," Tempe, AZ",226,,181, Ruby & Priest,"Priest & Ruby,  Tempe, AZ"," Ruby & Priest,  Tempe, AZ",0.0,-111.96311995944154,33.34020998484465
+Harl & Warner," Tempe, AZ",228,,182, Warner & Harl,"Harl & Warner,  Tempe, AZ"," Warner & Harl,  Tempe, AZ",0.0,-111.96668997964201,33.33450999731873
+Priest & Warner," Tempe, AZ",229,,183, Warner & Priest,"Priest & Warner,  Tempe, AZ"," Warner & Priest,  Tempe, AZ",12036.017095826446,,
+Hardy & Warner," Tempe, AZ",231,,184, Warner & Hardy,"Hardy & Warner,  Tempe, AZ"," Warner & Hardy,  Tempe, AZ",0.0,-111.9543199669357,33.33455999537118
+Kyrene & Warner," Tempe, AZ",232,,185, Warner & Kyrene,"Kyrene & Warner,  Tempe, AZ"," Warner & Kyrene,  Tempe, AZ",12034.431016213208,,
+Rural Road & Warner," Tempe, AZ",236,,186, Warner & Rural Road,"Rural Road & Warner,  Tempe, AZ"," Warner & Rural Road,  Tempe, AZ",12032.86350151254,,
+McClintock Drive & Warner," Tempe, AZ",240,,187, Warner & McClintock Drive,"McClintock Drive & Warner,  Tempe, AZ"," Warner & McClintock Drive,  Tempe, AZ",12031.29966403772,,
+Priest & Lisa," Tempe, AZ",243,,188, Lisa & Priest,"Priest & Lisa,  Tempe, AZ"," Lisa & Priest,  Tempe, AZ",0.0,-111.96310001051198,33.32595999507511
+River Parkway & Warner," Tempe, AZ",244,,189, Warner & River Parkway,"River Parkway & Warner,  Tempe, AZ"," Warner & River Parkway,  Tempe, AZ",12030.080857158979,,
+Price Freeway SB & Warner," Tempe, AZ",245,,190, Warner & Price Freeway SB,"Price Freeway SB & Warner,  Tempe, AZ"," Warner & Price Freeway SB,  Tempe, AZ",0.0,-111.89328001434602,33.33502500240459
+52nd Street & Rio Salado Parkway & Bus Maintenance," Tempe, AZ",246,,191, Rio Salado Parkway  & 52nd Street,"52nd Street & Rio Salado Parkway & Bus Maintenance,  Tempe, AZ"," Rio Salado Parkway  & 52nd Street,  Tempe, AZ",12034.331583312107,,
+Lakeside Dr & Rio Salado Parkway," Tempe, AZ",247,,192, Rio Salado Parkway & Lakeside Dr,"Lakeside Dr & Rio Salado Parkway,  Tempe, AZ"," Rio Salado Parkway & Lakeside Dr,  Tempe, AZ",0.0,0.0,0.0
+Rural Road & Knox," Tempe, AZ",248,,193, Knox & Rural Road,"Rural Road & Knox,  Tempe, AZ"," Knox & Rural Road,  Tempe, AZ",12033.028223890187,,
+Pier Drive & Rio Salado Parkway," Tempe, AZ",249,,194, Rio Salado Parkway & Pier Drive,"Pier Drive & Rio Salado Parkway,  Tempe, AZ"," Rio Salado Parkway & Pier Drive,  Tempe, AZ",0.0,-111.91790998536996,33.429199980306066
+AZ Mills South & Baseline," Tempe, AZ",250,,195, Baseline & AZ Mills South,"AZ Mills South & Baseline,  Tempe, AZ"," Baseline & AZ Mills South,  Tempe, AZ",0.0,-111.96546999363484,33.37839001481346
+Priest Drive & AZ Mills East," Tempe, AZ",251,,196, AZ Mills East & Priest Drive,"Priest Drive & AZ Mills East,  Tempe, AZ"," AZ Mills East & Priest Drive,  Tempe, AZ",0.0,-111.96093999406366,33.38466001366483
+Darrow Dr & Priest Drive," Tempe, AZ",252,,197, Priest Drive & Darrow Dr,"Darrow Dr & Priest Drive,  Tempe, AZ"," Priest Drive & Darrow Dr,  Tempe, AZ",0.0,-111.96159001065492,33.38064998545714
+Rural Road & Alexander Blvd," Tempe, AZ",253,,198, Alexander Blvd & Rural Road,"Rural Road & Alexander Blvd,  Tempe, AZ"," Alexander Blvd & Rural Road,  Tempe, AZ",0.0,-111.92823003601666,33.32379000416202
+SR 143 SB & SR 143 & SR 143 NB," Tempe, AZ",264,,199, SR 143  & SR 143 SB,"SR 143 SB & SR 143 & SR 143 NB,  Tempe, AZ"," SR 143  & SR 143 SB,  Tempe, AZ",0.34054803653902,,
+Price Freeway NB & Broadway Road," Tempe, AZ",303,,200, Broadway Road & Price Freeway NB,"Price Freeway NB & Broadway Road,  Tempe, AZ"," Broadway Road & Price Freeway NB,  Tempe, AZ",0.0,-111.89105998347097,33.4073600095731
+Priest Drive & 202 WB," Tempe, AZ",306,,201, 202 WB & Priest Drive,"Priest Drive & 202 WB,  Tempe, AZ"," 202 WB & Priest Drive,  Tempe, AZ",12036.347786433009,,
+202 & 202 EB," Tempe, AZ",317,,202, 202 EB & 202,"202 & 202 EB,  Tempe, AZ"," 202 EB & 202,  Tempe, AZ",0.0,-111.64740996046336,33.20860999785765
+Price Freeway NB & Rio Salado Parkway," Tempe, AZ",322,,203, Rio Salado Parkway & Price Freeway NB,"Price Freeway NB & Rio Salado Parkway,  Tempe, AZ"," Rio Salado Parkway & Price Freeway NB,  Tempe, AZ",12027.130788237198,,
+Center Pkwy & 202 EB," Tempe, AZ",331,,204, 202 EB & Center Pkwy,"Center Pkwy & 202 EB,  Tempe, AZ"," 202 EB & Center Pkwy,  Tempe, AZ",12032.340290513415,,
+Center Pkwy & 202 WB," Tempe, AZ",334,,205, 202 WB & Center Pkwy,"Center Pkwy & 202 WB,  Tempe, AZ"," 202 WB & Center Pkwy,  Tempe, AZ",0.0,-111.94956082678874,33.43608940180878
+Price Freeway NB & Southern Ave," Tempe, AZ",335,,206, Southern Ave & Price Freeway NB,"Price Freeway NB & Southern Ave,  Tempe, AZ"," Southern Ave & Price Freeway NB,  Tempe, AZ",12028.074204574748,,
+Priest Drive & US 60 EB," Tempe, AZ",340,,207, US 60 EB & Priest Drive,"Priest Drive & US 60 EB,  Tempe, AZ"," US 60 EB & Priest Drive,  Tempe, AZ",0.0,0.0,0.0
+Mill Avenue & US 60 EB," Tempe, AZ",341,,208, US 60 EB & Mill Avenue,"Mill Avenue & US 60 EB,  Tempe, AZ"," US 60 EB & Mill Avenue,  Tempe, AZ",12032.64665099191,,
+Rural Road & US 60 EB," Tempe, AZ",342,,209, US 60 EB & Rural Road,"Rural Road & US 60 EB,  Tempe, AZ"," US 60 EB & Rural Road,  Tempe, AZ",0.0,-111.92657997455754,33.38548001525247
+McClintock Drive & US 60 EB," Tempe, AZ",344,,210, US 60 EB & McClintock Drive,"McClintock Drive & US 60 EB,  Tempe, AZ"," US 60 EB & McClintock Drive,  Tempe, AZ",0.0,-111.90927000339575,33.385600002196426
+I-10 WB on-ramp & Baseline," Tempe, AZ",355,,211, Baseline & I-10 WB on-ramp,"I-10 WB on-ramp & Baseline,  Tempe, AZ"," Baseline & I-10 WB on-ramp,  Tempe, AZ",0.0,-111.96785003504152,33.37836998206487
+Price Freeway NB & Baseline," Tempe, AZ",372,,212, Baseline & Price Freeway NB,"Price Freeway NB & Baseline,  Tempe, AZ"," Baseline & Price Freeway NB,  Tempe, AZ",0.0,-111.89296996774756,33.37854000897079
+Price Freeway SB & Price Freeway NB," Tempe, AZ",391,,213, Price Freeway NB & Price Freeway SB,"Price Freeway SB & Price Freeway NB,  Tempe, AZ"," Price Freeway NB & Price Freeway SB,  Tempe, AZ",0.0,-111.89184397834492,33.38207191379389
+I-10 WB & Elliot," Tempe, AZ",402,,214, Elliot & I-10 WB,"I-10 WB & Elliot,  Tempe, AZ"," Elliot & I-10 WB,  Tempe, AZ",0.0,-111.97176999969956,33.348969995672334
+Price Freeway NB & Price Freeway SB," Tempe, AZ",411,,215, Price Freeway SB & Price Freeway NB,"Price Freeway NB & Price Freeway SB,  Tempe, AZ"," Price Freeway SB & Price Freeway NB,  Tempe, AZ",0.0,-111.89184397834492,33.38207191379389
+Price Freeway NB & Elliot," Tempe, AZ",420,,216, Elliot & Price Freeway NB,"Price Freeway NB & Elliot,  Tempe, AZ"," Elliot & Price Freeway NB,  Tempe, AZ",0.0,-111.89368997323034,33.34944998535768
+Price Freeway NB & Warner," Tempe, AZ",445,,217, Warner & Price Freeway NB,"Price Freeway NB & Warner,  Tempe, AZ"," Warner & Price Freeway NB,  Tempe, AZ",0.0,-111.89328001434602,33.33502500240459
+Curry & Washington St," Tempe, AZ",474,,218, Washington St & Curry,"Curry & Washington St,  Tempe, AZ"," Washington St & Curry,  Tempe, AZ",0.0,-111.94335501265869,33.437535007688
+202 & 202 WB," Tempe, AZ",496,,219, 202 WB & 202,"202 & 202 WB,  Tempe, AZ"," 202 WB & 202,  Tempe, AZ",0.0,-111.64740996046336,33.20860999785765
+SR 143 & SR 143 SB & SR 143 NB ," Tempe, AZ",498,,220, SR 143 SB  & SR 143,"SR 143 & SR 143 SB & SR 143 NB ,  Tempe, AZ"," SR 143 SB  & SR 143,  Tempe, AZ",0.0,-111.97827997243883,33.40731998598544
+56th St & Washington St," Tempe, AZ",500,,221, Washington St & 56th St,"56th St & Washington St,  Tempe, AZ"," Washington St & 56th St,  Tempe, AZ",0.0,-111.96103001570377,33.44540001984937
+Priest Drive & Curry," Tempe, AZ",503,,222, Curry & Priest Drive,"Priest Drive & Curry,  Tempe, AZ"," Curry & Priest Drive,  Tempe, AZ",0.0,-111.96302683398818,33.32039738504338
+Papago Hills (Future) & Papago Hills & Curry & Washington St," Tempe, AZ",504,,223, Papago Hills  & Papago Hills (Future),"Papago Hills (Future) & Papago Hills & Curry & Washington St,  Tempe, AZ"," Papago Hills  & Papago Hills (Future),  Tempe, AZ",1.9459404811910495,,
+Parkside Drive & Parkside Drive (Future) & Washington St," Tempe, AZ",505,,224, Parkside Drive (Future)  & Parkside Drive,"Parkside Drive & Parkside Drive (Future) & Washington St,  Tempe, AZ"," Parkside Drive (Future)  & Parkside Drive,  Tempe, AZ",0.0,-111.88354996586384,33.209610000815985
+Center Pkwy & Washington St," Tempe, AZ",506,,225, Washington St & Center Pkwy,"Center Pkwy & Washington St,  Tempe, AZ"," Washington St & Center Pkwy,  Tempe, AZ",12032.198580598604,,
+Center Pkwy Station & Washington St," Tempe, AZ",507,,226, Washington St & Center Pkwy Station,"Center Pkwy Station & Washington St,  Tempe, AZ"," Washington St & Center Pkwy Station,  Tempe, AZ",0.0,-111.94882998799385,33.4392200007286
+Ash Street & 3rd Street," Tempe, AZ",509,,227, 3rd Street & Ash Street,"Ash Street & 3rd Street,  Tempe, AZ"," 3rd Street & Ash Street,  Tempe, AZ",12031.931238590234,,
+Mill Avenue & 3rd Street," Tempe, AZ",511,,228, 3rd Street & Mill Avenue,"Mill Avenue & 3rd Street,  Tempe, AZ"," 3rd Street & Mill Avenue,  Tempe, AZ",12031.691068868937,,
+College Avenue & PED & 5th Street & Veterans Way," Tempe, AZ",512,,229, PED  & College Avenue,"College Avenue & PED & 5th Street & Veterans Way,  Tempe, AZ"," PED  & College Avenue,  Tempe, AZ",12033.577447192043,,
+Veterans Ped Cross & Veterans Way," Tempe, AZ",513,,230, Veterans Way & Veterans Ped Cross,"Veterans Ped Cross & Veterans Way,  Tempe, AZ"," Veterans Way & Veterans Ped Cross,  Tempe, AZ",0.0,-110.96828997645913,32.18143999212488
+ASU Ped #2 & Veterans Way," Tempe, AZ",514,,231, Veterans Way & ASU Ped #2,"ASU Ped #2 & Veterans Way,  Tempe, AZ"," Veterans Way & ASU Ped #2,  Tempe, AZ",0.0,-111.93472281812032,33.42532989904794
+6th Street & Veterans Way," Tempe, AZ",515,,232, Veterans Way & 6th Street,"6th Street & Veterans Way,  Tempe, AZ"," Veterans Way & 6th Street,  Tempe, AZ",0.0,-111.93037999418117,33.42315998087784
+McAllister Avenue & Veterans Way & University Drive," Tempe, AZ",516,,233, Veterans Way  & McAllister Avenue,"McAllister Avenue & Veterans Way & University Drive,  Tempe, AZ"," Veterans Way  & McAllister Avenue,  Tempe, AZ",0.0,-111.92892003428607,33.42200000929739
+Rural Road & Tyler Street & Terrace Road," Tempe, AZ",517,,234, Tyler Street  & Rural Road,"Rural Road & Tyler Street & Terrace Road,  Tempe, AZ"," Tyler Street  & Rural Road,  Tempe, AZ",12030.613460407061,,
+Terrace Road & Ped Crossing," Tempe, AZ",519,,235, Ped Crossing & Terrace Road,"Terrace Road & Ped Crossing,  Tempe, AZ"," Ped Crossing & Terrace Road,  Tempe, AZ",12032.30862766422,,
+Lemon Street & Terrace Road," Tempe, AZ",520,,236, Terrace Road & Lemon Street,"Lemon Street & Terrace Road,  Tempe, AZ"," Terrace Road & Lemon Street,  Tempe, AZ",12030.35237520651,,
+Terrace Road & Apache Boulevard," Tempe, AZ",521,,237, Apache Boulevard & Terrace Road,"Terrace Road & Apache Boulevard,  Tempe, AZ"," Apache Boulevard & Terrace Road,  Tempe, AZ",0.0,-111.92047996070258,33.41488000164502
+Dorsey Lane & Apache Boulevard," Tempe, AZ",522,,238, Apache Boulevard & Dorsey Lane,"Dorsey Lane & Apache Boulevard,  Tempe, AZ"," Apache Boulevard & Dorsey Lane,  Tempe, AZ",0.0,-111.91767998594683,33.414650002221876
+Firestation & Apache Boulevard," Tempe, AZ",523,,239, Apache Boulevard & Firestation,"Firestation & Apache Boulevard,  Tempe, AZ"," Apache Boulevard & Firestation,  Tempe, AZ",1.322147930262375,,
+Una-Butte Avenue & Apache Boulevard," Tempe, AZ",524,,240, Apache Boulevard & Una-Butte Avenue,"Una-Butte Avenue & Apache Boulevard,  Tempe, AZ"," Apache Boulevard & Una-Butte Avenue,  Tempe, AZ",0.0,-111.91231003585845,33.414680009435244
+McClintock Drive & Apache Boulevard," Tempe, AZ",525,,241, Apache Boulevard & McClintock Drive,"McClintock Drive & Apache Boulevard,  Tempe, AZ"," Apache Boulevard & McClintock Drive,  Tempe, AZ",0.0,-111.90910999286413,33.41461002054373
+Park-n-Ride & Apache Boulevard," Tempe, AZ",526,,242, Apache Boulevard & Park-n-Ride,"Park-n-Ride & Apache Boulevard,  Tempe, AZ"," Apache Boulevard & Park-n-Ride,  Tempe, AZ",7.460956929092434,,
+Police Substation & Apache Boulevard," Tempe, AZ",527,,243, Apache Boulevard & Police Substation,"Police Substation & Apache Boulevard,  Tempe, AZ"," Apache Boulevard & Police Substation,  Tempe, AZ",12028.863260973465,,
+Martin Lane & Apache Boulevard," Tempe, AZ",528,,244, Apache Boulevard & Martin Lane,"Martin Lane & Apache Boulevard,  Tempe, AZ"," Apache Boulevard & Martin Lane,  Tempe, AZ",0.0,-111.90155001911407,33.41466001859618
+River Drive & Apache Boulevard," Tempe, AZ",530,,245, Apache Boulevard & River Drive,"River Drive & Apache Boulevard,  Tempe, AZ"," Apache Boulevard & River Drive,  Tempe, AZ",12028.019742274388,,
+Price Freeway SB & Apache Boulevard," Tempe, AZ",532,,246, Apache Boulevard & Price Freeway SB,"Price Freeway SB & Apache Boulevard,  Tempe, AZ"," Apache Boulevard & Price Freeway SB,  Tempe, AZ",0.0,-111.89122996846739,33.414680009435244
+Price Freeway NB & Apache Boulevard," Tempe, AZ",533,,247, Apache Boulevard & Price Freeway NB,"Price Freeway NB & Apache Boulevard,  Tempe, AZ"," Apache Boulevard & Price Freeway NB,  Tempe, AZ",0.0,-111.89122996846739,33.414680009435244
+101 Park-n-Ride & Apache Boulevard," Tempe, AZ",534,,248, Apache Boulevard & 101 Park-n-Ride,"101 Park-n-Ride & Apache Boulevard,  Tempe, AZ"," Apache Boulevard & 101 Park-n-Ride,  Tempe, AZ",163.01283033778014,,
+Lebanon Lane & Apache Boulevard," Tempe, AZ",536,,249, Apache Boulevard & Lebanon Lane,"Lebanon Lane & Apache Boulevard,  Tempe, AZ"," Apache Boulevard & Lebanon Lane,  Tempe, AZ",0.0,-111.88626000279852,33.414739981952465
+Tempe Canal & Apache Boulevard," Tempe, AZ",537,,250, Apache Boulevard & Tempe Canal,"Tempe Canal & Apache Boulevard,  Tempe, AZ"," Apache Boulevard & Tempe Canal,  Tempe, AZ",226.82351021065972,,
+48th Street & Baseline," Tempe, AZ",744,,251, Baseline & 48th Street,"48th Street & Baseline,  Tempe, AZ"," Baseline & 48th Street,  Tempe, AZ",0.0,-111.97846001571904,33.37818998069419
+I-10 EB & Warner," Tempe, AZ",745,,252, Warner & I-10 EB,"I-10 EB & Warner,  Tempe, AZ"," Warner & I-10 EB,  Tempe, AZ",0.0,-111.9723500273993,33.33427999789561
+I-10 WB & Warner," Tempe, AZ",746,,253, Warner & I-10 WB,"I-10 WB & Warner,  Tempe, AZ"," Warner & I-10 WB,  Tempe, AZ",0.0,-111.97205003908465,33.33427999789561
+SR 143 & University Drive," Tempe, AZ",747,,254, University Drive & SR 143,"SR 143 & University Drive,  Tempe, AZ"," University Drive & SR 143,  Tempe, AZ",0.0,-111.97803002408614,33.42188999681821
+Smith Road & Apache Boulevard," Tempe, AZ",1990,,255, Apache Boulevard & Smith Road,"Smith Road & Apache Boulevard,  Tempe, AZ"," Apache Boulevard & Smith Road,  Tempe, AZ",0.0,-111.90047998535469,33.41486998527071
+Lemon Street & McAllister Avenue," Tempe, AZ",7054,,256, McAllister Avenue & Lemon Street,"Lemon Street & McAllister Avenue,  Tempe, AZ"," McAllister Avenue & Lemon Street,  Tempe, AZ",0.0,-111.92936997484853,33.416650008138575
+Price Freeway NB & University Drive," Tempe, AZ",8055,,257, University Drive & Price Freeway NB,"Price Freeway NB & University Drive,  Tempe, AZ"," University Drive & Price Freeway NB,  Tempe, AZ",0.0,-111.89107004175479,33.42190998765729
