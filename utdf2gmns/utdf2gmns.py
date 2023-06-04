@@ -75,33 +75,32 @@ def generate_movement_utdf(input_dir: str,
     # And re-run the function to generate the final movement_utdf.csv file
 
     try:
-        # geocoding utdf_intersection automatically
-        df_utdf_geo = generate_coordinates_from_intersection(
-            utdf_dict_data.get("utdf_intersection"))
-        utdf_dict_data["utdf_geo"] = df_utdf_geo
+        # read utdf_geo.csv file from the input directory
+        utdf_dict_data["utdf_geo"] = pd.read_csv(path2linux(
+            os.path.join(input_dir, "utdf_geo.csv")))
 
-    except Exception as e:
-
+        # check if user manually add coord_x and coord_y to in utdf_geo.csv file
+        if "coord_x" not in utdf_dict_data.get("utdf_geo").columns:
+            raise Exception(
+                "coord_x is not found in the utdf_geo.csv file!, please add coord_x and coord_y manually."
+            )
+    except Exception:
         try:
-            # read utdf_geo.csv file from the input directory
-            utdf_dict_data["utdf_geo"] = pd.read_csv(path2linux(os.path.join(input_dir,
-                                                                             "utdf_geo.csv")))
-            # check if user manually add coord_x and coord_y to in utdf_geo.csv file
-            if "coord_x" not in utdf_dict_data.get("utdf_geo").columns:
-                raise Exception(
-                    "coord_x is not found in the utdf_geo.csv file!, please add coord_x and coord_y manually."
-                ) from e
-
-        except Exception as exc:
+            # geocoding utdf_intersection automatically
+            df_utdf_geo = generate_coordinates_from_intersection(
+                utdf_dict_data.get("utdf_intersection"))
+            utdf_dict_data["utdf_geo"] = df_utdf_geo
+        except Exception as e:
             #  Save the utdf_geo.csv file in the input directory
             utdf_dict_data.get("utdf_intersection").to_csv(
                 path2linux(os.path.join(input_dir, "utdf_geo.csv")), index=False)
 
             raise Exception(
-                "We can not generate the utdf_geo.csv file automatically, \
+                "We can not geocoding intersections automatically, \
+                 We save utdf_geo.csv file in your input dir,   \
                 please manually add coord_x and coord_y to the utdf_geo.csv file \
-                in your input directory and re-run the code afterward."
-            ) from exc
+                in your input directory and re-run the code afterwards."
+            ) from e
 
     # required_sub files are not found, will return utdf_intersection and utdf_lane
     if not isRequired_sub:
