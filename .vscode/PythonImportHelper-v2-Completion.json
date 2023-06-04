@@ -59,14 +59,6 @@
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
         "label": "geocoder",
         "kind": 6,
         "isExtraImport": true,
@@ -117,7 +109,7 @@
         "documentation": {}
     },
     {
-        "label": "get_file_names_from_folder_by_type",
+        "label": "get_filenames_from_folder_by_type",
         "importPath": "utils_lib.utility_lib",
         "description": "utils_lib.utility_lib",
         "isExtraImport": true,
@@ -310,7 +302,7 @@
         "kind": 2,
         "importPath": "utdf2gmns.func_lib.match_node_intersection_movement_utdf",
         "description": "utdf2gmns.func_lib.match_node_intersection_movement_utdf",
-        "peekOfCode": "def match_intersection_node(df_intersection_geo: pd.DataFrame, df_node: pd.DataFrame) -> pd.DataFrame:\n    # get valid node data with ctrl_type = signal\n    df_node_signal = df_node[df_node[\"ctrl_type\"] == \"signal\"].reset_index(drop=True)\n    #  mach intersection_geo with node\n    col_intersection_geo = list(df_intersection_geo.columns)\n    col_node = list(df_node_signal.columns)\n    intersection_node_list = []\n    for i in range(len(df_intersection_geo)):\n        intersection_value = list(df_intersection_geo.loc[i, :])\n        intersection_lnglat = (",
+        "peekOfCode": "def match_intersection_node(df_intersection_geo: pd.DataFrame, df_node: pd.DataFrame) -> pd.DataFrame:\n    # get valid node data with ctrl_type = signal\n    df_node_signal = df_node[df_node[\"ctrl_type\"] == \"signal\"].reset_index(drop=True)\n    # mach intersection_geo with node\n    col_intersection_geo = list(df_intersection_geo.columns)\n    col_node = list(df_node_signal.columns)\n    intersection_node_list = []\n    for i in range(len(df_intersection_geo)):\n        intersection_value = list(df_intersection_geo.loc[i, :])\n        intersection_lnglat = (",
         "detail": "utdf2gmns.func_lib.match_node_intersection_movement_utdf",
         "documentation": {}
     },
@@ -337,7 +329,7 @@
         "kind": 2,
         "importPath": "utdf2gmns.func_lib.match_node_intersection_movement_utdf",
         "description": "utdf2gmns.func_lib.match_node_intersection_movement_utdf",
-        "peekOfCode": "def match_movement_utdf_phase_timeplans(df_movement_utdf_lane: pd.DataFrame, utdf_dict_data: dict) -> pd.DataFrame:\n    df_utdf_phase_timeplans = utdf_dict_data.get(\"phase_timeplans\")\n    return pd.merge(df_movement_utdf_lane, df_utdf_phase_timeplans, left_on=\"synchro_INTID\", right_on=\"INTID\", how=\"left\")",
+        "peekOfCode": "def match_movement_utdf_phase_timeplans(df_movement_utdf_lane: pd.DataFrame, utdf_dict_data: dict) -> pd.DataFrame:\n    df_utdf_phase_timeplans = utdf_dict_data.get(\"phase_timeplans\")\n    df_movement_utdf_lane[\"synchro_INTID\"] = df_movement_utdf_lane[\"synchro_INTID\"].astype(int)\n    df_utdf_phase_timeplans[\"INTID\"] = df_utdf_phase_timeplans[\"INTID\"].astype(int)\n    return pd.merge(df_movement_utdf_lane, df_utdf_phase_timeplans, left_on=\"synchro_INTID\", right_on=\"INTID\", how=\"left\")",
         "detail": "utdf2gmns.func_lib.match_node_intersection_movement_utdf",
         "documentation": {}
     },
@@ -445,16 +437,16 @@
         "kind": 2,
         "importPath": "utdf2gmns.utils_lib.utility_lib",
         "description": "utdf2gmns.utils_lib.utility_lib",
-        "peekOfCode": "def path2linux(path: Union[str, Path]) -> str:\n    \"\"\"Convert a path to a linux path, linux path can run in windows, linux and mac\"\"\"\n    try:\n        return path.replace(\"\\\\\", \"/\")\n    except Exception:\n        return str(path).replace(\"\\\\\", \"/\")\ndef get_file_names_from_folder_by_type(dir_name: str, file_type: str = \"txt\",\n                                       isTraverseSubdirectory: bool = False) -> list:\n    if isTraverseSubdirectory:\n        files_list = []",
+        "peekOfCode": "def path2linux(path: Union[str, Path]) -> str:\n    \"\"\"Convert a path to a linux path, linux path can run in windows, linux and mac\"\"\"\n    try:\n        return path.replace(\"\\\\\", \"/\")\n    except Exception:\n        return str(path).replace(\"\\\\\", \"/\")\ndef get_filenames_from_folder_by_type(dir_name: str, file_type: str = \"txt\", isTraverseSubdirectory: bool = False) -> list:\n    \"\"\"Get all files in the folder with the specified file type\n    Args:\n        dir_name (str)                         : the folder path",
         "detail": "utdf2gmns.utils_lib.utility_lib",
         "documentation": {}
     },
     {
-        "label": "get_file_names_from_folder_by_type",
+        "label": "get_filenames_from_folder_by_type",
         "kind": 2,
         "importPath": "utdf2gmns.utils_lib.utility_lib",
         "description": "utdf2gmns.utils_lib.utility_lib",
-        "peekOfCode": "def get_file_names_from_folder_by_type(dir_name: str, file_type: str = \"txt\",\n                                       isTraverseSubdirectory: bool = False) -> list:\n    if isTraverseSubdirectory:\n        files_list = []\n        for root, dirs, files in os.walk(dir_name):\n            files_list.extend([os.path.join(root, file) for file in files])\n        return [path2linux(file) for file in files_list if file.split(\".\")[-1] == file_type]\n    # files in the first layer of the folder\n    return [path2linux(os.path.join(dir_name, file)) for file in os.listdir(dir_name) if file.split(\".\")[-1] == file_type]\ndef check_required_files_exist(required_files: list, dir_files: list) -> bool:",
+        "peekOfCode": "def get_filenames_from_folder_by_type(dir_name: str, file_type: str = \"txt\", isTraverseSubdirectory: bool = False) -> list:\n    \"\"\"Get all files in the folder with the specified file type\n    Args:\n        dir_name (str)                         : the folder path\n        file_type (str, optional)              : the exact file type to specify, if file_type is \"*\" or \"all\", return all files in the folder. Defaults to \"txt\".\n        isTraverseSubdirectory (bool, optional): get files inside the subfolder or not, if True, will traverse all subfolders. Defaults to False.\n    Returns:\n        list: a list of file paths\n    Examples:\n        # get all files in the folder without traversing subfolder",
         "detail": "utdf2gmns.utils_lib.utility_lib",
         "documentation": {}
     },
@@ -490,7 +482,7 @@
         "kind": 2,
         "importPath": "utdf2gmns.utdf2gmns",
         "description": "utdf2gmns.utdf2gmns",
-        "peekOfCode": "def generate_utdf_dict_of_dataframes(utdf_filename: str, city_name: str) ->dict:\n    # read single UTDF file and produce data conversion and store data into a dictionary\n    # read UTDF file and create dataframes of utdf_geo and utdf_lane\n    utdf_dict_data = read_UTDF_file(utdf_filename)\n    df_utdf_intersection = generate_intersection_data_from_utdf(utdf_dict_data, city_name)\n    # geocoding utdf_intersection\n    df_utdf_geo = generate_coordinates_from_intersection(df_utdf_intersection)\n    # store utdf_geo and utdf_lane into utdf_dict_data\n    utdf_dict_data[\"utdf_geo\"] = df_utdf_geo\n    # store object into pickle file",
+        "peekOfCode": "def generate_utdf_dict_of_dataframes(utdf_filename: str, city_name: str) -> dict:\n    # read single UTDF file and produce data conversion and store data into a dictionary\n    # read UTDF file and create dataframes of utdf_geo and utdf_lane\n    utdf_dict_data = read_UTDF_file(utdf_filename)\n    df_utdf_intersection = generate_intersection_data_from_utdf(utdf_dict_data, city_name)\n    utdf_dict_data[\"utdf_intersection\"] = df_utdf_intersection\n    # geocoding utdf_intersection\n    # df_utdf_geo = generate_coordinates_from_intersection(df_utdf_intersection)\n    # store utdf_geo and utdf_lane into utdf_dict_data\n    # utdf_dict_data[\"utdf_geo\"] = df_utdf_geo",
         "detail": "utdf2gmns.utdf2gmns",
         "documentation": {}
     },
@@ -499,7 +491,7 @@
         "kind": 2,
         "importPath": "utdf2gmns.utdf2gmns",
         "description": "utdf2gmns.utdf2gmns",
-        "peekOfCode": "def generate_movement_utdf(input_dir: list, city_name: list, output_dir: str = \"\", isSave2csv: bool = True) -> list:\n    # check if required files exist in the input directory\n    files_from_directory = get_file_names_from_folder_by_type(input_dir, file_type=\"csv\")\n    # if not required, raise an exception\n    isRequired = check_required_files_exist(required_files, files_from_directory)\n    isRequired_sub = check_required_files_exist(required_files_sub, files_from_directory)\n    # required fils are not found, raise an exception\n    if not isRequired:\n        raise Exception(f\"Required files {required_files} are not found!\")\n    # read UTDF file and create dataframes of utdf_intersection and utdf_lane",
+        "peekOfCode": "def generate_movement_utdf(input_dir: str,\n                           city_name: list,\n                           output_dir: str = \"\",\n                           isSave2csv: bool = True) -> list:\n    # check if required files exist in the input directory\n    files_from_directory = get_filenames_from_folder_by_type(input_dir, file_type=\"csv\")\n    # if not required, raise an exception\n    isRequired = check_required_files_exist(required_files, files_from_directory)\n    isRequired_sub = check_required_files_exist(required_files_sub, files_from_directory)\n    # required files are not found, raise an exception",
         "detail": "utdf2gmns.utdf2gmns",
         "documentation": {}
     },
@@ -508,7 +500,7 @@
         "kind": 5,
         "importPath": "utdf2gmns.utdf2gmns",
         "description": "utdf2gmns.utdf2gmns",
-        "peekOfCode": "pd.options.mode.chained_assignment = None  # default='warn'\n@func_running_time\ndef generate_utdf_dict_of_dataframes(utdf_filename: str, city_name: str) ->dict:\n    # read single UTDF file and produce data conversion and store data into a dictionary\n    # read UTDF file and create dataframes of utdf_geo and utdf_lane\n    utdf_dict_data = read_UTDF_file(utdf_filename)\n    df_utdf_intersection = generate_intersection_data_from_utdf(utdf_dict_data, city_name)\n    # geocoding utdf_intersection\n    df_utdf_geo = generate_coordinates_from_intersection(df_utdf_intersection)\n    # store utdf_geo and utdf_lane into utdf_dict_data",
+        "peekOfCode": "pd.options.mode.chained_assignment = None  # default='warn'\n@func_running_time\ndef generate_utdf_dict_of_dataframes(utdf_filename: str, city_name: str) -> dict:\n    # read single UTDF file and produce data conversion and store data into a dictionary\n    # read UTDF file and create dataframes of utdf_geo and utdf_lane\n    utdf_dict_data = read_UTDF_file(utdf_filename)\n    df_utdf_intersection = generate_intersection_data_from_utdf(utdf_dict_data, city_name)\n    utdf_dict_data[\"utdf_intersection\"] = df_utdf_intersection\n    # geocoding utdf_intersection\n    # df_utdf_geo = generate_coordinates_from_intersection(df_utdf_intersection)",
         "detail": "utdf2gmns.utdf2gmns",
         "documentation": {}
     }

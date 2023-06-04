@@ -41,7 +41,7 @@ def match_intersection_node(df_intersection_geo: pd.DataFrame, df_node: pd.DataF
     # get valid node data with ctrl_type = signal
     df_node_signal = df_node[df_node["ctrl_type"] == "signal"].reset_index(drop=True)
 
-    #  mach intersection_geo with node
+    # mach intersection_geo with node
     col_intersection_geo = list(df_intersection_geo.columns)
     col_node = list(df_node_signal.columns)
 
@@ -159,5 +159,8 @@ def match_movement_utdf_lane(df_movement_intersection: pd.DataFrame, utdf_dict_d
 def match_movement_utdf_phase_timeplans(df_movement_utdf_lane: pd.DataFrame, utdf_dict_data: dict) -> pd.DataFrame:
 
     df_utdf_phase_timeplans = utdf_dict_data.get("phase_timeplans")
+
+    df_movement_utdf_lane["synchro_INTID"] = df_movement_utdf_lane["synchro_INTID"].astype(int)
+    df_utdf_phase_timeplans["INTID"] = df_utdf_phase_timeplans["INTID"].astype(int)
 
     return pd.merge(df_movement_utdf_lane, df_utdf_phase_timeplans, left_on="synchro_INTID", right_on="INTID", how="left")
