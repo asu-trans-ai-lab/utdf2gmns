@@ -79,10 +79,11 @@ def generate_movement_utdf(input_dir: str,
         utdf_dict_data["utdf_geo"] = pd.read_csv(path2linux(
             os.path.join(input_dir, "utdf_geo.csv")))
 
-        # check if user manually add coord_x and coord_y to in utdf_geo.csv file
-        if "coord_x" not in utdf_dict_data.get("utdf_geo").columns:
+        # check if user manually added coord_x and coord_y to in utdf_geo.csv file
+        if not {"coord_x", "coord_y"}.issubset(set(utdf_dict_data.get("utdf_geo").columns)):
             raise Exception(
-                "coord_x is not found in the utdf_geo.csv file!, please add coord_x and coord_y manually."
+                "coord_x or coord_y not found in the utdf_geo.csv file!, please add coord_x and coord_y manually \
+                 and re-run the code afterwards."
             )
     except Exception:
         try:
