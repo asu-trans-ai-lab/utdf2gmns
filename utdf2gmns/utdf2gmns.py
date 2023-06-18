@@ -110,7 +110,7 @@ def generate_movement_utdf(input_dir: str,
             keys are: Lanes, Nodes, Networks, Timeplans, Links and utdf_geo.\n")
 
         # store object into pickle file
-        with open(path2linux(os.path.join(os.getcwd(), "utdf2gmns.pickle")), 'wb') as f:
+        with open(path2linux(os.path.join(input_dir, "utdf2gmns.pickle")), 'wb') as f:
             pickle.dump(utdf_dict_data, f, pickle.HIGHEST_PROTOCOL)
         return utdf_dict_data
 
@@ -174,6 +174,6 @@ if __name__ == '__main__':
     df_movement_utdf_phase, utdf_dict_data = generate_movement_utdf(input_dir, city_name, isSave2csv=False)
     # df_movement_utdf_phase.to_csv(path2linux(os.path.join(input_dir, "movement_utdf.csv")), index=False)
 
-    # NOTE : the following code is for testing purpose only: read utdf.csv file and generate utdf_dict_data
-    path_utdf = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\datasets\data_ASU_network\UTDF.csv"
-    utdf_dict_data = generate_utdf_dict_of_dataframes(path_utdf, city_name)
+    # # NOTE : the following code is for testing purpose only: read utdf.csv file and generate utdf_dict_data
+    # path_utdf = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\datasets\data_ASU_network\UTDF.csv"
+    # utdf_dict_data = generate_utdf_dict_of_dataframes(path_utdf, city_name)

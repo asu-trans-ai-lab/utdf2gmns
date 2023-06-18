@@ -160,7 +160,7 @@ def match_movement_utdf_phase_timeplans(df_movement_utdf_lane: pd.DataFrame, utd
 
     df_utdf_phase_timeplans = utdf_dict_data.get("phase_timeplans")
 
-    df_movement_utdf_lane["synchro_INTID"] = df_movement_utdf_lane["synchro_INTID"].astype(int)
-    df_utdf_phase_timeplans["INTID"] = df_utdf_phase_timeplans["INTID"].astype(int)
+    df_movement_utdf_lane["synchro_INTID"] = df_movement_utdf_lane["synchro_INTID"].astype(str)
+    df_utdf_phase_timeplans["INTID"] = df_utdf_phase_timeplans["INTID"].astype(str)
 
     return pd.merge(df_movement_utdf_lane, df_utdf_phase_timeplans, left_on="synchro_INTID", right_on="INTID", how="left")
