@@ -170,7 +170,7 @@ if __name__ == '__main__':
     city_name = " Tempe, AZ"
 
     # NOTE : the following code is for generating movement_utdf.csv file
-    input_dir = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\datasets\data_ASU_network_2_tes"
+    input_dir = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\datasets\data_ASU_network_2"
     df_movement_utdf_phase, utdf_dict_data = generate_movement_utdf(input_dir, city_name, isSave2csv=False)
     # df_movement_utdf_phase.to_csv(path2linux(os.path.join(input_dir, "movement_utdf.csv")), index=False)
 
