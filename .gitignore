@@ -3,3 +3,5 @@
 */.vscode/*
 */.pytest_cache/*
 */GMNS_*/*
+*.pypirc
+*/Tutorial PyPI.md
