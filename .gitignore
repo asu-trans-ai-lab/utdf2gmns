@@ -5,6 +5,7 @@
 */GMNS_*/*
 *.pypirc
 */Tutorial_PyPI.md
+Tutorial_PyPI.md
 **build/*
 **/dist/*
 */Debug/
