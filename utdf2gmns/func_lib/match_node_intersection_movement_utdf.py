@@ -7,7 +7,13 @@
 
 
 import pandas as pd
-from utils_lib.utility_lib import func_running_time, calculate_point2point_distance_in_km
+
+try:
+    # For deployment import
+    from utdf2gmns.utils_lib.utility_lib import func_running_time, calculate_point2point_distance_in_km
+except Exception:
+    # For local test import
+    from utils_lib.utility_lib import func_running_time, calculate_point2point_distance_in_km
 
 
 def find_shortest_distance_node(point: tuple, node_df: pd.DataFrame, max_distance_threshold: float = 0.1) -> tuple:

@@ -13,21 +13,23 @@ import sys
 from multiprocessing import Pool
 from pathlib import Path
 
-# add folder utils_lib to the path
-try:
-    sys.path.append(os.path.join(
-        Path(__file__).resolve().parent.parent, "utils_lib"))
-except Exception:
-    sys.path.append(os.path.join(
-        Path("__file__").resolve().parent.parent, "utils_lib"))
-
 try:
     # for deployment
-    from utils_lib.utility_lib import (calculate_point2point_distance_in_km,
-                                       func_running_time)
+    from utdf2gmns.utils_lib.utility_lib import (calculate_point2point_distance_in_km,
+                                                 func_running_time)
 except Exception:
     # for local testing
-    from utility_lib import (calculate_point2point_distance_in_km, func_running_time)
+
+    # add folder utils_lib to the path
+    try:
+        sys.path.append(os.path.join(
+            Path(__file__).resolve().parent.parent, "utils_lib"))
+    except Exception:
+        sys.path.append(os.path.join(
+            Path("__file__").resolve().parent.parent, "utils_lib"))
+
+    from utils_lib.utility_lib import (
+        calculate_point2point_distance_in_km, func_running_time)
 
 import geocoder
 import pandas as pd

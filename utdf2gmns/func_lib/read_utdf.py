@@ -11,20 +11,21 @@ import sys
 import os
 from pathlib import Path
 
-# add folder utils_lib to the path
 try:
-    sys.path.append(os.path.join(Path(__file__).resolve().parent.parent, "utils_lib"))
-except Exception:
-    sys.path.append(os.path.join(Path("__file__").resolve().parent.parent, "utils_lib"))
-
-try:
-    # for deployment
-    from utils_lib.package_settings import link_column_names, utdf_categories, utdf_setting
-    from utils_lib.utility_lib import func_running_time, path2linux
+    # for deployment import
+    from utdf2gmns.utils_lib.package_settings import link_column_names, utdf_categories, utdf_setting
+    from utdf2gmns.utils_lib.utility_lib import func_running_time, path2linux
 except Exception:
     # for local testing
-    from package_settings import link_column_names, utdf_categories, utdf_setting
-    from utility_lib import func_running_time, path2linux
+
+    # add folder utils_lib to the path
+    try:
+        sys.path.append(os.path.join(Path(__file__).resolve().parent.parent, "utils_lib"))
+    except Exception:
+        sys.path.append(os.path.join(Path("__file__").resolve().parent.parent, "utils_lib"))
+
+    from utils_lib.package_settings import link_column_names, utdf_categories, utdf_setting
+    from utils_lib.utility_lib import func_running_time, path2linux
 
 # aviod the warning of "A value is trying to be set on a copy of a slice from a DataFrame"
 pd.options.mode.chained_assignment = None  # default='warn'
