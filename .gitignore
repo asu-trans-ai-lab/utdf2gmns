@@ -5,3 +5,16 @@
 */GMNS_*/*
 *.pypirc
 */Tutorial PyPI.md
+**build/*
+**/dist/*
+*/Debug/
+x64/
+.vs
+.vscode/
+.DS_Store
+**log.txt
+*__pycache__*
+**.egg-info/*
+*.pypirc
+*setup.py
+*PKG-INFO*
