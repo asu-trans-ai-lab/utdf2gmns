@@ -4,7 +4,7 @@
 */.pytest_cache/*
 */GMNS_*/*
 *.pypirc
-*/Tutorial PyPI.md
+*/Tutorial_PyPI.md
 **build/*
 **/dist/*
 */Debug/
