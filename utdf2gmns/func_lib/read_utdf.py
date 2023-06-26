@@ -7,25 +7,15 @@
 
 # from utility_lib import func_running_time
 import pandas as pd
-import sys
+# import sys
 import os
 from pathlib import Path
 
-try:
-    # for deployment import
-    from utdf2gmns.utils_lib.package_settings import link_column_names, utdf_categories, utdf_setting
-    from utdf2gmns.utils_lib.utility_lib import func_running_time, path2linux
-except Exception:
-    # for local testing
+from utdf2gmns.utils_lib.package_settings import (utdf_link_column_names,
+                                                  utdf_categories,
+                                                  utdf_city_name)
+from utdf2gmns.utils_lib.utility_lib import func_running_time, path2linux
 
-    # add folder utils_lib to the path
-    try:
-        sys.path.append(os.path.join(Path(__file__).resolve().parent.parent, "utils_lib"))
-    except Exception:
-        sys.path.append(os.path.join(Path("__file__").resolve().parent.parent, "utils_lib"))
-
-    from utils_lib.package_settings import link_column_names, utdf_categories, utdf_setting
-    from utils_lib.utility_lib import func_running_time, path2linux
 
 # aviod the warning of "A value is trying to be set on a copy of a slice from a DataFrame"
 pd.options.mode.chained_assignment = None  # default='warn'
@@ -43,17 +33,17 @@ def read_UTDF_file(path_utdf: str) -> dict:
     categorical_data_beginning_index_dict = {}
     for i in range(len(lines)):
         if "Network" in lines[i] and utdf_categories["Network"] in lines[i + 1]:
-            categorical_data_beginning_index_dict[i+2] = "Network"
+            categorical_data_beginning_index_dict[i + 2] = "Network"
         elif "Nodes" in lines[i] and utdf_categories["Nodes"] in lines[i + 1]:
-            categorical_data_beginning_index_dict[i+2] = "Nodes"
+            categorical_data_beginning_index_dict[i + 2] = "Nodes"
         elif "Links" in lines[i] and utdf_categories["Links"] in lines[i + 1]:
-            categorical_data_beginning_index_dict[i+2] = "Links"
+            categorical_data_beginning_index_dict[i + 2] = "Links"
         elif "Lanes" in lines[i] and utdf_categories["Lanes"] in lines[i + 1]:
-            categorical_data_beginning_index_dict[i+2] = "Lanes"
+            categorical_data_beginning_index_dict[i + 2] = "Lanes"
         elif "Timeplans" in lines[i] and utdf_categories["Timeplans"] in lines[i + 1]:
-            categorical_data_beginning_index_dict[i+2] = "Timeplans"
+            categorical_data_beginning_index_dict[i + 2] = "Timeplans"
         elif "Phases" in lines[i] and utdf_categories["Phases"] in lines[i + 1]:
-            categorical_data_beginning_index_dict[i+2] = "Phases"
+            categorical_data_beginning_index_dict[i + 2] = "Phases"
         else:
             continue
 
@@ -159,7 +149,7 @@ def generate_intersection_data_from_utdf(utdf_dict_data: dict, city_name: str) -
 
         # for link table, direction info store in column 3 to 10
         for direction_id in range(3, 11):
-            direction_name = direction_list.get(link_column_names.get(direction_id), "")
+            direction_name = direction_list.get(utdf_link_column_names.get(direction_id), "")
             if direction_name not in direction_name_list and direction_name != '' and direction_name != '\n':
                 direction_name_list.append(direction_name)
         if len(direction_name_list) > 1:
@@ -170,7 +160,7 @@ def generate_intersection_data_from_utdf(utdf_dict_data: dict, city_name: str) -
         if isIntersection:
             intersection_name = ' & '.join(direction_name_list)
             # get "INTID"
-            intersection_id = direction_list[link_column_names.get(2)]
+            intersection_id = direction_list[utdf_link_column_names.get(2)]
 
             link_list.append([intersection_name, city_name, intersection_id, "", sequenced_intersection_id])
             sequenced_intersection_id += 1

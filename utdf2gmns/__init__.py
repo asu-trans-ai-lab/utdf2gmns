@@ -5,8 +5,25 @@
 # Author/Copyright: Mr. Xiangyong Luo
 ##############################################################
 
-from .__utdf2gmns import (generate_utdf_dataframes, generate_movement_utdf)
+from .__utdf2gmns import (generate_utdf_dataframes,
+                          generate_movement_utdf,
+                          generate_coordinates_from_intersection,
+                          match_intersection_node,
+                          match_movement_and_intersection_node,
+                          match_movement_utdf_lane,
+                          match_movement_utdf_phase_timeplans
+                          )
 
-__all__ = ['generate_utdf_dataframes', 'generate_movement_utdf']
+from .utils_lib import package_settings
 
-print("UTDF2GMNS Version: ", "0.1.6")
+__all__ = ['generate_utdf_dataframes',
+           'generate_movement_utdf',
+           'generate_coordinates_from_intersection',
+           'match_intersection_node',
+           'match_movement_and_intersection_node',
+           'match_movement_utdf_lane',
+           'match_movement_utdf_phase_timeplans',
+           'package_settings'
+           ]
+
+print("UTDF2GMNS Version: ", "0.1.9")
