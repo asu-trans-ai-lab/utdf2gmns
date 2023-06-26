@@ -59,7 +59,10 @@ if__name__=="__main__":
 
     if option == 1:
         # NOTE: Option 1, generate movement_utdf.csv directly
-        path =r"C:\Users\roche\Desktop\coding\data_bullhead_seg4"  # the folder contain UTDF.csv, node.csv and movement.csv
+
+	# the folder contain UTDF.csv, node.csv and movement.csv
+        path =r"C:\Users\roche\Desktop\coding\data_bullhead_seg4"
+
         res = ug.generate_movement_utdf(path, city,isSave2csv=True)
 
     if option == 2:
