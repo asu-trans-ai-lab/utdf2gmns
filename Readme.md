@@ -1,8 +1,10 @@
 ## utdf2gmns
 
+
 ## Introduction
 
-This open-source package is a tool to convert utdf file to GMNS format.
+A tool to convert utdf file to GMNS format:  **synchro utdf format to gmns signal timing format at movement layer**
+
 
 ## Required Data Input Files:
 
@@ -14,13 +16,12 @@ This open-source package is a tool to convert utdf file to GMNS format.
 
 **If input folder have UTDF.csv only, outputs are:**
 
-* A dictionary store utdf data with keys: Networks, Node, Links, Timeplans, Lanes, and utdf_intersection_geo
+* A dictionary store utdf data with keys: Networks, Node, Links, Timeplans, Lanes, and utdf_intersection
 * A file named utdf2gmns.pickle to store dictionary object.
 
 **If input folder have extra node.csv and movement.csv, outputs are:**
 
-* Two files named movement_utdf.csv and intersection_utdf.csv
-* A file named utdf2gmns.pickle to store dictionary object.
+* Two files named:  movement_utdf.csv and utdf_intersection.csv
 
 ## **Package dependencies**:
 
@@ -35,28 +36,33 @@ Step 1: Read UTDF.csv file and perform geocoding, then produce utdf_geo, utdf_la
 
 Step 2: Match four files (utdf_geo, node, utdf_lane, utdf_pahse_timeplans, movement) to produce movement_utdf
 
+
 ## Installation
 
-`pip install UTDF2GMNS`
+`pip install utdf2gmns`
 
-## Example
+
+## Simple Example
 
 ```python
 import utdf2gmns as ug
 import pandas as pd
-if__name__=="main":
+
+
+if__name__=="__main__":
+
     city =" Bullhead City, AZ"
-    # option= 1, generate movement_utdf.csv directly
-    # option= 2, generate movement_utdf.csv step by step (more flexible)
 
-    option =1
+    # option = 1, generate movement_utdf.csv directly
+    # option = 2, generate movement_utdf.csv step by step (more flexible)
+    option = 1
 
-    if option ==1:
+    if option == 1:
         # NOTE: Option 1, generate movement_utdf.csv directly
-        path =r"C:\Users\roche\Desktop\coding\data_bullhead_seg4"  # the fold contain UTDF.csv, node.csv and movement.csv
+        path =r"C:\Users\roche\Desktop\coding\data_bullhead_seg4"  # the folder contain UTDF.csv, node.csv and movement.csv
         res = ug.generate_movement_utdf(path, city,isSave2csv=True)
 
-    if option ==2:
+    if option == 2:
         # NOTE: Option 2, generate movement_utdf.csv step by step (more flexible)
         path_utdf =r"C:\Users\roche\Desktop\coding\data_bullhead_seg4\UTDF.csv"
         path_node =r"C:\Users\roche\Desktop\coding\data_bullhead_seg4\node.csv"
@@ -89,6 +95,8 @@ if__name__=="main":
 
 ```
 
+
+
 ## TODO LIST
 
 * [X] Print out how many intersections being geocoded.
@@ -101,3 +109,27 @@ if__name__=="main":
 * [X] Number of lanes of the movements from synchro file.
 * [ ] Add signal info to micre-link.csv
 * [X] Add function to verify whether geocoded for utdf_geo
+
+
+
+## Call for Contributions
+
+The utdf2gmns project welcomes your expertise and enthusiasm!
+
+Small improvements or fixes are always appreciated. If you are considering larger contributions to the source code, please contact us through email:
+
+    Xiangyong Luo                :  luoxiangyong01@gmail.com
+
+    Dr. Xuesong Simon Zhou :  xzhou74@asu.edu
+
+Writing code isn't the only way to contribute to utdf2gmns. You can also:
+
+* review pull requests
+* help us stay on top of new and old issues
+* develop tutorials, presentations, and other educational materials
+* develop graphic design for our brand assets and promotional materials
+* translate website content
+* help with outreach and onboard new contributors
+* write grant proposals and help with other fundraising efforts
+
+For more information about the ways you can contribute to utdf2gmns, visit [our GitHub](https://github.com/asu-trans-ai-lab/utdf2gmns). If you' re unsure where to start or how your skills fit in, reach out! You can ask by opening a new issue or leaving a comment on a relevant issue that is already open on GitHub.
