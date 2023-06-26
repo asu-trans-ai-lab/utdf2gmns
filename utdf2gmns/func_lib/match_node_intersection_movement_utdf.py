@@ -7,7 +7,7 @@
 
 
 import pandas as pd
-from utils_lib.utility_lib import func_running_time, calculate_point2point_distance_in_km
+from utdf2gmns.utils_lib.utility_lib import func_running_time, calculate_point2point_distance_in_km
 
 
 def find_shortest_distance_node(point: tuple, node_df: pd.DataFrame, max_distance_threshold: float = 0.1) -> tuple:
@@ -28,7 +28,8 @@ def find_shortest_distance_node(point: tuple, node_df: pd.DataFrame, max_distanc
 
     # if the minimum distance is larger than the threshold, then return None
     if min_distance > max_distance_threshold:
-        return []
+        print(f"  WARNING: {point} is not able to find the nearest node, the minimum distance is {min_distance}, the threshold is {max_distance_threshold}km")
+        return [""] * len(node_df.columns)
 
     # find the index of the minimum distance
     min_distance_index = point_to_node_distance_list.index(min_distance)
@@ -36,7 +37,9 @@ def find_shortest_distance_node(point: tuple, node_df: pd.DataFrame, max_distanc
 
 
 @func_running_time
-def match_intersection_node(df_intersection_geo: pd.DataFrame, df_node: pd.DataFrame) -> pd.DataFrame:
+def match_intersection_node(df_intersection_geo: pd.DataFrame,
+                            df_node: pd.DataFrame,
+                            max_distance_threshold=0.1) -> pd.DataFrame:
 
     # get valid node data with ctrl_type = signal
     df_node_signal = df_node[df_node["ctrl_type"] == "signal"].reset_index(drop=True)
@@ -54,7 +57,8 @@ def match_intersection_node(df_intersection_geo: pd.DataFrame, df_node: pd.DataF
             df_intersection_geo.loc[i, "coord_x"], df_intersection_geo.loc[i, "coord_y"])
 
         intersection_node_list.append(
-            intersection_value + find_shortest_distance_node(intersection_lnglat, df_node_signal))
+            intersection_value + find_shortest_distance_node(intersection_lnglat,
+                                                             df_node_signal, max_distance_threshold))
 
     df_intersection_node = pd.DataFrame(
         intersection_node_list, columns=col_intersection_geo + col_node)
@@ -74,13 +78,13 @@ def match_movement_and_intersection_node(df_movement: pd.DataFrame, df_intersect
         # get the osm_node_id of the movement
         movement_osm_node_id = df_movement.loc[k, "osm_node_id"]
 
-        # get filter the intersection_node by osm_node_id
+        # filter the intersection_node by osm_node_id
         matched_intersection_node_list = list(
             df_intersection_node[df_intersection_node["osm_node_id"] == movement_osm_node_id].values)
 
-        # get filtered intersection node value
+        # filtered intersection node value
         matched_intersection_node = list(
-            matched_intersection_node_list[0]) if matched_intersection_node_list else []
+            matched_intersection_node_list[0]) if matched_intersection_node_list else [""] * len(col_intersection_node)
 
         # append data to movement_intersection_list
         movement_intersection_list.append(
@@ -97,6 +101,7 @@ def match_movement_and_intersection_node(df_movement: pd.DataFrame, df_intersect
 def match_movement_utdf_lane(df_movement_intersection: pd.DataFrame, utdf_dict_data: dict) -> pd.DataFrame:
     # Add Synchro/utdf data to movement_intersection_node
     df_utdf_lanes = utdf_dict_data.get("Lanes")
+    print(f"  : There are {df_utdf_lanes.shape[0]} utdf lanes")
 
     intersection_id_list = [value for value in list(
         df_movement_intersection["synchro_INTID"].unique()) if value is not None]
@@ -155,7 +160,7 @@ def match_movement_utdf_lane(df_movement_intersection: pd.DataFrame, utdf_dict_d
 
     return df_movement_utdf_lane
 
-
+@func_running_time
 def match_movement_utdf_phase_timeplans(df_movement_utdf_lane: pd.DataFrame, utdf_dict_data: dict) -> pd.DataFrame:
 
     df_utdf_phase_timeplans = utdf_dict_data.get("phase_timeplans")

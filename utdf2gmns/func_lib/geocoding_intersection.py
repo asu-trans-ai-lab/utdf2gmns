@@ -8,29 +8,16 @@
 # from geopy.geocoders import Nominatim
 # import googlemaps
 import contextlib
-import os
-import sys
+# import os
+# import sys
 from multiprocessing import Pool
-from pathlib import Path
-
-# add folder utils_lib to the path
-try:
-    sys.path.append(os.path.join(
-        Path(__file__).resolve().parent.parent, "utils_lib"))
-except Exception:
-    sys.path.append(os.path.join(
-        Path("__file__").resolve().parent.parent, "utils_lib"))
-
-try:
-    # for deployment
-    from utils_lib.utility_lib import (calculate_point2point_distance_in_km,
-                                       func_running_time)
-except Exception:
-    # for local testing
-    from utility_lib import (calculate_point2point_distance_in_km, func_running_time)
+# from pathlib import Path
 
 import geocoder
 import pandas as pd
+
+from utdf2gmns.utils_lib.utility_lib import (
+    calculate_point2point_distance_in_km, func_running_time)
 
 # def googlemaps_geocoding_from_address(address, api_key) -> tuple:
 #
@@ -71,7 +58,8 @@ def geocoder_geocoding_from_address(address: str) -> tuple:
 
     # get the location
     try:
-        location_lng_lat = (location_instance["features"][0]["geometry"]["coordinates"])
+        location_lng_lat = (
+            location_instance["features"][0]["geometry"]["coordinates"])
     except Exception:
         location_lng_lat = [0, 0]
 
@@ -82,7 +70,7 @@ def geocoder_geocoding_from_address(address: str) -> tuple:
 def generate_coordinates_from_intersection(df_intersection: pd.DataFrame, distance_threshold=0.01) -> pd.DataFrame:
     # distance_threshold is the threshold to determine whether the intersection is able to geocode, using km as unit
 
-    df = df_intersection
+    df = df_intersection.copy()
 
     # check required columns exist in the dataframe
     if not {"intersection_name", "city_name"}.issubset(set(df.columns)):
@@ -102,23 +90,36 @@ def generate_coordinates_from_intersection(df_intersection: pd.DataFrame, distan
     df["full_name_intersection_reversed"] = df["reversed_intersection_name"] + ", " + df["city_name"]
 
     # Step 4: geocoding
+    print("   :geocoding intersections...")
     intersection_full_name_list = df["full_name_intersection"].tolist()
     intersection_full_name_reversed_list = df["full_name_intersection_reversed"].tolist()
 
-    with contextlib.suppress(Exception):
-        p = Pool()
-        lnglat_values_full_name = p.map(
-            geocoder_geocoding_from_address, intersection_full_name_list)
+    try:
+        # use multiprocessing to speed up
+        # p = Pool()
+        # lnglat_values_full_name = p.map(geocoder_geocoding_from_address, intersection_full_name_list)
 
-    with contextlib.suppress(Exception):
-        p1 = Pool()
-        lnglat_values_full_name_reversed = p1.map(geocoder_geocoding_from_address, intersection_full_name_reversed_list)
+        # using loop to geocode
+        lnglat_values_full_name = [geocoder_geocoding_from_address(address) for address in intersection_full_name_list]
 
-    # lnglat_values_full_name = [geocoder_geocoding_from_address(address) for address in intersection_full_name_list]
-    # lnglat_values_full_name_reversed = [geocoder_geocoding_from_address(address) for address in intersection_full_name_reversed_list]
+    except Exception as e:
+        raise Exception("   :geocoding intersections failed, try again...") from e
+
+    try:
+        # use multiprocessing to speed up
+        # p1 = Pool()
+        # lnglat_values_full_name_reversed = p1.map(geocoder_geocoding_from_address, intersection_full_name_reversed_list)
+
+        # using loop to geocode
+        lnglat_values_full_name_reversed = [geocoder_geocoding_from_address(address) for address in intersection_full_name_reversed_list]
+
+    except Exception as exc:
+        raise Exception("   :geocoding intersections failed, try again...") from exc
 
     # create new column named distance_from_full_name
-    distance = [calculate_point2point_distance_in_km(lnglat_values_full_name[i], lnglat_values_full_name_reversed[i]) for i in range(len(lnglat_values_full_name))]
+    print("   :cross validating...")
+    distance = [calculate_point2point_distance_in_km(
+        lnglat_values_full_name[i], lnglat_values_full_name_reversed[i]) for i in range(len(lnglat_values_full_name))]
 
     for i in range(len(df)):
         df["distance_from_full_name"] = distance
@@ -129,16 +130,21 @@ def generate_coordinates_from_intersection(df_intersection: pd.DataFrame, distan
 
         else:
             # use None to indicate the intersection is not able to geocode
-            df.loc[i, "coord_x"] = None
-            df.loc[i, "coord_y"] = None
+            df.loc[i, "coord_x"] = 0
+            df.loc[i, "coord_y"] = 0
 
-    created_column_names = ["reversed_intersection_name", "full_name_intersection", "full_name_intersection_reversed", "distance_from_full_name"]
+    created_column_names = ["reversed_intersection_name", "full_name_intersection",
+                            "full_name_intersection_reversed", "distance_from_full_name"]
     df_final = df.loc[:, ~df.columns.isin(created_column_names)]
 
     # print summary information
-    print(f"There are {df_final['coord_x'].isna().sum()} / {len(df_final)} intersections are not able to geocode.")
+    print(
+        f" {len(df_final) - df_final['coord_x'].isna().sum()} / {len(df_final)} intersections geocoded.")
+    print(
+        f" {df_final['coord_x'].isna().sum()} / {len(df_final)} intersections are not able to geocode.")
 
     return df_final
+
 
 if __name__ == "__main__":
     """
