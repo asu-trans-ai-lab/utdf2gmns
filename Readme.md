@@ -21,6 +21,8 @@ A tool to convert utdf file to GMNS format:  **synchro utdf format to gmns signa
 
 * Two files named:  movement_utdf.csv and utdf_intersection.csv
 
+Sample results: [datasets](https://github.com/asu-trans-ai-lab/utdf2gmns/tree/main/datasets)
+
 ## **Package dependencies**:
 
 * [X] geocoder==1.38.1
@@ -100,6 +102,8 @@ if__name__=="__main__":
 * [X] Print out check log.
 * [X] Number of lanes of the movements from synchro file.
 * [X] Add function to verify whether geocoded for utdf_geo
+* [ ] Print geocoding details (in percentage)
+* [ ] Add three kwargs in function generate_movement_utdf
 * [ ] Print out how many movements being matched or not matched for signalized intersecton nodes.
 * [ ] Check reasonable capacity.
 * [ ] Check each movement is reasonable (like 15s of green time...). other attributes.
