@@ -1,10 +1,8 @@
 ## utdf2gmns
 
-
 ## Introduction
 
 A tool to convert utdf file to GMNS format:  **synchro utdf format to gmns signal timing format at movement layer**
-
 
 ## Required Data Input Files:
 
@@ -36,11 +34,9 @@ Step 1: Read UTDF.csv file and perform geocoding, then produce utdf_geo, utdf_la
 
 Step 2: Match four files (utdf_geo, node, utdf_lane, utdf_pahse_timeplans, movement) to produce movement_utdf
 
-
 ## Installation
 
 `pip install utdf2gmns`
-
 
 ## Simple Example
 
@@ -98,8 +94,6 @@ if__name__=="__main__":
 
 ```
 
-
-
 ## TODO LIST
 
 * [X] Print out how many intersections being geocoded.
@@ -113,15 +107,13 @@ if__name__=="__main__":
 * [ ] Add signal info to micre-link.csv
 * [X] Add function to verify whether geocoded for utdf_geo
 
-
-
 ## Call for Contributions
 
 The utdf2gmns project welcomes your expertise and enthusiasm!
 
 Small improvements or fixes are always appreciated. If you are considering larger contributions to the source code, please contact us through email:
 
-    Xiangyong Luo                :  luoxiangyong01@gmail.com
+    Xiangyong Luo :  luoxiangyong01@gmail.com
 
     Dr. Xuesong Simon Zhou :  xzhou74@asu.edu
 
