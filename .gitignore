@@ -4,8 +4,8 @@
 */.pytest_cache/*
 */GMNS_*/*
 *.pypirc
-*/Tutorial_PyPI.md
-Tutorial_PyPI.md
+*/Tutorial_PyPI*
+Tutorial_PyPI*
 **build/*
 **/dist/*
 */Debug/
