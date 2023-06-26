@@ -101,6 +101,7 @@ def match_movement_and_intersection_node(df_movement: pd.DataFrame, df_intersect
 def match_movement_utdf_lane(df_movement_intersection: pd.DataFrame, utdf_dict_data: dict) -> pd.DataFrame:
     # Add Synchro/utdf data to movement_intersection_node
     df_utdf_lanes = utdf_dict_data.get("Lanes")
+    print(f"  : There are {df_utdf_lanes.shape[0]} utdf lanes")
 
     intersection_id_list = [value for value in list(
         df_movement_intersection["synchro_INTID"].unique()) if value is not None]

@@ -139,7 +139,9 @@ def generate_coordinates_from_intersection(df_intersection: pd.DataFrame, distan
 
     # print summary information
     print(
-        f"There are {df_final['coord_x'].isna().sum()} / {len(df_final)} intersections are not able to geocode.")
+        f" {len(df_final) - df_final['coord_x'].isna().sum()} / {len(df_final)} intersections geocoded.")
+    print(
+        f" {df_final['coord_x'].isna().sum()} / {len(df_final)} intersections are not able to geocode.")
 
     return df_final
 
