@@ -26,8 +26,6 @@ Sample results: [datasets](https://github.com/asu-trans-ai-lab/utdf2gmns/tree/ma
 ## **Package dependencies**:
 
 * [X] geocoder==1.38.1
-* [X] numpy==1.23.3
-* [X] openpyxl==3.0.10
 * [X] pandas==1.4.4
 
 ## Data Conversion Steps:
