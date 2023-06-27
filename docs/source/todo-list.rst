@@ -1,4 +1,6 @@
-## TODO LIST
+===============
+TODO LIST
+===============
 
 * [X] Print out how many intersections being geocoded.
 * [X] Print out check log.
