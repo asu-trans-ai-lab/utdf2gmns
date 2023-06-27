@@ -8,13 +8,16 @@ utdf2gmns is a tool to convert utdf file to GMNS format:  **synchro utdf format 
 
 **If you use utdf2gmns in your research, please cite: https://github.com/xyluo25/utdf2gmns **
 
-## Required Data Input Files:
+Required Data Input Files:
+--------------------------
+
 
 * [X] UTDF.csv
 * [X] node.csv (GMNS format)
 * [X] movement.csv (GMNS format)
 
-## **Produced outputs**
+**Produced outputs**
+------------------------
 
 **If input folder have UTDF.csv only, outputs are:**
 
@@ -25,26 +28,25 @@ utdf2gmns is a tool to convert utdf file to GMNS format:  **synchro utdf format 
 
 * Two files named:  movement_utdf.csv and utdf_intersection.csv
 
-Sample results: [datasets](https://github.com/asu-trans-ai-lab/utdf2gmns/tree/main/datasets)
+Sample results: `datasets <https://github.com/asu-trans-ai-lab/utdf2gmns/tree/main/datasets>`_
 
-## **Package dependencies**:
+
+**Package dependencies**
+------------------------
 
 * [X] geocoder==1.38.1
-* [X] numpy==1.23.3
-* [X] openpyxl==3.0.10
 * [X] pandas==1.4.4
 
-## Data Conversion Steps:
+**Data Conversion Steps**
+-------------------------
 
 Step 1: Read UTDF.csv file and perform geocoding, then produce utdf_geo, utdf_lane, and utdf_phase_timeplans.
 
 Step 2: Match four files (utdf_geo, node, utdf_lane, utdf_pahse_timeplans, movement) to produce movement_utdf
 
 
-
-
-
-## Call for Contributions
+**Call for Contributions**
+--------------------------
 
 The utdf2gmns project welcomes your expertise and enthusiasm!
 
