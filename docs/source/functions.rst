@@ -141,10 +141,12 @@ utdf2gmns.generate_movement_utdf
 
         return [df_movement_utdf_phase, utdf_dict_data]
 
+
 utdf2gmns.generate_utdf_dataframes
 ==================================================
 .. autofunction:: osm2gmns.__utdf2gmns.generate_utdf_dataframes
 .. autofunction:: osm2gmns.func_lib.read_utdf
+
 
 .. code-block:: python
     def generate_utdf_dataframes(utdf_filename: str, city_name: str) -> dict:
