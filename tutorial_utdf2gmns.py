@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     # option= 1, generate movement_utdf.csv directly
     # option= 2, generate movement_utdf.csv step by step (more flexible)
-    option = 1
+    option = 2
 
     if option == 1:
         # NOTE: Option 1, generate movement_utdf.csv directly

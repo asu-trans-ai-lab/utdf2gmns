@@ -52,10 +52,35 @@ def generate_utdf_dataframes(utdf_filename: str, city_name: str) -> dict:
 
 
 @func_running_time
-def generate_movement_utdf(input_dir: str,
+def generate_movement_utdf(input_dir: str = "",
                            city_name: str = "",
+                           UTDF_file: str = None,
+                           node_file: str = None,
+                           movement_file: str = None,
                            output_dir: str = "",
                            isSave2csv: bool = True) -> list:
+    """Des
+
+    Args:
+        input_dir (str, optional): _description_. Defaults to "".
+        city_name (str, optional): _description_. Defaults to "".
+        UTDF_file (str, optional): _description_. Defaults to None.
+        node_file (str, optional): _description_. Defaults to None.
+        movement_file (str, optional): _description_. Defaults to None.
+        output_dir (str, optional): _description_. Defaults to "".
+        isSave2csv (bool, optional): _description_. Defaults to True.
+
+    Raises:
+        Exception: _description_
+        Exception: _description_
+        Exception: _description_
+
+    Returns:
+        list: _description_
+    """
+
+    # if not specified input_dir, use current working directory
+    input_dir = input_dir or os.getcwd()
 
     # check if required files exist in the input directory
     files_from_directory = get_filenames_from_folder_by_type(input_dir, file_type="csv")

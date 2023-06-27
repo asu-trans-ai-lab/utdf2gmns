@@ -5,7 +5,7 @@
 # Author/Copyright: Mr. Xiangyong Luo
 ##############################################################
 
-from .__utdf2gmns import (generate_utdf_dataframes,
+from ._utdf2gmns import (generate_utdf_dataframes,
                           generate_movement_utdf,
                           generate_coordinates_from_intersection,
                           match_intersection_node,
@@ -26,4 +26,4 @@ __all__ = ['generate_utdf_dataframes',
            'package_settings'
            ]
 
-print("UTDF2GMNS Version: ", "0.2.3")
+print("utdf2gmns version: ", "0.2.4")

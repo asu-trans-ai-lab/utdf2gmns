@@ -94,27 +94,31 @@ def generate_coordinates_from_intersection(df_intersection: pd.DataFrame, distan
     intersection_full_name_list = df["full_name_intersection"].tolist()
     intersection_full_name_reversed_list = df["full_name_intersection_reversed"].tolist()
 
+    # the number of intersections to be geocoded
+    num_intersection = len(intersection_full_name_list)
+
     try:
+        lnglat_values_full_name = []
+        lnglat_values_full_name_reversed = []
+        for i in range(num_intersection):
+            lnglat_values_full_name.append(
+                geocoder_geocoding_from_address(intersection_full_name_list[i]))
+            lnglat_values_full_name_reversed.append(
+                geocoder_geocoding_from_address(intersection_full_name_reversed_list[i]))
+
+            if i % 10 == 0:
+                print(f"    :{i}/{num_intersection} intersections have been geocoded.")
+
         # use multiprocessing to speed up
         # p = Pool()
         # lnglat_values_full_name = p.map(geocoder_geocoding_from_address, intersection_full_name_list)
 
-        # using loop to geocode
-        lnglat_values_full_name = [geocoder_geocoding_from_address(address) for address in intersection_full_name_list]
+        # p1 = Pool()
+        # lnglat_values_full_name_reversed = p1.map(geocoder_geocoding_from_address, intersection_full_name_reversed_list)
 
     except Exception as e:
         raise Exception("   :geocoding intersections failed, try again...") from e
 
-    try:
-        # use multiprocessing to speed up
-        # p1 = Pool()
-        # lnglat_values_full_name_reversed = p1.map(geocoder_geocoding_from_address, intersection_full_name_reversed_list)
-
-        # using loop to geocode
-        lnglat_values_full_name_reversed = [geocoder_geocoding_from_address(address) for address in intersection_full_name_reversed_list]
-
-    except Exception as exc:
-        raise Exception("   :geocoding intersections failed, try again...") from exc
 
     # create new column named distance_from_full_name
     print("   :cross validating...")
@@ -130,8 +134,8 @@ def generate_coordinates_from_intersection(df_intersection: pd.DataFrame, distan
 
         else:
             # use None to indicate the intersection is not able to geocode
-            df.loc[i, "coord_x"] = 0
-            df.loc[i, "coord_y"] = 0
+            df.loc[i, "coord_x"] = None
+            df.loc[i, "coord_y"] = None
 
     created_column_names = ["reversed_intersection_name", "full_name_intersection",
                             "full_name_intersection_reversed", "distance_from_full_name"]
