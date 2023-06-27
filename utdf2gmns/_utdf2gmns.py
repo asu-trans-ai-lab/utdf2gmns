@@ -194,7 +194,7 @@ def generate_movement_utdf(input_dir: str = "",
         df_movement_utdf_phase.to_csv(output_file_name, index=False)
 
         output_file_name = validate_filename(os.path.join(output_dir, "utdf_intersection.csv"))
-        df_intersection_node.to_csv(output_file_name, index=False)
+        utdf_dict_data.get("utdf_geo").to_csv(output_file_name, index=False)
 
         # with open(path2linux(os.path.join(output_dir, "utdf2gmns.pickle")), 'wb') as f:
         #     pickle.dump(utdf_dict_data, f, pickle.HIGHEST_PROTOCOL)

@@ -70,7 +70,7 @@ def geocoder_geocoding_from_address(address: str) -> tuple:
 def generate_coordinates_from_intersection(df_intersection: pd.DataFrame, distance_threshold=0.01) -> pd.DataFrame:
     # distance_threshold is the threshold to determine whether the intersection is able to geocode, using km as unit
 
-    df = df_intersection.copy()
+    df = df_intersection.copy(deep=True)
 
     # check required columns exist in the dataframe
     if not {"intersection_name", "city_name"}.issubset(set(df.columns)):

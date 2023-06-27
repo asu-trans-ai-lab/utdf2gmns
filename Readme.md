@@ -26,8 +26,6 @@ Sample results: [datasets](https://github.com/asu-trans-ai-lab/utdf2gmns/tree/ma
 ## **Package dependencies**:
 
 * [X] geocoder==1.38.1
-* [X] numpy==1.23.3
-* [X] openpyxl==3.0.10
 * [X] pandas==1.4.4
 
 ## Data Conversion Steps:
@@ -102,7 +100,7 @@ if__name__=="__main__":
 * [X] Print out check log.
 * [X] Number of lanes of the movements from synchro file.
 * [X] Add function to verify whether geocoded for utdf_geo
-* [ ] Print geocoding details (in percentage)
+* [X] Print geocoding details (in percentage)
 * [ ] Add three kwargs in function generate_movement_utdf
 * [ ] Print out how many movements being matched or not matched for signalized intersecton nodes.
 * [ ] Check reasonable capacity.
