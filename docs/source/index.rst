@@ -78,13 +78,12 @@ Contents
    gmns
    quick-start
    functions
-   todo
+   todo-list
    acknowledgement
 
 
 For program source code and sample network files, readers can visit the project  `homepage`_
-at ASU Trans+AI Lab Github. Interested readers can also check the `link`_ for our online
-transportation modelling visualization platform, in which network data are provided by osm2gmns.
+at ASU Trans+AI Lab Github.
 
 
 .. _`GMNS`: https://github.com/zephyr-data-specs/GMNS
