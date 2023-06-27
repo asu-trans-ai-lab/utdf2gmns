@@ -78,6 +78,7 @@ Contents
    gmns
    quick-start
    todo-list
+   functions
    api
    acknowledgement
 
