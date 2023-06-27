@@ -7,4 +7,4 @@ USDOT. Their TRB poster can be found at https://github.com/zephyr-data-specs/GMN
 
 This document is prepared with the help from `Sohum Berdia`_.
 
-.. _`Chongnan Li`: https://github.com/Sbb02
+.. _`Sohum Berdia`: https://github.com/Sbb02
