@@ -42,7 +42,6 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
     "sphinx.ext.napoleon",
-    "m2r"
 ]
 
 # source_suffix = '.rst'
