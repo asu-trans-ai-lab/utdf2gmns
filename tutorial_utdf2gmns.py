@@ -12,22 +12,22 @@ import pandas as pd
 if __name__ == "__main__":
 
     city = " Bullhead City, AZ"
+    path = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\datasets\data_ASU_network"
 
     # option= 1, generate movement_utdf.csv directly
     # option= 2, generate movement_utdf.csv step by step (more flexible)
-    option = 2
+    option = 1
 
     if option == 1:
         # NOTE: Option 1, generate movement_utdf.csv directly
-        path = r"C:\Users\roche\Desktop\coding\data_bullhead_seg4"
 
         res = ug.generate_movement_utdf(path, city, isSave2csv=True)
 
     if option == 2:
         # NOTE: Option 2, generate movement_utdf.csv step by step (more flexible)
-        path_utdf = r"C:\Users\roche\Desktop\coding\data_bullhead_seg4\UTDF.csv"
-        path_node = r"C:\Users\roche\Desktop\coding\data_bullhead_seg4\node.csv"
-        path_movement = r"C:\Users\roche\Desktop\coding\data_bullhead_seg4\movement.csv"
+        path_utdf = fr"{path}\UTDF.csv"
+        path_node = fr"{path}\node.csv"
+        path_movement = fr"{path}\movement.csv"
 
         # Step 1: read UTDF.csv
         utdf_dict_data = ug.generate_utdf_dataframes(path_utdf, city)

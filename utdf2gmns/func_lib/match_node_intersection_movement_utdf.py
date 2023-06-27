@@ -10,7 +10,10 @@ import pandas as pd
 from utdf2gmns.utils_lib.utility_lib import func_running_time, calculate_point2point_distance_in_km
 
 
-def find_shortest_distance_node(point: tuple, node_df: pd.DataFrame, max_distance_threshold: float = 0.1) -> tuple:
+def find_shortest_distance_node(point: tuple,
+                                node_df: pd.DataFrame,
+                                max_distance_threshold: float = 0.1,
+                                intersection_id="") -> tuple:
     """ point: a tuple of (longitude, latitude),
         node_df: a dataframe of node information,
         max_distance_threshold (km): the maximum distance threshold to find the nearest node
@@ -28,7 +31,7 @@ def find_shortest_distance_node(point: tuple, node_df: pd.DataFrame, max_distanc
 
     # if the minimum distance is larger than the threshold, then return None
     if min_distance > max_distance_threshold:
-        print(f"  WARNING: {point} is not able to find the nearest node, the minimum distance is {min_distance}, the threshold is {max_distance_threshold}km")
+        print(f"  :Intersection id: {intersection_id} can not find the nearest node within threshold of {max_distance_threshold}km")
         return [""] * len(node_df.columns)
 
     # find the index of the minimum distance
@@ -56,9 +59,13 @@ def match_intersection_node(df_intersection_geo: pd.DataFrame,
         intersection_lnglat = (
             df_intersection_geo.loc[i, "coord_x"], df_intersection_geo.loc[i, "coord_y"])
 
+        inter_id = df_intersection_geo.loc[i, "intersection_id"]
+
         intersection_node_list.append(
             intersection_value + find_shortest_distance_node(intersection_lnglat,
-                                                             df_node_signal, max_distance_threshold))
+                                                             df_node_signal,
+                                                             max_distance_threshold,
+                                                             intersection_id=inter_id))
 
     df_intersection_node = pd.DataFrame(
         intersection_node_list, columns=col_intersection_geo + col_node)

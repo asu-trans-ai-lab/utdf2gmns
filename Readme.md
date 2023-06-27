@@ -102,7 +102,7 @@ if__name__=="__main__":
 * [X] Print out check log.
 * [X] Number of lanes of the movements from synchro file.
 * [X] Add function to verify whether geocoded for utdf_geo
-* [ ] Print geocoding details (in percentage)
+* [X] Print geocoding details (in percentage)
 * [ ] Add three kwargs in function generate_movement_utdf
 * [ ] Print out how many movements being matched or not matched for signalized intersecton nodes.
 * [ ] Check reasonable capacity.
