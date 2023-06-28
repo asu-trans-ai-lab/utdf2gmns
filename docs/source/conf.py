@@ -35,10 +35,14 @@ release = '0.2.5'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 
+# -- Docstring preprocessing for autodoc
+autodoc_typehints = "both"
+
 # -- General configuration
 extensions = [
-    "sphinx.ext.autodoc",
-    "sphinx.ext.napoleon"]
+    "sphinx.ext.napoleon",
+    "sphinx.ext.autodoc"
+    ]
 
 pygments_style = "vs"
 
@@ -51,8 +55,6 @@ html_theme = "sphinx_rtd_theme"
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
 
-# -- Docstring preprocessing for autodoc
-autodoc_typehints = "both"
 
 # def process_signature(app, what, name, obj, options, signature, return_annotation):
 #     """Replace the create_env keyword argument accepted by decorated mods with
