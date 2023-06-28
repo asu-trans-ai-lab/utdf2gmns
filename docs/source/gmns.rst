@@ -1,11 +1,10 @@
-===========
 GMNS
 ===========
 
-General Modeling Network Specification (`GMNS`_), proposed by the `Zephyr Foundation`_, 
-defines a common human and machine readable format for sharing routable road network files. 
-It is designed to be used in multi-modal static and dynamic transportation planning and 
-operations models. It will facilitate the sharing of tools and data sources by modelers. 
+General Modeling Network Specification (`GMNS`_), proposed by the `Zephyr Foundation`_,
+defines a common human and machine readable format for sharing routable road network files.
+It is designed to be used in multi-modal static and dynamic transportation planning and
+operations models. It will facilitate the sharing of tools and data sources by modelers.
 For additional information on GMNS goals, history and requirements, please see the `wiki`_.
 
 
