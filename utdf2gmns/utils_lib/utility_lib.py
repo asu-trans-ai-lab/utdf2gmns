@@ -12,8 +12,9 @@ from pathlib import Path
 from typing import Union  # Python version <= 3.9
 
 
-# A decorator to measure the time of a function
 def func_running_time(func):
+    """A decorator to measure the time of a function"""
+
     def inner(*args, **kwargs):
         print(f'INFO Begin to run function: {func.__name__} …')
         time_start = datetime.datetime.now()
@@ -28,7 +29,14 @@ def func_running_time(func):
 
 # convert OS path to standard linux path
 def path2linux(path: Union[str, Path]) -> str:
-    """Convert a path to a linux path, linux path can run in windows, linux and mac"""
+    """path2linux: convert a path to a linux path, linux path can run in windows, linux and mac
+
+    :param path: the string path or Path object
+    :type path: Union[str, Path]
+    :return: the linux path
+    :rtype: str
+    """
+
     try:
         return path.replace("\\", "/")
     except Exception:

@@ -26,4 +26,4 @@ __all__ = ['generate_utdf_dataframes',
            'package_settings'
            ]
 
-print("utdf2gmns version: ", "0.2.5")
+print("utdf2gmns version: ", "0.2.6")

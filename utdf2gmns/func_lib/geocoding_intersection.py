@@ -68,6 +68,18 @@ def geocoder_geocoding_from_address(address: str) -> tuple:
 
 @func_running_time
 def generate_coordinates_from_intersection(df_intersection: pd.DataFrame, distance_threshold=0.01) -> pd.DataFrame:
+    """generate_coordinates_from_intersection: geocoding intersections
+
+    :param df_intersection: the dataframe of intersections
+    :type df_intersection: pd.DataFrame
+    :param distance_threshold: maximum distance threshold to find closest node from intersection, defaults to 0.01, unit: km
+    :type distance_threshold: float, optional
+    :raises Exception: intersection_name and city_name must included in the dataframe
+    :raises Exception: geocoding intersections failed
+    :return: a dataframe of intersections with coordinates
+    :rtype: pd.DataFrame
+    """
+
     # distance_threshold is the threshold to determine whether the intersection is able to geocode, using km as unit
 
     df = df_intersection.copy(deep=True)

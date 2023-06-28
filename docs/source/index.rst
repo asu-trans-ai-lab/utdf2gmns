@@ -77,9 +77,8 @@ Contents
    installation
    gmns
    quick-start
-   todo-list
-   functions
    api
+   todo-list
    acknowledgement
 
 

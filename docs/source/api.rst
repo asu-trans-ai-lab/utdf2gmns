@@ -2,26 +2,16 @@
 API Reference
 =============
 
-.. automodule:: utdf2gmns._utdf2gmns
-   :members: generate_movement_utdf
+utdf2gmns._utdf2gmns
+====================
+.. autofunction:: utdf2gmns._utdf2gmns.generate_movement_utdf
+.. autofunction:: utdf2gmns._utdf2gmns.generate_utdf_dataframes
 
-.. automodule:: utdf2gmns._utdf2gmns
-   :members: generate_utdf_dataframes
-
-.. automodule:: utdf2gmns.func_lib.read_utdf
-   :members: read_UTDF_file
-
-.. automodule:: utdf2gmns.func_lib.geocoding_intersection
-   :members: generate_coordinates_from_intersection
-
-.. automodule:: utdf2gmns.func_lib.match_node_intersection_movement_utdf
-   :members: match_intersection_node
-
-.. automodule:: utdf2gmns.func_lib.match_node_intersection_movement_utdf
-   :members: match_movement_and_intersection_node
-
-.. automodule:: utdf2gmns.func_lib.match_node_intersection_movement_utdf
-   :members: match_movement_utdf_lane
-
-.. automodule:: utdf2gmns.func_lib.match_node_intersection_movement_utdf
-   :members: match_movement_utdf_phase_timeplans
+utdf2gmns.func_lib
+==================
+.. autofunction:: utdf2gmns.func_lib.read_utdf.read_UTDF_file
+.. autofunction:: utdf2gmns.func_lib.geocoding_intersection.generate_coordinates_from_intersection
+.. autofunction:: utdf2gmns.func_lib.match_node_intersection_movement_utdf.match_intersection_node
+.. autofunction:: utdf2gmns.func_lib.match_node_intersection_movement_utdf.match_movement_and_intersection_node
+.. autofunction:: utdf2gmns.func_lib.match_node_intersection_movement_utdf.match_movement_utdf_lane
+.. autofunction:: utdf2gmns.func_lib.match_node_intersection_movement_utdf.match_movement_utdf_phase_timeplans

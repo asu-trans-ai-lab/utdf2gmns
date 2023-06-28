@@ -22,8 +22,19 @@ pd.options.mode.chained_assignment = None  # default='warn'
 
 
 @func_running_time
-def read_UTDF_file(path_utdf: str) -> dict:
-    """ read UTDF file and split data into different categories """
+def read_UTDF_file(path_utdf):
+    """read_UTDF_file: read utdf file and split data into different categories
+
+    Parameters
+    ----------
+    path_utdf : str
+        path of utdf file
+
+    Returns
+    -------
+    dict
+        a dictionary with keys as category names and values as dataframes
+    """
 
     # read the utdf.csv file
     with open(path_utdf, encoding='utf-8') as f:
@@ -106,6 +117,15 @@ def read_UTDF_file(path_utdf: str) -> dict:
 
 @func_running_time
 def generate_intersection_data_from_utdf(utdf_dict_data: dict, city_name: str) -> pd.DataFrame:
+    """generate_intersection_data_from_utdf: convert utdf links to intersection
+
+    :param utdf_dict_data: a dictionary include key of Links
+    :type utdf_dict_data: dict
+    :param city_name: city name of the utdf data
+    :type city_name: str
+    :return: a dataframe of intersection
+    :rtype: pd.DataFrame
+    """
 
     # Get link data from utdf
     df_link = utdf_dict_data["Links"]
@@ -175,6 +195,15 @@ def generate_intersection_data_from_utdf(utdf_dict_data: dict, city_name: str) -
 
 # combine phase and timeplans data into one dataframe (intersection id based)
 def spanning_phase_timeplans_data(utdf_dict_data: dict, isSimpleCol: bool = True) -> pd.DataFrame:
+    """spanning_phase_timeplans_data: combine phase and timeplans data into one dataframe (intersection id based)
+
+    :param utdf_dict_data: a dictionary include key of Phases and Timeplans
+    :type utdf_dict_data: dict
+    :param isSimpleCol: defaults to True, if True, keep columns between Start_D and End_D if _D exists in column name, else keep all columns
+    :type isSimpleCol: bool, optional
+    :return: a dataframe of phase and timeplans
+    :rtype: pd.DataFrame
+    """
 
     df_phase = utdf_dict_data.get("Phases")
     df_timeplans = utdf_dict_data.get("Timeplans")
