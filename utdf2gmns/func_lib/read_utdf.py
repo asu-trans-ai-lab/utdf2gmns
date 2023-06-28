@@ -25,10 +25,15 @@ pd.options.mode.chained_assignment = None  # default='warn'
 def read_UTDF_file(path_utdf):
     """read_UTDF_file: read utdf file and split data into different categories
 
-    :param path_utdf: path of utdf file
-    :type path_utdf: str
-    :return: a dictionary with keys as category names and values as dataframes
-    :rtype: dict
+    Parameters
+    ----------
+    path_utdf : str
+        path of utdf file
+
+    Returns
+    -------
+    dict
+        a dictionary with keys as category names and values as dataframes
     """
 
     # read the utdf.csv file
