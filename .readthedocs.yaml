@@ -4,6 +4,9 @@ build:
   os: "ubuntu-22.04"
   tools:
     python: "3.10"
+  commands:
+    - pip3 install -r requirements.txt
+    - pip3 install python3-sphinx
 
 sphinx:
   fail_on_warning: false
