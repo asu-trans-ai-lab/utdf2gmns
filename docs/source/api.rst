@@ -4,14 +4,14 @@ API Reference
 
 utdf2gmns._utdf2gmns
 ====================
-.. autofunction:: utdf2gmns._utdf2gmns.generate_movement_utdf
-.. autofunction:: utdf2gmns._utdf2gmns.generate_utdf_dataframes
+.. autofunction:: generate_movement_utdf
+.. autofunction:: generate_utdf_dataframes
 
 utdf2gmns.func_lib
 ==================
-.. autofunction:: utdf2gmns.func_lib.read_utdf.read_UTDF_file
-.. autofunction:: utdf2gmns.func_lib.geocoding_intersection.generate_coordinates_from_intersection
-.. autofunction:: utdf2gmns.func_lib.match_node_intersection_movement_utdf.match_intersection_node
-.. autofunction:: utdf2gmns.func_lib.match_node_intersection_movement_utdf.match_movement_and_intersection_node
-.. autofunction:: utdf2gmns.func_lib.match_node_intersection_movement_utdf.match_movement_utdf_lane
-.. autofunction:: utdf2gmns.func_lib.match_node_intersection_movement_utdf.match_movement_utdf_phase_timeplans
+.. autofunction:: read_utdf.read_UTDF_file
+.. autofunction:: geocoding_intersection.generate_coordinates_from_intersection
+.. autofunction:: match_node_intersection_movement_utdf.match_intersection_node
+.. autofunction:: match_node_intersection_movement_utdf.match_movement_and_intersection_node
+.. autofunction:: match_node_intersection_movement_utdf.match_movement_utdf_lane
+.. autofunction:: match_node_intersection_movement_utdf.match_movement_utdf_phase_timeplans
