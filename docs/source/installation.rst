@@ -7,7 +7,7 @@ You can install the latest release of osm2gmns at `PyPI`_ via `pip`_:
 
     pip install utdf2gmns
 
-By running the command above, the osm2gmns package along with three required dependency packages
+By running the command above, the utdf2gmns package along with required dependency packages
 (`geocoder`_, `pandas`_) will be installed to your computer (if they have not been installed yet).
 
 

@@ -22,8 +22,8 @@ For dynamic models, GMNS (version 0.92) includes the following optional addition
 - Link, segment, lane and movement time-of-day (TOD) files, that allocate usage of network elements by time-of-day and day-of-week.
 - Signal phase and timing files, for basic implementation of traffic signals.
 
-osm2gmns uses GMNS as the standard when processing and manipulating networks, and thus any
-network in GMNS format is fully compatible with osm2gmns.
+utdf2gmns uses GMNS as the standard when processing and manipulating networks, and thus any
+network in GMNS format is fully compatible with utdf2gmns.
 
 
 .. _`GMNS`: https://github.com/zephyr-data-specs/GMNS
