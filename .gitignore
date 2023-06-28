@@ -17,5 +17,5 @@ x64/
 *__pycache__*
 **.egg-info/*
 *.pypirc
-*setup.py
+# *setup.py
 *PKG-INFO*
