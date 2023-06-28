@@ -50,7 +50,7 @@ extensions = [
     "sphinx.ext.duration",
     "sphinx.ext.extlinks",
     "sphinx.ext.intersphinx",
-    "sphinxcontrib.bibtex",
+    # "sphinxcontrib.bibtex",
 ]
 
 pygments_style = "vs"
