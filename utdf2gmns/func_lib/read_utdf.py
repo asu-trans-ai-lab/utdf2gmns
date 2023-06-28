@@ -22,7 +22,7 @@ pd.options.mode.chained_assignment = None  # default='warn'
 
 
 @func_running_time
-def read_UTDF_file(path_utdf: str) -> dict:
+def read_UTDF_file(path_utdf):
     """read_UTDF_file: read utdf file and split data into different categories
 
     :param path_utdf: path of utdf file
