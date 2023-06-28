@@ -75,9 +75,9 @@ numpydoc_xref_ignore = {"optional", "or", "of"}
 
 # -- Docstring preprocessing for autodoc
 
-autodoc_typehints = "none"
+autodoc_typehints = "both"
 autodoc_docstring_signature = True
-add_module_names = False
+add_module_names = True
 
 
 def process_signature(app, what, name, obj, options, signature, return_annotation):
