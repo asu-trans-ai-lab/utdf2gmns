@@ -1,13 +1,2 @@
 geocoder
 pandas
-
-# sphinx readthedocs
-numpydoc
-sphinx-copybutton
-sphinx-design
-sphinx-rtd-theme
-sphinx-tabs
-sphinx-toolbox
-sphinxcontrib-bibtex
-docutils
-Jinja2

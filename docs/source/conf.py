@@ -37,26 +37,14 @@ release = '0.2.5'
 
 # -- General configuration
 extensions = [
-    "numpydoc",
-    "sphinx_copybutton",
-    "sphinx_design",
-    "sphinx_tabs.tabs",
-    "sphinx_toolbox.code",
-    "sphinx_toolbox.collapse",
     "sphinx.ext.autodoc",
-    "sphinx.ext.autosectionlabel",
-    "sphinx.ext.autosummary",
-    "sphinx.ext.doctest",
-    "sphinx.ext.duration",
-    "sphinx.ext.extlinks",
-    "sphinx.ext.intersphinx",
-    # "sphinxcontrib.bibtex",
-]
+    "sphinx.ext.napoleon"]
 
 pygments_style = "vs"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
+html_static_path = ['_static']
 
 html_theme = "sphinx_rtd_theme"
 
