@@ -20,7 +20,7 @@ except Exception:
 
 setuptools.setup(
     name="utdf2gmns",  # Replace with your own username
-    version="0.2.5",
+    version="0.2.6",
     author="Xiangyong Luo, Dr.Xuesong (Simon) Zhou",
     author_email="luoxiangyong01@gmail.com",
     description="This open-source package is a tool to convert utdf file to GMNS format.",
