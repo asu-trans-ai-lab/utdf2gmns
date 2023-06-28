@@ -51,35 +51,12 @@ extensions = [
     "sphinx.ext.extlinks",
     "sphinx.ext.intersphinx",
     "sphinxcontrib.bibtex",
-    "sphinx.ext.napoleon",
 ]
 
 pygments_style = "vs"
 
-# source_suffix = '.rst'
-source_suffix = ['.rst', '.md']
-
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
-
-# List of patterns, relative to source directory, that match files and
-# directories to ignore when looking for source files.
-# This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
-
-
-# -- Options for HTML output -------------------------------------------------
-
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
-
-intersphinx_mapping = {
-    "python": ("https://docs.python.org/3/", None),
-    "sphinx": ("https://www.sphinx-doc.org/en/master/", None),
-    "pandas": ("https://pandas.pydata.org/pandas-docs/stable/", None),
-}
 
 html_theme = "sphinx_rtd_theme"
 
@@ -88,30 +65,15 @@ autosectionlabel_prefix_document = True
 # -- Include only prompts
 copybutton_prompt_text = ">>> "
 
-
-intersphinx_disabled_domains = ['std']
-
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
 
 extlinks_detect_hardcoded_links = True
 extlinks = {
-    "pypi": ("https://pypi.org/project/%s/", "%s"),
-    "ghsrc": ("https://github.com/Gurobi/gurobi-optimods/tree/main/%s", "%s"),
+    "pypi": ("https://pypi.org/project/%s/", "%s")
 }
 
-# -- Bibfiles
-
-bibtex_bibfiles = [
-    "refs/graphs.bib",
-    "refs/portfolio.bib",
-    "refs/qubo.bib",
-    "refs/regression.bib",
-    "refs/workforce.bib",
-]
-
 # -- numpydoc magic linking
-
 numpydoc_xref_param_type = True
 numpydoc_xref_aliases = {
     "DataFrame": "pandas.DataFrame",

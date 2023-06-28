@@ -1,5 +1,4 @@
-geocoder==1.38.1
-openpyxl
+geocoder
 pandas
 
 # sphinx readthedocs
