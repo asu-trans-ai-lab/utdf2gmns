@@ -12,7 +12,7 @@ import pandas as pd
 if __name__ == "__main__":
 
     city = " Bullhead City, AZ"
-    path = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\datasets\data_ASU_network"
+    path = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\datasets\data_bullhead_seg4"
 
     # option= 1, generate movement_utdf.csv directly
     # option= 2, generate movement_utdf.csv step by step (more flexible)

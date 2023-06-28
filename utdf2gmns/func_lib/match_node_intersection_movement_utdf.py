@@ -40,7 +40,7 @@ def find_shortest_distance_node(point: tuple,
 
     # if the minimum distance is larger than the threshold, then return None
     if min_distance > max_distance_threshold:
-        print(f"  :Intersection id: {intersection_id} can not find the nearest node within threshold of {max_distance_threshold}km")
+        print(f"  :Intersection id {intersection_id} cannot find a GMNS node within a threshold of {max_distance_threshold}km")
         return [""] * len(node_df.columns)
 
     # find the index of the minimum distance

@@ -117,6 +117,7 @@ def generate_movement_utdf(input_dir: str = "",
         print("If you use a different city name, please provide it as a parameter")
         city_name = utdf_city_name
 
+    print("\nStep 1: read UTDF file...")
     utdf_dict_data = generate_utdf_dataframes(path_utdf, city_name)
 
     # geocoding the utdf_intersection and store it into utdf_dict_data
@@ -124,6 +125,7 @@ def generate_movement_utdf(input_dir: str = "",
     # And user manually add coord_x and coord_y to in utdf_geo.csv file
     # And re-run the function to generate the final movement_utdf.csv file
 
+    print("Step 1.1: geocoding UTDF intersections from address...")
     # check utdf_geo.csv file existence
     if os.path.exists(path2linux(os.path.join(input_dir, "utdf_geo.csv"))):
         # read utdf_geo.csv file from the input directory
@@ -169,30 +171,33 @@ def generate_movement_utdf(input_dir: str = "",
 
     # get the path of each file,
     # since the input directory and files are checked, no need to validate the filename
+    print("Step 2: read node.csv and movement.csv (GMNS format)...")
     path_node = path2linux(os.path.join(input_dir, "node.csv"))
     path_movement = path2linux(os.path.join(input_dir, "movement.csv"))
 
     # read node and movement files
     df_node = pd.read_csv(path_node)
     df_movement = pd.read_csv(path_movement)
+    print(f"    : {len(df_node)} nodes loaded.")
+    print(f"    : {len(df_movement)} movements loaded.\n")
 
     # match utdf_intersection_geo with node
-    print("Performing data matching between df_utdf_intersection_geo and node...")
+    print("Step 3: Performing data merging from GMNS nodes to UTDF intersections based on distance threshold(default 0.1km)...")
     df_intersection_node = match_intersection_node(utdf_dict_data.get("utdf_geo"),
                                                    df_node)
 
     # match movement with intersection_node
-    print("Performing data matching between movement and intersection_node...")
+    print("Step 4: Performing data merging from UTDF intersections(geocoded) to GMNS movements based on OSM id...")
     df_movement_intersection = match_movement_and_intersection_node(df_movement,
                                                                     df_intersection_node)
 
     # match movement with utdf_lane
-    print("Performing data matching between movement_geo and utdf_lane...")
+    print("Step 5: Performing data merging from UTDF Lanes to GMNS movements based on UTDF id...")
     df_movement_utdf_lane = match_movement_utdf_lane(
         df_movement_intersection, utdf_dict_data)
 
     # match movement with utdf_phase_timeplans
-    print("Performing data matching between movement_utdf_lane and utdf_phase_timeplans...")
+    print("Step 6: Performing data merging from UTDF phases and timeplans to GMNS movements based on UTDF id...")
     df_movement_utdf_phase = match_movement_utdf_phase_timeplans(
         df_movement_utdf_lane, utdf_dict_data)
 
@@ -206,14 +211,17 @@ def generate_movement_utdf(input_dir: str = "",
     if isSave2csv:
         if not output_dir:
             output_dir = input_dir
-        output_file_name = validate_filename(os.path.join(output_dir, "movement_utdf.csv"))
-        df_movement_utdf_phase.to_csv(output_file_name, index=False)
+        output_file_name_1 = validate_filename(os.path.join(output_dir, "movement_utdf.csv"))
+        df_movement_utdf_phase.to_csv(output_file_name_1, index=False)
 
-        output_file_name = validate_filename(os.path.join(output_dir, "utdf_intersection.csv"))
-        utdf_dict_data.get("utdf_geo").to_csv(output_file_name, index=False)
+        output_file_name_2 = validate_filename(os.path.join(output_dir, "utdf_intersection.csv"))
+        utdf_dict_data.get("utdf_geo").to_csv(output_file_name_2, index=False)
 
         # with open(path2linux(os.path.join(output_dir, "utdf2gmns.pickle")), 'wb') as f:
         #     pickle.dump(utdf_dict_data, f, pickle.HIGHEST_PROTOCOL)
+
+        print(f" : Successfully saved movement_utdf.csv to: {output_file_name_1}.")
+        print(f" : Successfully saved utdf_intersection.csv to: {output_file_name_2}.")
 
     return [df_movement_utdf_phase, utdf_dict_data]
 
