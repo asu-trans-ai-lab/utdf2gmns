@@ -72,15 +72,29 @@ Contents
 ====================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
+    :caption: Start
+    :hidden:
 
    installation
    gmns
    quick-start
-   todo-list
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Reference
+    :hidden:
+
    functions
    api
-   acknowledgement
+
+.. toctree::
+    :maxdepth: 1
+    :caption: TODO
+    :hidden:
+
+    todo-list
+    acknowledgement
 
 
 For program source code and sample network files, readers can visit the project  `homepage`_
