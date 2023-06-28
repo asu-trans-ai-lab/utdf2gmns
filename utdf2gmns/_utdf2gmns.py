@@ -31,14 +31,19 @@ pd.options.mode.chained_assignment = None  # default='warn'
 
 @func_running_time
 def generate_utdf_dataframes(utdf_filename: str, city_name: str) -> dict:
-    """generate_utdf_dataframes: read single UTDF file and produce data conversion and store data into a dictionary
+    """read single UTDF file and produce data conversion and store data into a dictionary
 
-    :param utdf_filename: the path of UTDF file
-    :type utdf_filename: str
-    :param city_name: the name of the city where the UTDF file is located
-    :type city_name: str
-    :return: a dictionary of utdf_dict_data including: Node, Link, Network, Lanes, Timeplans, Phases, utdf_intersection
-    :rtype: dict
+    Parameters
+    ----------
+    utdf_filename : str
+        the path of UTDF file
+    city_name : str
+        the name of the city where the UTDF file is located
+
+    Returns
+    -------
+    dict
+        a dictionary of utdf_dict_data including: Node, Link, Network, Lanes, Timeplans, Phases, utdf_intersection
     """
 
     # read UTDF file and create dataframes of utdf_geo and utdf_lane
