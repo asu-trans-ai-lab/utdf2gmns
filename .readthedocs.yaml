@@ -5,11 +5,9 @@ build:
   tools:
     python: "3.10"
   commands:
-    - pip3 install -r requirements.txt
-    - pip3 install python3-sphinx
+    - apt-get install python3-sphinx
 
 sphinx:
-  fail_on_warning: false
   configuration: docs/source/conf.py
 
 python:
