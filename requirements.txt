@@ -1,4 +1,12 @@
 geocoder==1.38.1
 openpyxl
 pandas
+
+# sphinx readthedocs
 numpydoc
+sphinx-copybutton
+sphinx-design
+sphinx-rtd-theme
+sphinx-tabs
+sphinx-toolbox
+sphinxcontrib-bibtex
