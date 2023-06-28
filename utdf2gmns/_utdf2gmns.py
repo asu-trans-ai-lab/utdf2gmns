@@ -31,7 +31,15 @@ pd.options.mode.chained_assignment = None  # default='warn'
 
 @func_running_time
 def generate_utdf_dataframes(utdf_filename: str, city_name: str) -> dict:
-    # read single UTDF file and produce data conversion and store data into a dictionary
+    """generate_utdf_dataframes: read single UTDF file and produce data conversion and store data into a dictionary
+
+    :param utdf_filename: the path of UTDF file
+    :type utdf_filename: str
+    :param city_name: the name of the city where the UTDF file is located
+    :type city_name: str
+    :return: a dictionary of utdf_dict_data including: Node, Link, Network, Lanes, Timeplans, Phases, utdf_intersection
+    :rtype: dict
+    """
 
     # read UTDF file and create dataframes of utdf_geo and utdf_lane
     utdf_dict_data = read_UTDF_file(utdf_filename)
@@ -59,24 +67,27 @@ def generate_movement_utdf(input_dir: str = "",
                            movement_file: str = None,
                            output_dir: str = "",
                            isSave2csv: bool = True) -> list:
-    """Des
+    """generate_movement_utdf is the main function to generate movement_utdf.csv file
 
-    Args:
-        input_dir (str, optional): _description_. Defaults to "".
-        city_name (str, optional): _description_. Defaults to "".
-        UTDF_file (str, optional): _description_. Defaults to None.
-        node_file (str, optional): _description_. Defaults to None.
-        movement_file (str, optional): _description_. Defaults to None.
-        output_dir (str, optional): _description_. Defaults to "".
-        isSave2csv (bool, optional): _description_. Defaults to True.
-
-    Raises:
-        Exception: _description_
-        Exception: _description_
-        Exception: _description_
-
-    Returns:
-        list: _description_
+    :param input_dir: defaults to ""
+    :type input_dir: str, optional
+    :param city_name: defaults to ""
+    :type city_name: str, optional
+    :param UTDF_file: defaults to None
+    :type UTDF_file: str, optional
+    :param node_file: defaults to None
+    :type node_file: str, optional
+    :param movement_file: defaults to None
+    :type movement_file: str, optional
+    :param output_dir: defaults to "", if not specified, use input directory
+    :type output_dir: str, optional
+    :param isSave2csv: defaults to True, if True, save the output file to csv file
+    :type isSave2csv: bool, optional
+    :raises Exception: check if required files exist in the input directory
+    :raises Exception: check if coord_x and coord_y are provided in utdf_geo.csv file if it exists
+    :raises Exception: save utdf_geo.csv file in the input directory if it does not exist and re-run the function
+    :return: a list contain two elements: a dataframe of movement_utdf and a dictionary of utdf_dict_data
+    :rtype: list
     """
 
     # if not specified input_dir, use current working directory
