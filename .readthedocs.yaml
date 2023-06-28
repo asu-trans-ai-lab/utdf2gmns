@@ -5,7 +5,7 @@ build:
   tools:
     python: "3.10"
   commands:
-    - sudo apt-get install python3-sphinx
+    - pip install sphinx
 
 sphinx:
   configuration: docs/source/conf.py
