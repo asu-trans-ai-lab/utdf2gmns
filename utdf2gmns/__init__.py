@@ -5,7 +5,7 @@
 # Author/Copyright: Mr. Xiangyong Luo
 ##############################################################
 
-from ._utdf2gmns import (generate_utdf_dataframes,
+from .utdf2gmns import (generate_utdf_dataframes,
                           generate_movement_utdf,
                           generate_coordinates_from_intersection,
                           match_intersection_node,
