@@ -28,13 +28,18 @@ def func_running_time(func):
 
 
 # convert OS path to standard linux path
-def path2linux(path: Union[str, Path]) -> str:
-    """path2linux: convert a path to a linux path, linux path can run in windows, linux and mac
+def path2linux(path: str) -> str:
+    """Convert OS path to standard linux path
 
-    :param path: the string path or Path object
-    :type path: Union[str, Path]
-    :return: the linux path
-    :rtype: str
+    Parameters
+    ----------
+    path : str
+        the path to be converted
+
+    Returns
+    -------
+    str
+        the converted path
     """
 
     try:
@@ -47,8 +52,8 @@ def get_filenames_from_folder_by_type(dir_name: str, file_type: str = "txt", isT
     """Get all files in the folder with the specified file type
 
     Args:
-        dir_name (str)                         : the folder path
-        file_type (str, optional)              : the exact file type to specify, if file_type is "*" or "all", return all files in the folder. Defaults to "txt".
+        dir_name (str): the folder path
+        file_type (str, optional): the exact file type to specify, if file_type is "*" or "all", return all files in the folder. Defaults to "txt".
         isTraverseSubdirectory (bool, optional): get files inside the subfolder or not, if True, will traverse all subfolders. Defaults to False.
 
     Returns:

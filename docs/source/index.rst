@@ -6,7 +6,7 @@ utdf2gmns
 
 utdf2gmns is a tool to convert utdf file to GMNS format:  **synchro utdf format to gmns signal timing format at movement layer**
 
-**If you use utdf2gmns in your research, please cite: https://github.com/xyluo25/utdf2gmns **
+**If you use utdf2gmns in your research, please cite: https://github.com/xyluo25/utdf2gmns**
 
 Required Data Input Files:
 --------------------------
@@ -69,10 +69,10 @@ Writing code isn't the only way to contribute to utdf2gmns. You can also:
 For more information about the ways you can contribute to utdf2gmns, visit [our GitHub](https://github.com/asu-trans-ai-lab/utdf2gmns). If you' re unsure where to start or how your skills fit in, reach out! You can ask by opening a new issue or leaving a comment on a relevant issue that is already open on GitHub.
 
 Contents
-====================================
+========
 
 .. toctree::
-   :maxdepth: 2
+    :maxdepth: 2
 
    installation
    gmns
@@ -86,5 +86,4 @@ For program source code and sample network files, readers can visit the project 
 at ASU Trans+AI Lab Github.
 
 
-.. _`GMNS`: https://github.com/zephyr-data-specs/GMNS
-.. _`homepage`: https://github.com/asu-trans-ai-lab
+.. _homepage: https://github.com/asu-trans-ai-lab
