@@ -39,5 +39,18 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     include_package_data=True,
     package_data={'': ['*.txt', '*.xls', '*.xlsx', '*.csv'],
-                  "test_data": ['*.xls']}
+                  "test_data": ['*.xls']},
+    project_urls={
+        'Homepage': 'https://github.com/xyluo25/utdf2gmns',
+        'Documentation': 'https://utdf2gmns.readthedocs.io/en/latest/',
+        # 'Bug Tracker': '',
+        # 'Source Code': '',
+        # 'Download': '',
+        # 'Publication': '',
+        # 'Citation': '',
+        # 'License': '',
+        # 'Acknowledgement': '',
+        # 'FAQs': '',
+        # 'Contact': '',
+    }
 )

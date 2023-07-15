@@ -22,18 +22,18 @@ pd.options.mode.chained_assignment = None  # default='warn'
 
 
 @func_running_time
-def read_UTDF_file(path_utdf):
-    """read_UTDF_file: read utdf file and split data into different categories
+def read_UTDF_file(path_utdf: str) -> dict:
+    """read the utdf.csv file and return a dictionary of dataframes
 
     Parameters
     ----------
     path_utdf : str
-        path of utdf file
+        path to the utdf.csv file
 
     Returns
     -------
     dict
-        a dictionary with keys as category names and values as dataframes
+        a dictionary of dataframes include keys: Network, Nodes, Links, Lanes, Timeplans, utdf_intersection, Phases
     """
 
     # read the utdf.csv file
