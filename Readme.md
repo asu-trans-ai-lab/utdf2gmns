@@ -108,6 +108,7 @@ if__name__=="__main__":
 * [ ] Check number of lanes correctness between osm2gmns file and synchro file per movements.
 * [ ] Add signal info to micre-link.cs
 * [ ] Add cycle length and green time for each movement.
+* [ ] Add detailed information for user to load geocoded intersection data.
 
 ## Call for Contributions
 
