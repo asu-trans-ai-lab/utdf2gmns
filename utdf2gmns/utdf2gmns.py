@@ -67,10 +67,8 @@ def generate_utdf_dataframes(utdf_filename: str, city_name: str) -> dict:
 @func_running_time
 def generate_movement_utdf(input_dir: str = "",
                            city_name: str = "",
-                           UTDF_file: str = None,
-                           node_file: str = None,
-                           movement_file: str = None,
                            output_dir: str = "",
+                           path_utdf_intersection: str = "",
                            isSave2csv: bool = True) -> list:
     """generate movement_utdf.csv file from merging UTDF file to GMNS movement.csv file
 
@@ -130,10 +128,11 @@ def generate_movement_utdf(input_dir: str = "",
 
     print("Step 1.1: geocoding UTDF intersections from address...")
     # check utdf_geo.csv file existence
-    if os.path.exists(path2linux(os.path.join(input_dir, "utdf_geo.csv"))):
-        # read utdf_geo.csv file from the input directory
-        utdf_dict_data["utdf_geo"] = pd.read_csv(path2linux(
-            os.path.join(input_dir, "utdf_geo.csv")))
+    if path_utdf_intersection:
+        # read user manually added utdf_geo.csv file from the input directory
+        # and store it into utdf_dict_data
+        print("     : read user manually added utdf_geo.csv file from the input directory...")
+        utdf_dict_data["utdf_geo"] = pd.read_csv(path_utdf_intersection)
 
         # check if user manually added coord_x and coord_y to in utdf_geo.csv file
         if not {"coord_x", "coord_y"}.issubset(set(utdf_dict_data.get("utdf_geo").columns)):
@@ -141,6 +140,18 @@ def generate_movement_utdf(input_dir: str = "",
                 "coord_x or coord_y not found in the utdf_geo.csv file!, please add coord_x and coord_y manually \
                  and re-run the code afterwards."
             )
+
+#     if os.path.exists(path2linux(os.path.join(input_dir, "utdf_geo.csv"))):
+#         # read utdf_geo.csv file from the input directory
+#         utdf_dict_data["utdf_geo"] = pd.read_csv(path2linux(
+#             os.path.join(input_dir, "utdf_geo.csv")))
+#
+#         # check if user manually added coord_x and coord_y to in utdf_geo.csv file
+#         if not {"coord_x", "coord_y"}.issubset(set(utdf_dict_data.get("utdf_geo").columns)):
+#             raise Exception(
+#                 "coord_x or coord_y not found in the utdf_geo.csv file!, please add coord_x and coord_y manually \
+#                  and re-run the code afterwards."
+#             )
 
     # check utdf_geo in utdf_dict_data or not
     # if not generate utdf_geo automatically
