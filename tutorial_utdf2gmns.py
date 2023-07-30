@@ -5,7 +5,7 @@
 # Author/Copyright: Mr. Xiangyong Luo
 ##############################################################
 
-
+from __future__ import absolute_import
 import utdf2gmns as ug
 import pandas as pd
 
@@ -14,6 +14,9 @@ if __name__ == "__main__":
     city = " Bullhead City, AZ"
     path = r"C:\Users\roche\Anaconda_workspace\001_Github\utdf2gmns\datasets\data_bullhead_seg4"
 
+    # get user added intersection data
+    path_user_added_intersection = fr"{path}\utdf_intersection_sample.csv"
+
     # option= 1, generate movement_utdf.csv directly
     # option= 2, generate movement_utdf.csv step by step (more flexible)
     option = 1
@@ -21,7 +24,8 @@ if __name__ == "__main__":
     if option == 1:
         # NOTE: Option 1, generate movement_utdf.csv directly
 
-        res = ug.generate_movement_utdf(path, city, isSave2csv=True)
+        res = ug.generate_movement_utdf(path, city, isSave2csv=False,
+                                        path_utdf_intersection=path_user_added_intersection)
 
     if option == 2:
         # NOTE: Option 2, generate movement_utdf.csv step by step (more flexible)
@@ -36,6 +40,11 @@ if __name__ == "__main__":
         df_intersection = utdf_dict_data["utdf_intersection"]
 
         # Step 1.2: geocoding intersection data
+
+        # # Step 1.2.1: if user added intersection data, read it
+        # df_intersection_geo = pd.read_csv(path_user_added_intersection)
+
+        # Step 1.2.2: else generate intersection data from UTDF.csv
         df_intersection_geo = ug.generate_coordinates_from_intersection(df_intersection)
 
         # Step 2: read node.csv and movement.csv
