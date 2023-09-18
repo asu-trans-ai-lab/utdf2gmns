@@ -188,6 +188,7 @@ def generate_intersection_data_from_utdf(utdf_dict_data: dict, city_name: str) -
     intersection_column_name = ["intersection_name", "city_name",
                                 "synchro_INTID", "file_name", "intersection_id"]
     df_utdf_intersection = pd.DataFrame(link_list, columns=intersection_column_name)
+
     df_utdf_intersection["intersection_name"] = df_utdf_intersection["intersection_name"].map(lambda x: x.replace("\n", ""))
 
     return df_utdf_intersection
@@ -259,6 +260,46 @@ def spanning_phase_timeplans_data(utdf_dict_data: dict, isSimpleCol: bool = True
             final_spanned_list = [df[simple_col_list] for df in final_spanned_list]
             return pd.concat(final_spanned_list, axis=0, ignore_index=True)
     return pd.concat(final_spanned_list, axis=0, ignore_index=True)
+
+
+def reformat_lane_dataframe(utdf_dict_data: dict) -> pd.DataFrame:
+    # get utdf_lane data
+    df_lane = utdf_dict_data["Lanes"]
+
+    # get unique intersection id
+    intersection_id_list = list(df_lane["INTID"].unique())
+
+    # convert utdf_lane dataframe to dictionary
+    lane_dict = []
+    for intersection_id in intersection_id_list:
+        df_lane_intersection_id = df_lane[df_lane["INTID"] == intersection_id]
+        df_lane_intersection_id.set_index("RECORDNAME", inplace=True)
+        lane_dict.append(df_lane_intersection_id.to_dict("dict"))
+
+    # reformat lane_dict to dataframe
+    df_lane_formatted = pd.DataFrame(lane_dict)
+    df_lane_formatted["INTID"] = intersection_id_list
+    return df_lane_formatted
+
+
+def reformat_link_dataframe(utdf_dict_data: dict) -> pd.DataFrame:
+    # get link data from utdf
+    df_link = utdf_dict_data["Links"]
+
+    # get unique intersection id
+    intersection_id_list = list(df_link["INTID"].unique())
+
+    # convert utdf_link dataframe to dictionary
+    link_dict = []
+    for intersection_id in intersection_id_list:
+        df_link_intersection_id = df_link[df_link["INTID"] == intersection_id]
+        df_link_intersection_id.set_index("RECORDNAME", inplace=True)
+        link_dict.append(df_link_intersection_id.to_dict("dict"))
+
+    # reformat link_dict to dataframe
+    df_link_formatted = pd.DataFrame(link_dict)
+    df_link_formatted["INTID"] = intersection_id_list
+    return df_link_formatted
 
 
 if __name__ == '__main__':

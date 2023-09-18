@@ -19,7 +19,7 @@ if __name__ == "__main__":
 
     # option= 1, generate movement_utdf.csv directly
     # option= 2, generate movement_utdf.csv step by step (more flexible)
-    option = 1
+    option = 3
 
     if option == 1:
         # NOTE: Option 1, generate movement_utdf.csv directly
@@ -52,7 +52,7 @@ if __name__ == "__main__":
         df_movement = pd.read_csv(path_movement)
 
         # Step 3: match intersection_geo and node
-        df_intersection_node = ug.match_intersection_node(df_intersection_geo, df_node)
+        df_intersection_node = ug.match_intersection_node(df_intersection_geo, df_node, max_distance_threshold=0.1)
 
         # Step 4: match movement and intersection_node
         df_movement_intersection = ug.match_movement_and_intersection_node(df_movement, df_intersection_node)
@@ -62,3 +62,12 @@ if __name__ == "__main__":
 
         # Step 6: match movement and utdf_phase_timeplans
         df_movement_utdf_phase = ug.match_movement_utdf_phase_timeplans(df_movement_utdf_lane, utdf_dict_data)
+
+        # Step 7: sve movement_utdf.csv
+        df_movement_utdf_phase.to_csv(fr"{path}\movement_utdf.csv", index=False)
+
+#     path_utdf = fr"{path}\UTDF.csv"
+#     utdf_dict_data = ug.generate_utdf_dataframes(path_utdf, city)
+#
+#     df_lane_formated = ug.reformat_lane_dataframe(utdf_dict_data)
+#

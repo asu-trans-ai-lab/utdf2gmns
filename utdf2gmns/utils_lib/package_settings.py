@@ -18,6 +18,39 @@ utdf_categories = {
     "Timeplans": "Timing Plan Settings",
     "Phases": "Phasing Data"}
 
+utdf_metadata = {
+    "Nodes":
+        """
+        INTID: Intersection ID;
+        Type: 0 for signalized intersection, 1 for external node, 2 for bend, 3 for unsignalized, 4 for roundabout;
+        X, Y, Z: Coordinates of the node, Z is elevation;""",
+    "Links":
+        """
+        INTID: Intersection ID;
+        UPID: Upstream node ID;
+        Lanes: Number of lanes, for bend or external;
+        Distance: travel distance in feet;
+        Time: Travel time;
+        Speed: Travel speed, mph or km/h;
+        Grade: Grade in percent;
+        Median: Median width in feet;
+        Offset: Offset of link to right of center line, normally zero;
+        TWLTL: 1 indicates a TWLTL for link;
+        Crosswalk Width: Width of crosswalk at end of link;
+        Mandatory and Positioning Distances: For lane change start points;
+        Curve Pt X, Pt Y, Pt Z: Used to define a curve point; The other curve point is defined in the reverse link. Blank indicates a straight link;
+        """,
+    "Lanes": """
+        INTID: Intersection ID;
+        UPID: Upstream node ID;
+        Dest Node: Destination node number for this movement;
+        Lanes: For each lane group, enter the number of lanes. Shared lanes count as through lanes, unless there is no through movement, in which case LR lanes count as left lanes.
+        Shared: Enter code for sharing of this lane with adjacent movements. This field specified which movements the through lanes are shared with. Enter 0, 1, 2, 3 for No-sharing , shared-with-left, shared-with-right, shared-with-both; This field is normally 0 for turning lane groups. if a left shares with left2 or u-turns. the sharing is coded as 1.
+
+    """
+
+}
+
 utdf_link_column_names = {
     1: 'RECORDNAME',
     2: 'INTID',

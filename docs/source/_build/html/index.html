@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>utdf2gmns &#8212; utdf2gmns 0.2.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="installation.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="utdf2gmns">
+<h1>utdf2gmns<a class="headerlink" href="#utdf2gmns" title="Permalink to this heading">¶</a></h1>
+<div class="line-block">
+<div class="line"><strong>Authors</strong>: Xiangyong Luo, Xuesong (Simon) Zhou</div>
+<div class="line"><strong>Email</strong>: <a class="reference external" href="mailto:luoxiangyong01&#37;&#52;&#48;gmail&#46;com">luoxiangyong01<span>&#64;</span>gmail<span>&#46;</span>com</a>, <a class="reference external" href="mailto:xzhou74&#37;&#52;&#48;asu&#46;edu">xzhou74<span>&#64;</span>asu<span>&#46;</span>edu</a></div>
+</div>
+<p class="linemarker linemarker-7">utdf2gmns is a tool to convert utdf file to GMNS format:  <strong>synchro utdf format to gmns signal timing format at movement layer</strong></p>
+<p class="linemarker linemarker-9"><strong>If you use utdf2gmns in your research, please cite: https://github.com/xyluo25/utdf2gmns</strong></p>
+<section id="required-data-input-files">
+<h2>Required Data Input Files:<a class="headerlink" href="#required-data-input-files" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p class="linemarker linemarker-15">[X] UTDF.csv</p></li>
+<li><p class="linemarker linemarker-16">[X] node.csv (GMNS format)</p></li>
+<li><p class="linemarker linemarker-17">[X] movement.csv (GMNS format)</p></li>
+</ul>
+</section>
+<section id="produced-outputs">
+<h2><strong>Produced outputs</strong><a class="headerlink" href="#produced-outputs" title="Permalink to this heading">¶</a></h2>
+<p class="linemarker linemarker-22"><strong>If input folder have UTDF.csv only, outputs are:</strong></p>
+<ul class="simple">
+<li><p class="linemarker linemarker-24">A dictionary store utdf data with keys: Networks, Node, Links, Timeplans, Lanes, and utdf_intersection</p></li>
+<li><p class="linemarker linemarker-25">A file named utdf2gmns.pickle to store dictionary object.</p></li>
+</ul>
+<p class="linemarker linemarker-27"><strong>If input folder have extra node.csv and movement.csv, outputs are:</strong></p>
+<ul class="simple">
+<li><p class="linemarker linemarker-29">Two files named:  movement_utdf.csv and utdf_intersection.csv</p></li>
+</ul>
+<p class="linemarker linemarker-31">Sample results: <a class="reference external" href="https://github.com/asu-trans-ai-lab/utdf2gmns/tree/main/datasets">datasets</a></p>
+</section>
+<section id="package-dependencies">
+<h2><strong>Package dependencies</strong><a class="headerlink" href="#package-dependencies" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p class="linemarker linemarker-37">[X] geocoder==1.38.1</p></li>
+<li><p class="linemarker linemarker-38">[X] pandas==1.4.4</p></li>
+</ul>
+</section>
+<section id="data-conversion-steps">
+<h2><strong>Data Conversion Steps</strong><a class="headerlink" href="#data-conversion-steps" title="Permalink to this heading">¶</a></h2>
+<p class="linemarker linemarker-43">Step 1: Read UTDF.csv file and perform geocoding, then produce utdf_geo, utdf_lane, and utdf_phase_timeplans.</p>
+<p class="linemarker linemarker-45">Step 2: Match four files (utdf_geo, node, utdf_lane, utdf_pahse_timeplans, movement) to produce movement_utdf</p>
+</section>
+<section id="call-for-contributions">
+<h2><strong>Call for Contributions</strong><a class="headerlink" href="#call-for-contributions" title="Permalink to this heading">¶</a></h2>
+<p class="linemarker linemarker-51">The utdf2gmns project welcomes your expertise and enthusiasm!</p>
+<p class="linemarker linemarker-53">Small improvements or fixes are always appreciated. If you are considering larger contributions to the source code, please contact us through email:</p>
+<blockquote>
+<div><p class="linemarker linemarker-55">Xiangyong Luo :  <a class="reference external" href="mailto:luoxiangyong01&#37;&#52;&#48;gmail&#46;com">luoxiangyong01<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
+<p class="linemarker linemarker-57">Dr. Xuesong Simon Zhou :  <a class="reference external" href="mailto:xzhou74&#37;&#52;&#48;asu&#46;edu">xzhou74<span>&#64;</span>asu<span>&#46;</span>edu</a></p>
+</div></blockquote>
+<p class="linemarker linemarker-59">Writing code isn’t the only way to contribute to utdf2gmns. You can also:</p>
+<ul class="simple">
+<li><p class="linemarker linemarker-61">review pull requests</p></li>
+<li><p class="linemarker linemarker-62">help us stay on top of new and old issues</p></li>
+<li><p class="linemarker linemarker-63">develop tutorials, presentations, and other educational materials</p></li>
+<li><p class="linemarker linemarker-64">develop graphic design for our brand assets and promotional materials</p></li>
+<li><p class="linemarker linemarker-65">translate website content</p></li>
+<li><p class="linemarker linemarker-66">help with outreach and onboard new contributors</p></li>
+<li><p class="linemarker linemarker-67">write grant proposals and help with other fundraising efforts</p></li>
+</ul>
+<p class="linemarker linemarker-69">For more information about the ways you can contribute to utdf2gmns, visit [our GitHub](<a class="reference external" href="https://github.com/asu-trans-ai-lab/utdf2gmns">https://github.com/asu-trans-ai-lab/utdf2gmns</a>). If you’ re unsure where to start or how your skills fit in, reach out! You can ask by opening a new issue or leaving a comment on a relevant issue that is already open on GitHub.</p>
+</section>
+</section>
+<section id="contents">
+<h1>Contents<a class="headerlink" href="#contents" title="Permalink to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gmns.html">GMNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html#simple-example">Simple Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-utdf2gmns">utdf2gmns main functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#utdf2gmns.generate_movement_utdf"><code class="docutils literal notranslate"><span class="pre">generate_movement_utdf()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#utdf2gmns.generate_utdf_dataframes"><code class="docutils literal notranslate"><span class="pre">generate_utdf_dataframes()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#utdf2gmns-helper-functions">utdf2gmns helper functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#utdf2gmns.read_UTDF_file"><code class="docutils literal notranslate"><span class="pre">read_UTDF_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#utdf2gmns.generate_coordinates_from_intersection"><code class="docutils literal notranslate"><span class="pre">generate_coordinates_from_intersection()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#utdf2gmns.match_intersection_node"><code class="docutils literal notranslate"><span class="pre">match_intersection_node()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#utdf2gmns.match_movement_and_intersection_node"><code class="docutils literal notranslate"><span class="pre">match_movement_and_intersection_node()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#utdf2gmns.match_movement_utdf_lane"><code class="docutils literal notranslate"><span class="pre">match_movement_utdf_lane()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#utdf2gmns.match_movement_utdf_phase_timeplans"><code class="docutils literal notranslate"><span class="pre">match_movement_utdf_phase_timeplans()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="todo-list.html">TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgement.html">Acknowledgement</a></li>
+</ul>
+</div>
+<p class="linemarker linemarker-85">For program source code and sample network files, readers can visit the project  <a class="reference external" href="https://github.com/asu-trans-ai-lab">homepage</a>
+at ASU Trans+AI Lab Github.</p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">utdf2gmns</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gmns.html">GMNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todo-list.html">TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgement.html">Acknowledgement</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="installation.html" title="next chapter">Installation</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022-2023, Xiangyong Luo, Xuesong (Simon) Zhou.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

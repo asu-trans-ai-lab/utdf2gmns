@@ -1,0 +1,81 @@
+RECORDNAME,INTID,DATA
+Control Type,39,0
+Cycle Length,39,73.2
+Lock Timings,39,0
+Referenced To,39,0
+Reference Phase,39,206
+Offset,39,54.5
+Master,39,0
+Yield,39,0
+Node 0,39,39
+Node 1,39,0
+Control Type,75,0
+Cycle Length,75,70.3
+Lock Timings,75,0
+Referenced To,75,0
+Reference Phase,75,206
+Offset,75,0.0
+Master,75,0
+Yield,75,0
+Node 0,75,75
+Node 1,75,0
+Control Type,78,0
+Cycle Length,78,57.1
+Lock Timings,78,0
+Referenced To,78,0
+Reference Phase,78,206
+Offset,78,0.0
+Master,78,0
+Yield,78,0
+Node 0,78,78
+Node 1,78,0
+Control Type,80,0
+Cycle Length,80,45.0
+Lock Timings,80,0
+Referenced To,80,0
+Reference Phase,80,206
+Offset,80,0.0
+Master,80,0
+Yield,80,0
+Node 0,80,80
+Node 1,80,0
+Control Type,82,0
+Cycle Length,82,76.5
+Lock Timings,82,0
+Referenced To,82,0
+Reference Phase,82,206
+Offset,82,0.0
+Master,82,0
+Yield,82,0
+Node 0,82,82
+Node 1,82,0
+Control Type,84,0
+Cycle Length,84,65.4
+Lock Timings,84,0
+Referenced To,84,0
+Reference Phase,84,206
+Offset,84,0.0
+Master,84,0
+Yield,84,0
+Node 0,84,84
+Node 1,84,0
+Control Type,87,0
+Cycle Length,87,68.2
+Lock Timings,87,0
+Referenced To,87,0
+Reference Phase,87,206
+Offset,87,0.0
+Master,87,0
+Yield,87,0
+Node 0,87,87
+Node 1,87,0
+Control Type,98,0
+Cycle Length,98,60.5
+Lock Timings,98,0
+Referenced To,98,0
+Reference Phase,98,206
+Offset,98,0.0
+Master,98,0
+Yield,98,0
+Node 0,98,98
+Node 1,98,0

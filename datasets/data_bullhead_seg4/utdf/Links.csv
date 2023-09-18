@@ -1,0 +1,441 @@
+RECORDNAME,INTID,NB,SB,EB,WB
+Up ID,31,,87,,
+Lanes,31,,2,,
+Name,31,,SR 95,,
+Distance,31,,570,,
+Speed,31,,45,,
+Time,31,,8.6,,
+Grade,31,,0,,
+Median,31,,0,,
+Offset,31,,0,,
+TWLTL,31,,0,,
+Crosswalk Width,31,,16,,
+Mandatory Distance,31,,200,,
+Mandatory Distance2,31,,1980,,
+Positioning Distance,31,,1320,,
+Positioning Distance2,31,,2640,,
+Curve Pt X,31,,,,
+Curve Pt Y,31,,,,
+Curve Pt Z,31,,,,
+Link Is Hidden,31,,false,,
+Street Name Is Hidden,31,,false,,
+Up ID,39,75,106,73,74
+Lanes,39,3,3,2,2
+Name,39,SR 95,SR 95,Camp Mohave South,Camp Mohave South
+Distance,39,2985,99,218,282
+Speed,39,45,45,45,45
+Time,39,45.2,1.5,3.3,4.3
+Grade,39,0,0,0,0
+Median,39,12,12,12,12
+Offset,39,0,0,0,0
+TWLTL,39,0,0,0,0
+Crosswalk Width,39,16,16,16,16
+Mandatory Distance,39,305,305,305,305
+Mandatory Distance2,39,1980,1980,1980,1980
+Positioning Distance,39,1320,1320,1320,1320
+Positioning Distance2,39,2640,2640,2640,2640
+Curve Pt X,39,,,,
+Curve Pt Y,39,,,,
+Curve Pt Z,39,,,,
+Link Is Hidden,39,false,false,false,false
+Street Name Is Hidden,39,false,false,false,false
+Up ID,73,,,,39
+Lanes,73,,,,1
+Name,73,,,,Camp Mohave South
+Distance,73,,,,218
+Speed,73,,,,45
+Time,73,,,,3.3
+Grade,73,,,,0
+Median,73,,,,0
+Offset,73,,,,0
+TWLTL,73,,,,0
+Crosswalk Width,73,,,,16
+Mandatory Distance,73,,,,200
+Mandatory Distance2,73,,,,1980
+Positioning Distance,73,,,,1320
+Positioning Distance2,73,,,,2640
+Curve Pt X,73,,,,
+Curve Pt Y,73,,,,
+Curve Pt Z,73,,,,
+Link Is Hidden,73,,,,false
+Street Name Is Hidden,73,,,,false
+Up ID,74,,,39,
+Lanes,74,,,1,
+Name,74,,,Camp Mohave South,
+Distance,74,,,282,
+Speed,74,,,45,
+Time,74,,,4.3,
+Grade,74,,,0,
+Median,74,,,0,
+Offset,74,,,0,
+TWLTL,74,,,0,
+Crosswalk Width,74,,,16,
+Mandatory Distance,74,,,200,
+Mandatory Distance2,74,,,1980,
+Positioning Distance,74,,,1320,
+Positioning Distance2,74,,,2640,
+Curve Pt X,74,,,,
+Curve Pt Y,74,,,,
+Curve Pt Z,74,,,,
+Link Is Hidden,74,,,false,
+Street Name Is Hidden,74,,,false,
+Up ID,75,78,39,76,77
+Lanes,75,3,3,2,2
+Name,75,SR 95,SR 95,Aztec Rd,Aztec Rd
+Distance,75,2307,2985,182,210
+Speed,75,45,45,45,45
+Time,75,35.0,45.2,2.8,3.2
+Grade,75,0,0,0,0
+Median,75,12,12,12,12
+Offset,75,0,0,0,0
+TWLTL,75,0,0,0,0
+Crosswalk Width,75,16,16,16,16
+Mandatory Distance,75,292,292,292,292
+Mandatory Distance2,75,1980,1980,1980,1980
+Positioning Distance,75,1320,1320,1320,1320
+Positioning Distance2,75,2640,2640,2640,2640
+Curve Pt X,75,,,,
+Curve Pt Y,75,,,,
+Curve Pt Z,75,,,,
+Link Is Hidden,75,false,false,false,false
+Street Name Is Hidden,75,false,false,false,false
+Up ID,76,,,,75
+Lanes,76,,,,1
+Name,76,,,,Aztec Rd
+Distance,76,,,,182
+Speed,76,,,,45
+Time,76,,,,2.8
+Grade,76,,,,0
+Median,76,,,,0
+Offset,76,,,,0
+TWLTL,76,,,,0
+Crosswalk Width,76,,,,16
+Mandatory Distance,76,,,,200
+Mandatory Distance2,76,,,,1980
+Positioning Distance,76,,,,1320
+Positioning Distance2,76,,,,2640
+Curve Pt X,76,,,,
+Curve Pt Y,76,,,,
+Curve Pt Z,76,,,,
+Link Is Hidden,76,,,,false
+Street Name Is Hidden,76,,,,false
+Up ID,77,,,75,
+Lanes,77,,,1,
+Name,77,,,Aztec Rd,
+Distance,77,,,210,
+Speed,77,,,45,
+Time,77,,,3.2,
+Grade,77,,,0,
+Median,77,,,0,
+Offset,77,,,0,
+TWLTL,77,,,0,
+Crosswalk Width,77,,,16,
+Mandatory Distance,77,,,200,
+Mandatory Distance2,77,,,1980,
+Positioning Distance,77,,,1320,
+Positioning Distance2,77,,,2640,
+Curve Pt X,77,,,,
+Curve Pt Y,77,,,,
+Curve Pt Z,77,,,,
+Link Is Hidden,77,,,false,
+Street Name Is Hidden,77,,,false,
+Up ID,78,80,75,,79
+Lanes,78,3,3,,2
+Name,78,SR 95,SR 95,,El Rodeo Rd
+Distance,78,2660,2307,,248
+Speed,78,45,45,,45
+Time,78,40.3,35.0,,3.8
+Grade,78,0,0,,0
+Median,78,12,12,,24
+Offset,78,0,0,,0
+TWLTL,78,0,0,,0
+Crosswalk Width,78,16,16,,16
+Mandatory Distance,78,237,237,,237
+Mandatory Distance2,78,1980,1980,,1980
+Positioning Distance,78,1320,1320,,1320
+Positioning Distance2,78,2640,2640,,2640
+Curve Pt X,78,,,,
+Curve Pt Y,78,,,,
+Curve Pt Z,78,,,,
+Link Is Hidden,78,false,false,,false
+Street Name Is Hidden,78,false,false,,false
+Up ID,79,,,78,
+Lanes,79,,,1,
+Name,79,,,El Rodeo Rd,
+Distance,79,,,248,
+Speed,79,,,45,
+Time,79,,,3.8,
+Grade,79,,,0,
+Median,79,,,0,
+Offset,79,,,0,
+TWLTL,79,,,0,
+Crosswalk Width,79,,,16,
+Mandatory Distance,79,,,200,
+Mandatory Distance2,79,,,1980,
+Positioning Distance,79,,,1320,
+Positioning Distance2,79,,,2640,
+Curve Pt X,79,,,,
+Curve Pt Y,79,,,,
+Curve Pt Z,79,,,,
+Link Is Hidden,79,,,false,
+Street Name Is Hidden,79,,,false,
+Up ID,80,82,78,,81
+Lanes,80,2,3,,1
+Name,80,SR 95,SR 95,,E Hammer Ln
+Distance,80,2660,2660,,284
+Speed,80,45,45,,45
+Time,80,40.3,40.3,,4.3
+Grade,80,0,0,,0
+Median,80,12,12,,12
+Offset,80,0,0,,0
+TWLTL,80,0,0,,0
+Crosswalk Width,80,16,16,,16
+Mandatory Distance,80,200,200,,200
+Mandatory Distance2,80,1980,1980,,1980
+Positioning Distance,80,1320,1320,,1320
+Positioning Distance2,80,2640,2640,,2640
+Curve Pt X,80,,,,
+Curve Pt Y,80,,,,
+Curve Pt Z,80,,,,
+Link Is Hidden,80,false,false,,false
+Street Name Is Hidden,80,false,false,,false
+Up ID,81,,,80,
+Lanes,81,,,1,
+Name,81,,,E Hammer Ln,
+Distance,81,,,284,
+Speed,81,,,45,
+Time,81,,,4.3,
+Grade,81,,,0,
+Median,81,,,0,
+Offset,81,,,0,
+TWLTL,81,,,0,
+Crosswalk Width,81,,,16,
+Mandatory Distance,81,,,200,
+Mandatory Distance2,81,,,1980,
+Positioning Distance,81,,,1320,
+Positioning Distance2,81,,,2640,
+Curve Pt X,81,,,,
+Curve Pt Y,81,,,,
+Curve Pt Z,81,,,,
+Link Is Hidden,81,,,false,
+Street Name Is Hidden,81,,,false,
+Up ID,82,84,80,,83
+Lanes,82,2,3,,1
+Name,82,SR 95,SR 95,,Joy Ln
+Distance,82,5296,2660,,377
+Speed,82,45,45,,45
+Time,82,80.2,40.3,,5.7
+Grade,82,0,0,,0
+Median,82,12,12,,12
+Offset,82,0,0,,0
+TWLTL,82,0,0,,0
+Crosswalk Width,82,16,16,,16
+Mandatory Distance,82,318,318,,318
+Mandatory Distance2,82,1980,1980,,1980
+Positioning Distance,82,1320,1320,,1320
+Positioning Distance2,82,2640,2640,,2640
+Curve Pt X,82,,,,
+Curve Pt Y,82,,,,
+Curve Pt Z,82,,,,
+Link Is Hidden,82,false,false,,false
+Street Name Is Hidden,82,false,false,,false
+Up ID,83,,,82,
+Lanes,83,,,1,
+Name,83,,,Joy Ln,
+Distance,83,,,377,
+Speed,83,,,45,
+Time,83,,,5.7,
+Grade,83,,,0,
+Median,83,,,0,
+Offset,83,,,0,
+TWLTL,83,,,0,
+Crosswalk Width,83,,,16,
+Mandatory Distance,83,,,200,
+Mandatory Distance2,83,,,1980,
+Positioning Distance,83,,,1320,
+Positioning Distance2,83,,,2640,
+Curve Pt X,83,,,,
+Curve Pt Y,83,,,,
+Curve Pt Z,83,,,,
+Link Is Hidden,83,,,false,
+Street Name Is Hidden,83,,,false,
+Up ID,84,98,82,85,86
+Lanes,84,4,4,3,2
+Name,84,SR 95,SR 95,E Lipan Blvd,E Lipan Blvd
+Distance,84,1314,5296,256,347
+Speed,84,45,45,45,45
+Time,84,19.9,80.2,3.9,5.3
+Grade,84,0,0,0,0
+Median,84,12,12,0,0
+Offset,84,0,0,0,0
+TWLTL,84,0,0,0,0
+Crosswalk Width,84,16,16,16,16
+Mandatory Distance,84,272,272,272,272
+Mandatory Distance2,84,1980,1980,1980,1980
+Positioning Distance,84,1320,1320,1320,1320
+Positioning Distance2,84,2640,2640,2640,2640
+Curve Pt X,84,,,,
+Curve Pt Y,84,,,,
+Curve Pt Z,84,,,,
+Link Is Hidden,84,false,false,false,false
+Street Name Is Hidden,84,false,false,false,false
+Up ID,85,,,,84
+Lanes,85,,,,2
+Name,85,,,,E Lipan Blvd
+Distance,85,,,,256
+Speed,85,,,,45
+Time,85,,,,3.9
+Grade,85,,,,0
+Median,85,,,,0
+Offset,85,,,,0
+TWLTL,85,,,,0
+Crosswalk Width,85,,,,16
+Mandatory Distance,85,,,,200
+Mandatory Distance2,85,,,,1980
+Positioning Distance,85,,,,1320
+Positioning Distance2,85,,,,2640
+Curve Pt X,85,,,,
+Curve Pt Y,85,,,,
+Curve Pt Z,85,,,,
+Link Is Hidden,85,,,,false
+Street Name Is Hidden,85,,,,false
+Up ID,86,,,84,
+Lanes,86,,,3,
+Name,86,,,E Lipan Blvd,
+Distance,86,,,347,
+Speed,86,,,45,
+Time,86,,,5.3,
+Grade,86,,,0,
+Median,86,,,0,
+Offset,86,,,0,
+TWLTL,86,,,0,
+Crosswalk Width,86,,,16,
+Mandatory Distance,86,,,200,
+Mandatory Distance2,86,,,1980,
+Positioning Distance,86,,,1320,
+Positioning Distance2,86,,,2640,
+Curve Pt X,86,,,,
+Curve Pt Y,86,,,,
+Curve Pt Z,86,,,,
+Link Is Hidden,86,,,false,
+Street Name Is Hidden,86,,,false,
+Up ID,87,31,98,88,89
+Lanes,87,3,3,3,3
+Name,87,SR 95,SR 95,Boundary Cone Rd,Boundary Cone Rd
+Distance,87,570,3996,200,358
+Speed,87,45,45,45,45
+Time,87,8.6,60.5,3.0,5.4
+Grade,87,0,0,0,0
+Median,87,12,12,12,12
+Offset,87,0,0,0,0
+TWLTL,87,0,0,0,0
+Crosswalk Width,87,16,16,16,16
+Mandatory Distance,87,284,284,284,284
+Mandatory Distance2,87,1980,1980,1980,1980
+Positioning Distance,87,1320,1320,1320,1320
+Positioning Distance2,87,2640,2640,2640,2640
+Curve Pt X,87,,,,
+Curve Pt Y,87,,,,
+Curve Pt Z,87,,,,
+Link Is Hidden,87,false,false,false,false
+Street Name Is Hidden,87,false,false,false,false
+Up ID,88,,,,87
+Lanes,88,,,,2
+Name,88,,,,Boundary Cone Rd
+Distance,88,,,,200
+Speed,88,,,,45
+Time,88,,,,3.0
+Grade,88,,,,0
+Median,88,,,,0
+Offset,88,,,,0
+TWLTL,88,,,,0
+Crosswalk Width,88,,,,16
+Mandatory Distance,88,,,,200
+Mandatory Distance2,88,,,,1980
+Positioning Distance,88,,,,1320
+Positioning Distance2,88,,,,2640
+Curve Pt X,88,,,,
+Curve Pt Y,88,,,,
+Curve Pt Z,88,,,,
+Link Is Hidden,88,,,,false
+Street Name Is Hidden,88,,,,false
+Up ID,89,,,87,
+Lanes,89,,,2,
+Name,89,,,Boundary Cone Rd,
+Distance,89,,,358,
+Speed,89,,,45,
+Time,89,,,5.4,
+Grade,89,,,0,
+Median,89,,,0,
+Offset,89,,,0,
+TWLTL,89,,,0,
+Crosswalk Width,89,,,16,
+Mandatory Distance,89,,,200,
+Mandatory Distance2,89,,,1980,
+Positioning Distance,89,,,1320,
+Positioning Distance2,89,,,2640,
+Curve Pt X,89,,,,
+Curve Pt Y,89,,,,
+Curve Pt Z,89,,,,
+Link Is Hidden,89,,,false,
+Street Name Is Hidden,89,,,false,
+Up ID,97,,,,98
+Lanes,97,,,,1
+Name,97,,,,Fairway Vlg Blvd
+Distance,97,,,,285
+Speed,97,,,,45
+Time,97,,,,4.3
+Grade,97,,,,0
+Median,97,,,,0
+Offset,97,,,,0
+TWLTL,97,,,,0
+Crosswalk Width,97,,,,16
+Mandatory Distance,97,,,,200
+Mandatory Distance2,97,,,,1980
+Positioning Distance,97,,,,1320
+Positioning Distance2,97,,,,2640
+Curve Pt X,97,,,,
+Curve Pt Y,97,,,,
+Curve Pt Z,97,,,,
+Link Is Hidden,97,,,,false
+Street Name Is Hidden,97,,,,false
+Up ID,98,87,84,97,
+Lanes,98,3,3,3,
+Name,98,SR 95,SR 95,Fairway Vlg Blvd,
+Distance,98,3996,1314,285,
+Speed,98,45,45,45,
+Time,98,60.5,19.9,4.3,
+Grade,98,0,0,0,
+Median,98,12,12,36,
+Offset,98,0,0,0,
+TWLTL,98,0,0,0,
+Crosswalk Width,98,16,16,16,
+Mandatory Distance,98,252,252,252,
+Mandatory Distance2,98,1980,1980,1980,
+Positioning Distance,98,1320,1320,1320,
+Positioning Distance2,98,2640,2640,2640,
+Curve Pt X,98,,,,
+Curve Pt Y,98,,,,
+Curve Pt Z,98,,,,
+Link Is Hidden,98,false,false,false,
+Street Name Is Hidden,98,false,false,false,
+Up ID,106,39,,,
+Lanes,106,2,,,
+Name,106,SR 95,,,
+Distance,106,99,,,
+Speed,106,45,,,
+Time,106,1.5,,,
+Grade,106,0,,,
+Median,106,0,,,
+Offset,106,0,,,
+TWLTL,106,0,,,
+Crosswalk Width,106,16,,,
+Mandatory Distance,106,200,,,
+Mandatory Distance2,106,1980,,,
+Positioning Distance,106,1320,,,
+Positioning Distance2,106,2640,,,
+Curve Pt X,106,,,,
+Curve Pt Y,106,,,,
+Curve Pt Z,106,,,,
+Link Is Hidden,106,false,,,
+Street Name Is Hidden,106,false,,,
