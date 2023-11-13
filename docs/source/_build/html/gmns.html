@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GMNS &#8212; utdf2gmns 0.2.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Quick Start" href="quick-start.html" />
+    <link rel="prev" title="Installation" href="installation.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="gmns">
+<h1>GMNS<a class="headerlink" href="#gmns" title="Permalink to this heading">¶</a></h1>
+<p class="linemarker linemarker-4">General Modeling Network Specification (<a class="reference external" href="https://github.com/zephyr-data-specs/GMNS">GMNS</a>), proposed by the <a class="reference external" href="https://zephyrtransport.org">Zephyr Foundation</a>,
+defines a common human and machine readable format for sharing routable road network files.
+It is designed to be used in multi-modal static and dynamic transportation planning and
+operations models. It will facilitate the sharing of tools and data sources by modelers.
+For additional information on GMNS goals, history and requirements, please see the <a class="reference external" href="https://github.com/zephyr-data-specs/GMNS/wiki">wiki</a>.</p>
+<p class="linemarker linemarker-11">GMNS (version 0.92) includes the following features for use in static models:</p>
+<ul class="simple">
+<li><p class="linemarker linemarker-13">Configuration information and use definitions.</p></li>
+<li><p class="linemarker linemarker-14">Node and link files, to establish a routable network.</p></li>
+</ul>
+<p class="linemarker linemarker-16">For dynamic models, GMNS (version 0.92) includes the following optional additional features:</p>
+<ul class="simple">
+<li><p class="linemarker linemarker-18">A segment file, with information that overrides the characteristics of a portion of a link.</p></li>
+<li><p class="linemarker linemarker-19">A lane file that allocates portions of the right-of-way. Lanes include travel lanes used by motor vehicles. They may also optionally include bike lanes, parking lanes, and shoulders.</p></li>
+<li><p class="linemarker linemarker-20">A segment_lane file that specifies additional lanes, dropped lanes, or changes to lane properties on a segment of a link.</p></li>
+<li><p class="linemarker linemarker-21">A movement file that specifies how inbound and outbound lanes connect at an intersection.</p></li>
+<li><p class="linemarker linemarker-22">Link, segment, lane and movement time-of-day (TOD) files, that allocate usage of network elements by time-of-day and day-of-week.</p></li>
+<li><p class="linemarker linemarker-23">Signal phase and timing files, for basic implementation of traffic signals.</p></li>
+</ul>
+<p class="linemarker linemarker-25">utdf2gmns uses GMNS as the standard when processing and manipulating networks, and thus any
+network in GMNS format is fully compatible with utdf2gmns.</p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">utdf2gmns</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">GMNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todo-list.html">TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgement.html">Acknowledgement</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="installation.html" title="previous chapter">Installation</a></li>
+      <li>Next: <a href="quick-start.html" title="next chapter">Quick Start</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022-2023, Xiangyong Luo, Xuesong (Simon) Zhou.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/gmns.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

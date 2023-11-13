@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Quick Start &#8212; utdf2gmns 0.2.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API Reference" href="api.html" />
+    <link rel="prev" title="GMNS" href="gmns.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="quick-start">
+<h1>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this heading">¶</a></h1>
+<p class="linemarker linemarker-5">In this section, some examples are provided to quickly show how to use utdf2gmns to match movements with synchro signal data.</p>
+<section id="simple-example">
+<h2>Simple Example<a class="headerlink" href="#simple-example" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">utdf2gmns</span> <span class="k">as</span> <span class="nn">ug</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+    <span class="n">city</span> <span class="o">=</span><span class="s2">&quot; Bullhead City, AZ&quot;</span>
+
+    <span class="c1"># option = 1, generate movement_utdf.csv directly</span>
+    <span class="c1"># option = 2, generate movement_utdf.csv step by step (more flexible)</span>
+    <span class="n">option</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="c1"># NOTE: Option 1, generate movement_utdf.csv directly</span>
+
+    <span class="c1"># the folder contain UTDF.csv, node.csv and movement.csv</span>
+        <span class="n">path</span> <span class="o">=</span><span class="sa">r</span><span class="s2">&quot;C:\Users\roche\Desktop\coding\data_bullhead_seg4&quot;</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="n">ug</span><span class="o">.</span><span class="n">generate_movement_utdf</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">city</span><span class="p">,</span><span class="n">isSave2csv</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="c1"># NOTE: Option 2, generate movement_utdf.csv step by step (more flexible)</span>
+        <span class="n">path_utdf</span> <span class="o">=</span><span class="sa">r</span><span class="s2">&quot;C:\Users\roche\Desktop\coding\data_bullhead_seg4\UTDF.csv&quot;</span>
+        <span class="n">path_node</span> <span class="o">=</span><span class="sa">r</span><span class="s2">&quot;C:\Users\roche\Desktop\coding\data_bullhead_seg4\node.csv&quot;</span>
+        <span class="n">path_movement</span> <span class="o">=</span><span class="sa">r</span><span class="s2">&quot;C:\Users\roche\Desktop\coding\data_bullhead_seg4\movement.csv&quot;</span>
+
+        <span class="c1"># Step 1: read UTDF.csv</span>
+        <span class="n">utdf_dict_data</span> <span class="o">=</span> <span class="n">ug</span><span class="o">.</span><span class="n">generate_utdf_dataframes</span><span class="p">(</span><span class="n">path_utdf</span><span class="p">,</span> <span class="n">city</span><span class="p">)</span>
+
+        <span class="c1"># Step 1.1: get intersection data from UTDF.csv</span>
+        <span class="n">df_intersection</span> <span class="o">=</span> <span class="n">utdf_dict_data</span><span class="p">[</span><span class="s2">&quot;utdf_intersection&quot;</span><span class="p">]</span>
+
+        <span class="c1"># Step 1.2: geocoding intersection data</span>
+        <span class="n">df_intersection_geo</span> <span class="o">=</span> <span class="n">ug</span><span class="o">.</span><span class="n">generate_coordinates_from_intersection</span><span class="p">(</span><span class="n">df_intersection</span><span class="p">)</span>
+
+        <span class="c1"># Step 2: read node.csv and movement.csv</span>
+        <span class="n">df_node</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path_node</span><span class="p">)</span>
+        <span class="n">df_movement</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path_movement</span><span class="p">)</span>
+
+        <span class="c1"># Step 3: match intersection_geo and node</span>
+        <span class="n">df_intersection_node</span> <span class="o">=</span> <span class="n">ug</span><span class="o">.</span><span class="n">match_intersection_node</span><span class="p">(</span><span class="n">df_intersection_geo</span><span class="p">,</span> <span class="n">df_node</span><span class="p">)</span>
+
+        <span class="c1"># Step 4: match movement and intersection_node</span>
+        <span class="n">df_movement_intersection</span> <span class="o">=</span> <span class="n">ug</span><span class="o">.</span><span class="n">match_movement_and_intersection_node</span><span class="p">(</span><span class="n">df_movement</span><span class="p">,</span> <span class="n">df_intersection_node</span><span class="p">)</span>
+
+        <span class="c1"># Step 5: match movement and utdf_lane</span>
+        <span class="n">df_movement_utdf_lane</span> <span class="o">=</span> <span class="n">ug</span><span class="o">.</span><span class="n">match_movement_utdf_lane</span><span class="p">(</span><span class="n">df_movement_intersection</span><span class="p">,</span> <span class="n">utdf_dict_data</span><span class="p">)</span>
+
+        <span class="c1"># Step 6: match movement and utdf_phase_timeplans</span>
+        <span class="n">df_movement_utdf_phase</span> <span class="o">=</span> <span class="n">ug</span><span class="o">.</span><span class="n">match_movement_utdf_phase_timeplans</span><span class="p">(</span><span class="n">df_movement_utdf_lane</span><span class="p">,</span> <span class="n">utdf_dict_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">utdf2gmns</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gmns.html">GMNS</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#simple-example">Simple Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todo-list.html">TODO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgement.html">Acknowledgement</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="gmns.html" title="previous chapter">GMNS</a></li>
+      <li>Next: <a href="api.html" title="next chapter">API Reference</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022-2023, Xiangyong Luo, Xuesong (Simon) Zhou.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/quick-start.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
